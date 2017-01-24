@@ -82,13 +82,13 @@ function write(liste) {
       if (Suche[0] == test[o] || Suche[0] == test) {
         if (Suche[0] == test) {
           done = true; donee = true;
-          document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr style='background-color:#FFFF00'> <td class='table_td'> " + liste[i][0] +" </td><td class='table_td'> " + liste[i][1] + " </td><td class='table_td'> " + liste[i][2] + " </td><td class='table_td'> " + liste[i][3] + " </td> </tr>" + "</tbody></table>");  break
+          document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr> <td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][0] +" </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][1] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][2] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][3] + " </td> </tr>" + "</tbody></table>");  break
         };
         if (Suche.length == 2) {
           for (var g = 0; g < test.length; g++) {
             if (Suche[1] == test[g]) {
               done = true;  donee = true;
-              document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr style='background-color:#FFFF00'> <td class='table_td'> " + liste[i][0] +" </td><td class='table_td'> " + liste[i][1] + " </td><td class='table_td'> " + liste[i][2] + " </td><td class='table_td'> " + liste[i][3] + " </td> </tr>" + "</tbody></table>");  break
+              document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr> <td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][0] +" </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][1] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][2] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][3] + " </td> </tr>" + "</tbody></table>");  break
             };
           };
           if (donee == false) {
@@ -96,7 +96,7 @@ function write(liste) {
           };
         } else {
           done = true;
-          document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr style='background-color:#FFFF00'> <td class='table_td'> " + liste[i][0] +" </td><td class='table_td'> " + liste[i][1] + " </td><td class='table_td'> " + liste[i][2] + " </td><td class='table_td'> " + liste[i][3] + " </td> </tr>" + "</tbody></table>");  break
+          document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr> <td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][0] +" </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][1] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][2] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][3] + " </td> </tr>" + "</tbody></table>");  break
         };
       } else {
         if (done != true && donee != true) {
@@ -134,7 +134,7 @@ function ask() {
 
 function next_day() {
   document.getElementById("whitespace").innerHTML = "";
-  Tag_0 = Tag_1;  Tag_1 = Tag_2;  Tag_2 = Tag_3;  Tag_3 = Tag_4;  Tag_4 = []; ask();
+  Tag_0 = Tag_1;  Tag_1 = Tag_2;  Tag_2 = Tag_3;  Tag_3 = Tag_4;  Tag_4 = [];  ask();
  };
 //function that inserts the next day and deletes today
 
@@ -197,4 +197,3 @@ function adder() {
 
 
 //From here on this is JS that you are allowed to change
-console.log("Hallo");
