@@ -5,6 +5,20 @@
 </head>
 <body onload="update_date(); adder(); write([]);" style="-moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; -user-select: none;">
   <script language="javascript" type="text/javascript" src="motion.js"></script>
+    <SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
+      function NextQuotation() {
+      var obj = new ActiveXObject( "Microsoft.XMLHTTP" );
+      var url = "http://myurl/GetQuotation.asp"
+      obj.open( "POST",url, false );
+      obj.send();
+      nextquotation=obj.responseText;
+      alert(nextquotation);
+      }
+    </SCRIPT>
+    <form name="test">
+    <input type="text" name="quotation_id" >
+    <input type=button name="getQuote" onclick="NextQuotation()">
+    </form>
       <nav>
           <ul>
               <li id="Tag_0">MO</li>
