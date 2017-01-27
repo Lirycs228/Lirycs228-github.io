@@ -59,6 +59,52 @@ function update_day(){
 //                   !Hier beginnt die Tabelle!
 
 //From here on this is JS that you should not change
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyATwnVL6P_HgJl1Ry68RasnGCmR5CiOBPo",
+  authDomain: "oranien-plan.firebaseapp.com",
+  databaseURL: "https://oranien-plan.firebaseio.com",
+  storageBucket: "oranien-plan.appspot.com",
+  messagingSenderId: "90152525796"
+};
+firebase.initializeApp(config);
+alert("config done");
+var storage = firebase.storage();
+
+var storageRef = firebase.storage().ref();
+
+
+  function makeTextFile (text) {
+    var data = new Blob([text], {type: 'text/plain'});
+    alert("text file made");
+    return data;
+  };
+
+
+  function upload_file(str, nbr){
+    var planRef = storageRef.child('plan' + nbr.toString() + '.txt');
+    var file = makeTextFile(str);
+    planRef.put(file).then(function(snapshot) {
+      alert('Uploaded a blob or file!');
+    });
+  };
+
+  function download_file (nbr) {
+    var planRef = storageRef.child('plan' + nbr.toString() + '.txt');
+    planRef.getDownloadURL().then(function(url) {
+
+      // This can be downloaded directly:
+      var xhr = new XMLHttpRequest();
+      xhr.responseType = 'blob';
+      xhr.onload = function(event) {
+        var blob = xhr.response;
+      };
+
+      xhr.open('GET', url);
+      xhr.send();
+      alert("xhr");
+    })
+  };
 
 
 
