@@ -106,7 +106,10 @@ var storageRef = firebase.storage().ref();
     })
   };
 
-
+var a = "abc";
+upload_file(a, 99);
+var b = download_file(99);
+alert(b);
 
 var Tag_0 = [];    var Tag_1 = [];    var Tag_2 = [];    var Tag_3 = [];    var Tag_4 = [];   var day_at_moment = [];
 //variales to save all days
