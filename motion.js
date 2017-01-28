@@ -190,12 +190,6 @@ function show() {
 
 
 function adder() {
-  //document.getElementById("click_menue_button").addEventListener("mouseout", hide);
-  //document.getElementById("click_menue_button").addEventListener("click", show);
-  //document.getElementById("menue_button").addEventListener("mouseout", function(){ hide() });
-  //document.getElementById("hidden_bar").addEventListener("mouseover", function(){ show() });
-  //document.getElementById("hidden_bar").addEventListener("mouseout", function(){ hide() });
-
   document.getElementById("Tag_0").addEventListener("click", function(){ write(Tag_0);  day_at_moment = Tag_0; });
   document.getElementById("Tag_1").addEventListener("click", function(){ write(Tag_1);  day_at_moment = Tag_1; });
   document.getElementById("Tag_2").addEventListener("click", function(){ write(Tag_2);  day_at_moment = Tag_2; });
