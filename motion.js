@@ -42,7 +42,7 @@ function update_day(){
         document.getElementById('Tag_4').innerHTML = "MI";
           }
     else if (week_day == 5){
-        document.getElementById('Tag_0').innerHTML = "HEUTE";
+,        document.getElementById('Tag_0').innerHTML = "HEUTE";
         document.getElementById('Tag_1').innerHTML = "MO";
         document.getElementById('Tag_2').innerHTML = "DI";
         document.getElementById('Tag_3').innerHTML = "MI";
@@ -80,7 +80,7 @@ function readData(nbr) {
   });
 };
 
-var a = ["a", "b", "c"];
+var a = ["a", "b", "c", ["d", "e"]];
 writeData(99, a);
 var c = readData(99);
 alert(c);
