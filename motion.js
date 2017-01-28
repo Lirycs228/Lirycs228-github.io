@@ -68,7 +68,6 @@ var config = {
   messagingSenderId: "90152525796"
 };
 firebase.initializeApp(config);
-alert("config done");
 
 
 var database = firebase.database();
@@ -78,14 +77,11 @@ function writeData(nbr, lis) {
 };
 function readData(nbr) {
   return firebase.database().ref('plan/' + "Tag_" + nbr.toString()).once('value').then(function(snapshot) {
-    alert("done");
   });
 };
 
-alert("hi");
 var a = ["a", "b", "c"];
 writeData(99, a);
-alert(a);
 var c = readData(99);
 alert(c);
 
