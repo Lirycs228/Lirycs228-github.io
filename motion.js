@@ -335,10 +335,7 @@ function ask() {
     document.getElementById("e_pompt").innerHTML = "";
     Tag_4.push([Klasse, Stunde, Lehrer, bemerk]);
     writeData(4, Tag_4);
-    writeData(0, Tag_1);
-    writeData(1, Tag_2);
-    writeData(2, Tag_3);
-    writeData(3, Tag_4);
+
 
     day_at_moment = Tag_4;  write(Tag_4);
   });
@@ -352,6 +349,10 @@ function ask() {
 
 function next_day() {
   document.getElementById("whitespace").innerHTML = "";
+  writeData(0, Tag_1);
+  writeData(1, Tag_2);
+  writeData(2, Tag_3);
+  writeData(3, Tag_4);
   Tag_0 = Tag_1;  Tag_1 = Tag_2;  Tag_2 = Tag_3;  Tag_3 = Tag_4;  Tag_4 = [];  ask();
  };
 //function that inserts the next day and deletes today
