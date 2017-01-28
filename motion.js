@@ -81,6 +81,8 @@ function readData(nbr) {
     alert("done");
   });
 };
+
+alert("hi");
 var a = ["a", "b", "c"];
 writeData(99, a);
 alert(a);
