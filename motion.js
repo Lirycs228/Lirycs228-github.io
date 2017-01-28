@@ -70,6 +70,7 @@ var config = {
 firebase.initializeApp(config);
 alert("config done");
 
+
 var database = firebase.database();
 
 function writeData(nbr, lis) {
@@ -82,6 +83,7 @@ function readData(nbr) {
 };
 var a = ["a", "b", "c"];
 writeData(99, a);
+alert(a);
 var c = readData(99);
 alert(c);
 
