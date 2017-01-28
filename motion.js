@@ -69,47 +69,22 @@ var config = {
 };
 firebase.initializeApp(config);
 alert("config done");
-var storage = firebase.storage();
 
-var storageRef = firebase.storage().ref();
+var database = firebase.database();
 
+function writeData(nbr, lis) {
+  firebase.database().ref('plan/' + "Tag_" + nbr.toString()).set(lis);
+};
+function readData(nbr) {
+  return firebase.database().ref('plan/' + "Tag_" + nbr.toString()).once('value').then(function(snapshot) {
+    alert("done");
+  });
+};
+var a = ["a", "b", "c"];
+writeData(99, a);
+var c = readData(99);
+alert(c);
 
-  function makeTextFile (text) {
-    var data = new Blob([text], {type: 'text/plain'});
-    alert("text file made");
-    return data;
-  };
-
-
-  function upload_file(str, nbr){
-    var planRef = storageRef.child('plan' + nbr.toString() + '.txt');
-    var file = makeTextFile(str);
-    planRef.put(file).then(function(snapshot) {
-      alert('Uploaded a blob or file!');
-    });
-  };
-
-  function download_file (nbr) {
-    var planRef = storageRef.child('plan' + nbr.toString() + '.txt');
-    planRef.getDownloadURL().then(function(url) {
-
-      // This can be downloaded directly:
-      var xhr = new XMLHttpRequest();
-      xhr.responseType = 'blob';
-      xhr.onload = function(event) {
-        var blob = xhr.response;
-      };
-
-      xhr.open('GET', url);
-      xhr.send();
-      alert("xhr");
-    })
-  };
-
-var a = "abc";
-upload_file(a, 99);
-var b = download_file(99);
-alert(b);
 
 var Tag_0 = [];    var Tag_1 = [];    var Tag_2 = [];    var Tag_3 = [];    var Tag_4 = [];   var day_at_moment = [];
 //variales to save all days
