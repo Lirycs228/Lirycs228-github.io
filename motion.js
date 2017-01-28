@@ -76,7 +76,6 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 function writeData(nbr, lis) {
-  alert(lis);
   var long = lis.length;
   firebase.database().ref('plan/' + "Tag_" + nbr.toString()).set([long].concat(lis));
 };
@@ -293,8 +292,6 @@ function hide() {
 function show() {
   document.getElementById("hidden_bar").style.height = "auto";
   document.getElementById("hidden_bar").style.opacity = "1.0";
-  alert(document.getElementById("click_menue_button").innerHTML);
-  //document.getElementById("hidden_bar").style.filter = "opacity(1.0)";
 };
 
 
