@@ -80,29 +80,44 @@ function writeData(nbr, lis) {
   firebase.database().ref('plan/' + "Tag_" + nbr.toString()).set([long].concat(lis));
 };
 
-function readData(nbr, snapshot, func) {
-  var lang = snapshot.val();
-  var lis = [];
-  for(i=1; i<=lang; i++) {
-    var e = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + i.toString() + "/0");
-    var f = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + i.toString() + "/1");
-    var g = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + i.toString() + "/2");
-    var h = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + i.toString() + "/3");
+function indexer(index, nbr, lang, func, push, reset, re) {
+  var e = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + index.toString() + "/0");
+  var f = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + index.toString() + "/1");
+  var g = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + index.toString() + "/2");
+  var h = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + index.toString() + "/3");
 
-    e.once("value", function(snapshot) {
-      var a = snapshot.val();
-      f.once("value", function(snapshot) {
-        var b = snapshot.val();
-        g.on("value", function(snapshot) {
-          var c = snapshot.val();
-          h.once("value", function(snapshot) {
-            var d = snapshot.val();
-            lis.push([a, b, c, d]);
-            func(lis);
-          });
+  e.once("value", function(snapshot) {
+    var a = snapshot.val()
+    f.once("value", function(snapshot) {
+      var b = snapshot.val()
+      g.on("value", function(snapshot) {
+        var c = snapshot.val()
+        h.once("value", function(snapshot) {
+          var d = snapshot.val();
+          push([a, b, c, d]);
+          handler(lang, func, push, reset, re);
         });
       });
     });
+  });
+};
+
+var laengoe = 0
+function handler(lang, func, push, reset, re) {
+  laengoe++
+  if(laengoe == lang){
+    laengoe = 0;
+    func(re());
+    reset();
+  }
+}
+
+function readData(nbr, snapshot, func, push, reset, re) {
+  var lang = snapshot.val();
+  reset();
+
+  for(i=1; i<=lang; i++) {
+    indexer(i, nbr, lang, func, push, reset, re);
   };
 };
 
@@ -153,21 +168,100 @@ var Tag_3 = firebase.database().ref('plan/' + "Tag_3/0");
 var Tag_4 = firebase.database().ref('plan/' + "Tag_4/0");
 
 
+var var0 = [];
+
+function reset_var0(){
+  var0 = [];
+};
+function push_var0(lis){
+  var0.push(lis);
+};
+function re0(){
+  return var0;
+};
 Tag_0.on("value", function(snapshot) {
-  readData(0, snapshot, zero_to_lis)
+  readData(0, snapshot, zero_to_lis, push_var0, reset_var0, re0)
 });
+
+if(Tag_0.toString() == firebase.database().ref('plan/' + "Tag_0/0").toString()){
+  Tag_0 = [];
+}
+
+var var1 = [];
+
+function reset_var1(){
+  var1 = [];
+};
+function push_var1(lis){
+  var1.push(lis);
+};
+function re1(){
+  return var1;
+};
 Tag_1.on("value", function(snapshot) {
-  readData(1, snapshot, one_to_lis)
+  readData(1, snapshot, one_to_lis, push_var1, reset_var1, re1)
 });
+
+if(Tag_1.toString() == firebase.database().ref('plan/' + "Tag_1/0").toString()){
+  Tag_1 = [];
+}
+
+var var2 = [];
+
+function reset_var2(){
+  var2 = [];
+};
+function push_var2(lis){
+  var2.push(lis);
+};
+function re2(){
+  return var2;
+};
 Tag_2.on("value", function(snapshot) {
-  readData(2, snapshot, two_to_lis)
+  readData(2, snapshot, two_to_lis, push_var2, reset_var2, re2)
 });
+
+if(Tag_2.toString() == firebase.database().ref('plan/' + "Tag_2/0").toString()){
+  Tag_2 = [];
+}
+
+var var3 = [];
+
+function reset_var3(){
+  var3 = [];
+};
+function push_var3(lis){
+  var3.push(lis);
+};
+function re3(){
+  return var3;
+};
 Tag_3.on("value", function(snapshot) {
-  readData(3, snapshot, three_to_lis)
+  readData(3, snapshot, three_to_lis, push_var3, reset_var3, re3)
 });
+
+if(Tag_3.toString() == firebase.database().ref('plan/' + "Tag_3/0").toString()){
+  Tag_3 = [];
+}
+
+var var4 = [];
+
+function reset_var4(){
+  var4 = [];
+};
+function push_var4(lis){
+  var4.push(lis);
+};
+function re4(){
+  return var4;
+};
 Tag_4.on("value", function(snapshot) {
-  readData(4, snapshot, four_to_lis)
+  readData(4, snapshot, four_to_lis, push_var4, reset_var4, re4)
 });
+
+if(Tag_4.toString() == firebase.database().ref('plan/' + "Tag_4/0").toString()){
+  Tag_4 = [];
+}
 
 /*
 var Tag_0 = [];
@@ -240,20 +334,12 @@ function ask() {
     Klasse = document.getElementById("klassen").value;  Stunde = document.getElementById("stunde").value;  Lehrer = document.getElementById("lehrer").value;  bemerk = document.getElementById("bemerk").value;
     document.getElementById("e_pompt").innerHTML = "";
     Tag_4.push([Klasse, Stunde, Lehrer, bemerk]);
-    alert(Tag_4);
     writeData(4, Tag_4);
-    if(Tag_0 == undefined) {
-      writeData(0, Tag_0);
-    };
-    if(Tag_1 == undefined) {
-      writeData(1, Tag_1);
-    };
-    if(Tag_2 == undefined) {
-      writeData(2, Tag_2);
-    };
-    if(Tag_3 == undefined) {
-      writeData(3, Tag_3);
-    };
+    writeData(0, Tag_1);
+    writeData(1, Tag_2);
+    writeData(2, Tag_3);
+    writeData(3, Tag_4);
+
     day_at_moment = Tag_4;  write(Tag_4);
   });
   document.getElementById("weiter").addEventListener("click", function () {
