@@ -25,6 +25,7 @@ nav ul li{
   transition: all 400ms;
   border-right: solid #444 1px;
   cursor: pointer;
+  height: 18px;
 }
 
 nav ul li:hover{
@@ -39,8 +40,6 @@ nav ul li:first-child{
 
 nav ul li:last-child{
   border-radius: 0px 10px 10px 0px;
-  border: none;
-  height: 18px;
 }
 
 nav ul li ul{
@@ -87,6 +86,7 @@ nav ul li:last-child:hover ul{
   transition: all 400ms;
   border-right: solid #444 1px;
   cursor: pointer;
+  height: 24px;
 }
 
 #logo_bar ul li:first-child{
@@ -122,7 +122,7 @@ nav ul li:last-child:hover ul{
   }
 
 #logo_bar ul li:hover{
-  background-color: ff5400;
+  background-color: #ff5400;
   color: #fff;
   text-decoration: none;
 }
@@ -207,15 +207,6 @@ nav ul li:last-child:hover ul{
 
 .stby {
   margin-left: 11px;
-}
-
-#searcher{
-  position: relative;
-  top: -290px;
-  left: 30px;
-  background-color: red;
-  width: 40px;
-  height: 20px;
 }
 
 #table_main {
