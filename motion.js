@@ -340,6 +340,12 @@ function next_day() {
       alert(errorCode + "\n" + errorMessage);
       next_day();
     });
+    alert("1: " + Tag_0);
+    alert("2: " + Tag_1);
+    alert("3: " + Tag_2);
+    alert("4: " + Tag_3);
+    alert("5: " + Tag_4);
+
     Tag_0 = Tag_1;  Tag_1 = Tag_2;  Tag_2 = Tag_3;  Tag_3 = Tag_4;  Tag_4 = [];
     alert("1: " + Tag_0);
     writeData(0, Tag_0);
