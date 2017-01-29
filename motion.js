@@ -1,3 +1,4 @@
+
 // Oranien-Plan Javascript Code by Sven Nachtigal && Erik Hammon
 var date = new Date();
 var day = date.getDate();
@@ -328,6 +329,10 @@ function next_day() {
   document.getElementById("whitespace").innerHTML = "";
   var email = ""; var psw = ""; window.err = false;
   document.getElementById("e_pompt").innerHTML = "<div style='background-color:#444; z-index:3; width:180px; height:400px; position:absolute; top:20%; left:45%; color:#AAA;'> <button type='button' id='end' style='background-color:#FF0000; border:none; width:25px; height:20px;'>X</button> <center><br> E-Mail: <br> <input type='email' id='email' /> <br><br><br> Password: <br> <input type='password' id='psw' /><br><br><br> <button type='button'  id='login' style='border:none; background-color:#00FF00; width:100px; height:50px; font-size: 20px;'>Login</button> </center></div>"
+  document.getElementById("end").addEventListener("mouseover", function () {  change("AA0000", "end");  });
+  document.getElementById("end").addEventListener("mouseout", function () {  change("FF0000", "end");  });
+  document.getElementById("login").addEventListener("mouseover", function () {  change("00AA00", "login");  });
+  document.getElementById("login").addEventListener("mouseout", function () {  change("00FF00", "login");  });
   document.getElementById("end").addEventListener("click", function () {
     document.getElementById("e_pompt").innerHTML = "";
   });
@@ -340,25 +345,15 @@ function next_day() {
       alert(errorCode + "\n" + errorMessage);
       next_day();
     });
-    alert("1: " + Tag_0);
-    alert("2: " + Tag_1);
-    alert("3: " + Tag_2);
-    alert("4: " + Tag_3);
-    alert("5: " + Tag_4);
-
     Tag_0 = Tag_1;  Tag_1 = Tag_2;  Tag_2 = Tag_3;  Tag_3 = Tag_4;  Tag_4 = [];
-    alert("1: " + Tag_0);
     writeData(0, Tag_0);
-    alert("2: " + Tag_1);
     writeData(1, Tag_1);
-    alert("3: " + Tag_2);
     writeData(2, Tag_2);
-    alert("4: " + Tag_3);
     writeData(3, Tag_3);
-    alert("5: " + Tag_4);
 
     var Klasse = "";  var Stunde = "";  var Lehrer = "";  var bemerk = "";
     if(window.err == false){
+      alert("hi");
       document.getElementById("e_pompt").innerHTML = "<div style='background-color:#444; z-index:3; width:180px; height:400px; position:absolute; top:20%; left:45%; color:#AAA;'> <button type='button' id='close' style='background-color:#FF0000; border:none; width:25px; height:20px;'>X</button> <center><br> Klassen: <br> <input type='text' id='klassen' /><br><br><br> Stunde: <br> <input type='text' id='stunde' />  <br><br><br> Lehrkr&auml;fte: <br> <input type='text' id='lehrer' /><br><br><br> Anmerkungen: <br> <input type='text' id='bemerk' /><br><br><br> <button type='button'  id='weiter' style='border:none; background-color:#00FF00; width:100px; height:50px; font-size: 20px;'>Weiter</button> </center></div>";
       document.getElementById("close").addEventListener("mouseover", function () {  change("AA0000", "close");  });
       document.getElementById("close").addEventListener("mouseout", function () {  change("FF0000", "close");  });
@@ -372,6 +367,7 @@ function next_day() {
         }, function(error) {
           // An error happened.
         });
+        alert([Klasse, Stunde, Lehrer, bemerk]);
         Tag_4.push([Klasse, Stunde, Lehrer, bemerk]);
         writeData(4, Tag_4);
         day_at_moment = Tag_4;  write(Tag_4);
