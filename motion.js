@@ -369,6 +369,7 @@ function next_day() {
         });
         alert([Klasse, Stunde, Lehrer, bemerk]);
         Tag_4.push([Klasse, Stunde, Lehrer, bemerk]);
+        alert(Tag_4);
         writeData(4, Tag_4);
         alert(Tag_4);
         day_at_moment = Tag_4;  write(Tag_4);
