@@ -337,8 +337,6 @@ function next_day() {
   });
   document.getElementById("login").addEventListener("click", function () {
     email = document.getElementById("email").value; psw = document.getElementById("psw").value;
-    alert(email);
-    alert(psw);
     firebase.auth().signInWithEmailAndPassword(email, psw).catch(function(error) {
       window.err = true;
       var errorCode = error.code;
@@ -346,11 +344,12 @@ function next_day() {
       alert(errorCode + "\n" + errorMessage);
       next_day();
     });
-    writeData(0, Tag_1);
-    writeData(1, Tag_2);
-    writeData(2, Tag_3);
-    writeData(3, Tag_4);
     Tag_0 = Tag_1;  Tag_1 = Tag_2;  Tag_2 = Tag_3;  Tag_3 = Tag_4;  Tag_4 = [];
+    writeData(0, Tag_0);
+    writeData(1, Tag_1);
+    writeData(2, Tag_2);
+    writeData(3, Tag_3);
+
     var Klasse = "";  var Stunde = "";  var Lehrer = "";  var bemerk = "";
     if(window.err == false){
       document.getElementById("e_pompt").innerHTML = "<div style='background-color:#444; z-index:3; width:180px; height:400px; position:absolute; top:20%; left:45%; color:#AAA;'> <button type='button' id='close' style='background-color:#FF0000; border:none; width:25px; height:20px;'>X</button> <center><br> Klassen: <br> <input type='text' id='klassen' /><br><br><br> Stunde: <br> <input type='text' id='stunde' />  <br><br><br> Lehrkr&auml;fte: <br> <input type='text' id='lehrer' /><br><br><br> Anmerkungen: <br> <input type='text' id='bemerk' /><br><br><br> <button type='button'  id='weiter' style='border:none; background-color:#00FF00; width:100px; height:50px; font-size: 20px;'>Weiter</button> </center></div>";
