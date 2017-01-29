@@ -350,6 +350,10 @@ function next_day() {
     writeData(1, Tag_1);
     writeData(2, Tag_2);
     writeData(3, Tag_3);
+    alert("0: " + Tag_0);
+    alert("1: " + Tag_1);
+    alert("2: " + Tag_2);
+    alert("3: " + Tag_3);
 
     var Klasse = "";  var Stunde = "";  var Lehrer = "";  var bemerk = "";
     if(window.err == false){
