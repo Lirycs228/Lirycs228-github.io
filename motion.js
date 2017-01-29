@@ -327,7 +327,9 @@ function change(color, id) {
 
 function next_day() {
   document.getElementById("whitespace").innerHTML = "";
-  var email = ""; var psw = ""; window.err = false;
+  var email = "";
+  var psw = "";
+  window.err = false;
   document.getElementById("e_pompt").innerHTML = "<div style='background-color:#444; z-index:3; width:180px; height:400px; position:absolute; top:20%; left:45%; color:#AAA;'> <button type='button' id='end' style='background-color:#FF0000; border:none; width:25px; height:20px;'>X</button> <center><br> E-Mail: <br> <input type='email' id='email' /> <br><br><br> Password: <br> <input type='password' id='psw' /><br><br><br> <button type='button'  id='login' style='border:none; background-color:#00FF00; width:100px; height:50px; font-size: 20px;'>Login</button> </center></div>"
   document.getElementById("end").addEventListener("mouseover", function () {  change("AA0000", "end");  });
   document.getElementById("end").addEventListener("mouseout", function () {  change("FF0000", "end");  });
@@ -356,36 +358,31 @@ function next_day() {
     alert("3: " + Tag_3);
 
     var Klasse = "";  var Stunde = "";  var Lehrer = "";  var bemerk = "";
-    if(window.err == false){
-      alert("hi");
-      document.getElementById("e_pompt").innerHTML = "<div style='background-color:#444; z-index:3; width:180px; height:400px; position:absolute; top:20%; left:45%; color:#AAA;'> <button type='button' id='close' style='background-color:#FF0000; border:none; width:25px; height:20px;'>X</button> <center><br> Klassen: <br> <input type='text' id='klassen' /><br><br><br> Stunde: <br> <input type='text' id='stunde' />  <br><br><br> Lehrkr&auml;fte: <br> <input type='text' id='lehrer' /><br><br><br> Anmerkungen: <br> <input type='text' id='bemerk' /><br><br><br> <button type='button'  id='weiter' style='border:none; background-color:#00FF00; width:100px; height:50px; font-size: 20px;'>Weiter</button> </center></div>";
-      document.getElementById("close").addEventListener("mouseover", function () {  change("AA0000", "close");  });
-      document.getElementById("close").addEventListener("mouseout", function () {  change("FF0000", "close");  });
-      document.getElementById("weiter").addEventListener("mouseover", function () {  change("00AA00", "weiter");  });
-      document.getElementById("weiter").addEventListener("mouseout", function () {  change("00FF00", "weiter");  });
-      document.getElementById("close").addEventListener("click", function () {
-        Klasse = document.getElementById("klassen").value;  Stunde = document.getElementById("stunde").value;  Lehrer = document.getElementById("lehrer").value;  bemerk = document.getElementById("bemerk").value;
-        document.getElementById("e_pompt").innerHTML = "";
-        firebase.auth().signOut().then(function() {
-          // Sign-out successful.
-        }, function(error) {
-          // An error happened.
-        });
-        alert([Klasse, Stunde, Lehrer, bemerk]);
-        window.Tag_4.push([Klasse, Stunde, Lehrer, bemerk]);
-        alert(window.Tag_4);
-        writeData(4, window.Tag_4);
-        alert(Tag_4);
-        day_at_moment = Tag_4;  write(window.Tag_4);
-      });
-      document.getElementById("weiter").addEventListener("click", function () {
-        Klasse = document.getElementById("klassen").value;  Stunde = document.getElementById("stunde").value;  Lehrer = document.getElementById("lehrer").value;  bemerk = document.getElementById("bemerk").value;
-        window.Tag_4.push([Klasse, Stunde, Lehrer, bemerk]);
-        document.getElementById("klassen").value = "";  document.getElementById("stunde").value = "";  document.getElementById("lehrer").value = "";  document.getElementById("bemerk").value = "";  ask();
-      });
-    } else {
+    document.getElementById("e_pompt").innerHTML = "<div style='background-color:#444; z-index:3; width:180px; height:400px; position:absolute; top:20%; left:45%; color:#AAA;'> <button type='button' id='close' style='background-color:#FF0000; border:none; width:25px; height:20px;'>X</button> <center><br> Klassen: <br> <input type='text' id='klassen' /><br><br><br> Stunde: <br> <input type='text' id='stunde' />  <br><br><br> Lehrkr&auml;fte: <br> <input type='text' id='lehrer' /><br><br><br> Anmerkungen: <br> <input type='text' id='bemerk' /><br><br><br> <button type='button'  id='weiter' style='border:none; background-color:#00FF00; width:100px; height:50px; font-size: 20px;'>Weiter</button> </center></div>";
+    document.getElementById("close").addEventListener("mouseover", function () {  change("AA0000", "close");  });
+    document.getElementById("close").addEventListener("mouseout", function () {  change("FF0000", "close");  });
+    document.getElementById("weiter").addEventListener("mouseover", function () {  change("00AA00", "weiter");  });
+    document.getElementById("weiter").addEventListener("mouseout", function () {  change("00FF00", "weiter");  });
+    document.getElementById("close").addEventListener("click", function () {
+      Klasse = document.getElementById("klassen").value;  Stunde = document.getElementById("stunde").value;  Lehrer = document.getElementById("lehrer").value;  bemerk = document.getElementById("bemerk").value;
       document.getElementById("e_pompt").innerHTML = "";
-    };
+      alert([Klasse, Stunde, Lehrer, bemerk]);
+      window.Tag_4.push([Klasse, Stunde, Lehrer, bemerk]);
+      alert(window.Tag_4);
+      writeData(4, window.Tag_4);
+      alert(Tag_4);
+      day_at_moment = Tag_4;  write(window.Tag_4);
+      firebase.auth().signOut().then(function() {
+        // Sign-out successful.
+      }, function(error) {
+        // An error happened.
+      });
+    });
+    document.getElementById("weiter").addEventListener("click", function () {
+      Klasse = document.getElementById("klassen").value;  Stunde = document.getElementById("stunde").value;  Lehrer = document.getElementById("lehrer").value;  bemerk = document.getElementById("bemerk").value;
+      window.Tag_4.push([Klasse, Stunde, Lehrer, bemerk]);
+      document.getElementById("klassen").value = "";  document.getElementById("stunde").value = "";  document.getElementById("lehrer").value = "";  document.getElementById("bemerk").value = "";  ask();
+    });
   });
 };
 //function that inserts the next day and deletes today
