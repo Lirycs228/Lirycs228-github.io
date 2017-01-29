@@ -324,8 +324,34 @@ function change(color, id) {
   var color = "#" + color.toString();  document.getElementById(id.toString()).style.backgroundColor=color;  };
 
 function ask() {
-  var Klasse = "";  var Stunde = "";  var Lehrer = "";  var bemerk = "";
 
+};
+// function that ask you for params of new day
+
+function next_day() {
+  document.getElementById("whitespace").innerHTML = "";
+  var email = ""; var psw = ""; window.err = false;
+  document.getElementById("e_pompt").innerHTML = "<div style='background-color:#444; z-index:3; width:180px; height:400px; position:absolute; top:20%; left:45%; color:#AAA;'> <button type='button' id='end' style='background-color:#FF0000; border:none; width:25px; height:20px;'>X</button> <center><br> E-Mail: <br> <input type='email' id='email' /> <br><br><br> Password: <br> <input type='password' id='psw' /><br><br><br> <button type='button'  id='login' style='border:none; background-color:#00FF00; width:100px; height:50px; font-size: 20px;'>Login</button> </center></div>"
+  document.getElementById("end").addEventListener("click", function () {
+    document.getElementById("e_pompt").innerHTML = "";
+  });
+  document.getElementById("login").addEventListener("click", function () {
+    email = document.getElementById("email").value; psw = document.getElementById("psw").value;
+    alert(email);
+    alert(psw);
+    firebase.auth().signInWithEmailAndPassword(email, psw).catch(function(error) {
+      window.err = true;
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      alert(errorCode + "\n" + errorMessage);
+      next_day();
+    });
+    writeData(0, Tag_1);
+    writeData(1, Tag_2);
+    writeData(2, Tag_3);
+    writeData(3, Tag_4);
+    Tag_0 = Tag_1;  Tag_1 = Tag_2;  Tag_2 = Tag_3;  Tag_3 = Tag_4;  Tag_4 = [];
+    var Klasse = "";  var Stunde = "";  var Lehrer = "";  var bemerk = "";
     if(window.err == false){
       document.getElementById("e_pompt").innerHTML = "<div style='background-color:#444; z-index:3; width:180px; height:400px; position:absolute; top:20%; left:45%; color:#AAA;'> <button type='button' id='close' style='background-color:#FF0000; border:none; width:25px; height:20px;'>X</button> <center><br> Klassen: <br> <input type='text' id='klassen' /><br><br><br> Stunde: <br> <input type='text' id='stunde' />  <br><br><br> Lehrkr&auml;fte: <br> <input type='text' id='lehrer' /><br><br><br> Anmerkungen: <br> <input type='text' id='bemerk' /><br><br><br> <button type='button'  id='weiter' style='border:none; background-color:#00FF00; width:100px; height:50px; font-size: 20px;'>Weiter</button> </center></div>";
       document.getElementById("close").addEventListener("mouseover", function () {  change("AA0000", "close");  });
@@ -352,32 +378,6 @@ function ask() {
     } else {
       document.getElementById("e_pompt").innerHTML = "";
     };
-};
-// function that ask you for params of new day
-
-function next_day() {
-  document.getElementById("whitespace").innerHTML = "";
-  var email = ""; var psw = ""; window.err = false;
-  document.getElementById("e_pompt").innerHTML = "<div style='background-color:#444; z-index:3; width:180px; height:400px; position:absolute; top:20%; left:45%; color:#AAA;'> <button type='button' id='end' style='background-color:#FF0000; border:none; width:25px; height:20px;'>X</button> <center><br> E-Mail: <br> <input type='email' id='email' /> <br><br><br> Password: <br> <input type='password' id='psw' /><br><br><br> <button type='button'  id='login' style='border:none; background-color:#00FF00; width:100px; height:50px; font-size: 20px;'>Login</button> </center></div>"
-  document.getElementById("end").addEventListener("click", function () {
-    document.getElementById("e_pompt").innerHTML = "";
-  });
-  document.getElementById("login").addEventListener("click", function () {
-    email = document.getElementById("email").value; psw = document.getElementById("psw").value;
-    alert(email);
-    alert(psw);
-    firebase.auth().signInWithEmailAndPassword(email, psw).catch(function(error) {
-      window.err = true;
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      alert(errorCode + "\n" + errorMessage);
-      next_day();
-    });
-    writeData(0, Tag_1);
-    writeData(1, Tag_2);
-    writeData(2, Tag_3);
-    writeData(3, Tag_4);
-    Tag_0 = Tag_1;  Tag_1 = Tag_2;  Tag_2 = Tag_3;  Tag_3 = Tag_4;  Tag_4 = [];  ask();
   });
 };
 //function that inserts the next day and deletes today
