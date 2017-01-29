@@ -346,8 +346,14 @@ function next_day() {
       var errorMessage = error.message;
       alert(errorCode + "\n" + errorMessage);
       next_day();
+    }).then(function (){
+      alert("hg");
     });
-    Tag_0 = Tag_1;  Tag_1 = Tag_2;  Tag_2 = Tag_3;  Tag_3 = Tag_4;  Tag_4 = [];
+    Tag_0 = Tag_1;
+    Tag_1 = Tag_2;
+    Tag_2 = Tag_3;
+    Tag_3 = Tag_4;
+    Tag_4 = [];
     writeData(0, Tag_0);
     writeData(1, Tag_1);
     writeData(2, Tag_2);
