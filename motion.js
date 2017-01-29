@@ -323,10 +323,6 @@ function write(liste) {
 function change(color, id) {
   var color = "#" + color.toString();  document.getElementById(id.toString()).style.backgroundColor=color;  };
 
-function ask() {
-
-};
-// function that ask you for params of new day
 
 function next_day() {
   document.getElementById("whitespace").innerHTML = "";
@@ -345,10 +341,15 @@ function next_day() {
       next_day();
     });
     Tag_0 = Tag_1;  Tag_1 = Tag_2;  Tag_2 = Tag_3;  Tag_3 = Tag_4;  Tag_4 = [];
+    alert("1");
     writeData(0, Tag_0);
+    alert("2");
     writeData(1, Tag_1);
+    alert("3");
     writeData(2, Tag_2);
+    alert("4");
     writeData(3, Tag_3);
+    alert("5");
 
     var Klasse = "";  var Stunde = "";  var Lehrer = "";  var bemerk = "";
     if(window.err == false){
