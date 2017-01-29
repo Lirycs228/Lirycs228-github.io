@@ -341,15 +341,15 @@ function next_day() {
       next_day();
     });
     Tag_0 = Tag_1;  Tag_1 = Tag_2;  Tag_2 = Tag_3;  Tag_3 = Tag_4;  Tag_4 = [];
-    alert("1");
+    alert("1: " + Tag_0);
     writeData(0, Tag_0);
-    alert("2");
+    alert("2: " + Tag_1);
     writeData(1, Tag_1);
-    alert("3");
+    alert("3: " + Tag_2);
     writeData(2, Tag_2);
-    alert("4");
+    alert("4: " + Tag_3);
     writeData(3, Tag_3);
-    alert("5");
+    alert("5: " + Tag_4);
 
     var Klasse = "";  var Stunde = "";  var Lehrer = "";  var bemerk = "";
     if(window.err == false){
