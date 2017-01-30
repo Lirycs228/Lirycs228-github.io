@@ -137,7 +137,7 @@ function push_var0(lis){  var0.push(lis);  };
 function re0(){  return var0;  };
 
 Tag_0.on("value", function(snapshot) {
-  readData(0, snapshot, zero_to_lis, push_var0, reset_var0, re0, set_lang0, re_lang0);  Tag_0.off("value");
+  Tag_0.off("value"); readData(0, snapshot, zero_to_lis, push_var0, reset_var0, re0, set_lang0, re_lang0);
 });
 
 if(Tag_0.toString() == firebase.database().ref('plan/' + "Tag_0/0").toString()){  Tag_0 = [];  };
@@ -152,7 +152,7 @@ function push_var1(lis){  var1.push(lis);  };
 function re1(){  return var1;  };
 
 Tag_1.once("value", function(snapshot) {
-  readData(1, snapshot, one_to_lis, push_var1, reset_var1, re1, set_lang1, re_lang1);  Tag_1.off("value");
+  Tag_1.off("value"); readData(1, snapshot, one_to_lis, push_var1, reset_var1, re1, set_lang1, re_lang1);
 });
 
 if(Tag_1.toString() == firebase.database().ref('plan/' + "Tag_1/0").toString()){  Tag_1 = [];  };
@@ -167,7 +167,7 @@ function push_var2(lis){  var2.push(lis);  };
 function re2(){  return var2;  };
 
 Tag_2.once("value", function(snapshot) {
-  readData(2, snapshot, two_to_lis, push_var2, reset_var2, re2, set_lang2, re_lang2);  Tag_2.off("value");
+  Tag_2.off("value"); readData(2, snapshot, two_to_lis, push_var2, reset_var2, re2, set_lang2, re_lang2);
 });
 
 if(Tag_2.toString() == firebase.database().ref('plan/' + "Tag_2/0").toString()){  Tag_2 = [];  };
@@ -182,7 +182,7 @@ function push_var3(lis){  var3.push(lis);  };
 function re3(){  return var3;  };
 
 Tag_3.once("value", function(snapshot) {
-  readData(3, snapshot, three_to_lis, push_var3, reset_var3, re3, set_lang3, re_lang3);  Tag_3.off("value");
+  Tag_3.off("value"); readData(3, snapshot, three_to_lis, push_var3, reset_var3, re3, set_lang3, re_lang3);
 });
 if(Tag_3.toString() == firebase.database().ref('plan/' + "Tag_3/0").toString()){  Tag_3 = [];  };
 
@@ -196,7 +196,7 @@ function push_var4(lis){  var4.push(lis);  };
 function re4(){  return var4;  };
 
 Tag_4.once("value", function(snapshot) {
-  readData(4, snapshot, four_to_lis, push_var4, reset_var4, re4, set_lang4, re_lang4);  Tag_4.off("value");
+  Tag_4.off("value"); readData(4, snapshot, four_to_lis, push_var4, reset_var4, re4, set_lang4, re_lang4);
 });
 if(Tag_4.toString() == firebase.database().ref('plan/' + "Tag_4/0").toString()){  Tag_4 = [];  };
 
