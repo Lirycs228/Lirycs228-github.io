@@ -77,8 +77,11 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 function writeData(nbr, lis) {
+  alert("TEST1: " + lis);
   var long = lis.length;
+  alert("TEST2: " + lis);
   firebase.database().ref('plan/' + "Tag_" + nbr.toString()).set([long].concat(lis));
+  alert("TEST3: " + lis);
   alert("did!");
 };
 
