@@ -293,11 +293,9 @@ function next_day() {
 function help_first(num, char) {
   var buchs = num.split("");
   if (1 in buchs) {
-    document.getElementById(num).addEventListener("click", function(){  Suche = [];  Suche.push(char);
-      document.getElementById("searcher").innerHTML = Suche;  write(day_at_moment);  });
+    document.getElementById(num).addEventListener("click", function(){  Suche = [];  Suche.push(char);  write(day_at_moment);  });
   } else {
-    document.getElementById(num + char).addEventListener("click", function(){  Suche = [];  Suche.push(num, char);
-      document.getElementById("searcher").innerHTML = Suche;  write(day_at_moment);  });
+    document.getElementById(num + char).addEventListener("click", function(){  Suche = [];  Suche.push(num, char);  write(day_at_moment);  });
   };
 };
 
