@@ -276,7 +276,7 @@ function next_day() {
       document.getElementById("close").addEventListener("click", function () {
         Klasse = document.getElementById("klassen").value;  Stunde = document.getElementById("stunde").value;  Lehrer = document.getElementById("lehrer").value;  bemerk = document.getElementById("bemerk").value;
         document.getElementById("e_pompt").innerHTML = "";
-        window.Tag_4.push([Klasse, Stunde, Lehrer, bemerk]);  writeData(4, window.Tag_4); day_at_moment = Tag_4;  write(window.Tag_4);  firebase.auth().signOut().then(function() {
+        window.Tag_4.push([Klasse, Stunde, Lehrer, bemerk]);  writeData(4, window.Tag_4); day_at_moment = Tag_4; day_fives(); write(window.Tag_4);  firebase.auth().signOut().then(function() {
         }, function(error) {  alert(error);  });
       });
       document.getElementById("weiter").addEventListener("click", function () {
@@ -313,11 +313,11 @@ function show() {
 
 function adder() {
 
-  document.getElementById("Tag_0").addEventListener("click", function(){ write(Tag_0);  day_at_moment = Tag_0; });
-  document.getElementById("Tag_1").addEventListener("click", function(){ write(Tag_1);  day_at_moment = Tag_1; });
-  document.getElementById("Tag_2").addEventListener("click", function(){ write(Tag_2);  day_at_moment = Tag_2; });
-  document.getElementById("Tag_3").addEventListener("click", function(){ write(Tag_3);  day_at_moment = Tag_3; });
-  document.getElementById("Tag_4").addEventListener("click", function(){ write(Tag_4);  day_at_moment = Tag_4; });
+  document.getElementById("Tag_0").addEventListener("click", function(){ write(Tag_0);  day_at_moment = Tag_0;  day_ones();  });
+  document.getElementById("Tag_1").addEventListener("click", function(){ write(Tag_1);  day_at_moment = Tag_1;  day_twos();  });
+  document.getElementById("Tag_2").addEventListener("click", function(){ write(Tag_2);  day_at_moment = Tag_2;  day_threes();  });
+  document.getElementById("Tag_3").addEventListener("click", function(){ write(Tag_3);  day_at_moment = Tag_3;  day_fours(); });
+  document.getElementById("Tag_4").addEventListener("click", function(){ write(Tag_4);  day_at_moment = Tag_4;  day_fives();  });
 
   //eventListener for day-buttons
 
