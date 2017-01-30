@@ -266,6 +266,7 @@ function next_day() {
     firebase.auth().signInWithEmailAndPassword(email, psw).catch(function(error) {
       window.err = true;  var errorCode = error.code;  var errorMessage = error.message;  alert(errorCode + "\n" + errorMessage);  next_day();
     }).then(function (){
+      alert(window.err);
       if(window.err != true){
         Tag_0 = Tag_1;  Tag_1 = Tag_2;  Tag_2 = Tag_3;  Tag_3 = Tag_4;  Tag_4 = [];
         writeData(0, Tag_0);  writeData(1, Tag_1);  writeData(2, Tag_2);  writeData(3, Tag_3);
