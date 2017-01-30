@@ -91,13 +91,17 @@ function indexer(index, nbr, lang, func, push, reset, re, set_lang, re_lang) {
   var g = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + index.toString() + "/2");
   var h = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + index.toString() + "/3");
 
-  e.once("value", function(snapshot) {
+  e.on("value", function(snapshot) {
     var a = snapshot.val()
-    f.once("value", function(snapshot) {
+    f.on("value", function(snapshot) {
       var b = snapshot.val()
       g.on("value", function(snapshot) {
         var c = snapshot.val()
-        h.once("value", function(snapshot) {
+        h.on("value", function(snapshot) {
+          e.off("value");
+          f.off("value");
+          g.off("value");
+          h.off("value");
           var d = snapshot.val();
           push([a, b, c, d]);
           handler(lang, func, push, reset, re, set_lang, re_lang);
@@ -193,8 +197,9 @@ function push_var0(lis){
 function re0(){
   return var0;
 };
-Tag_0.once("value", function(snapshot) {
-  readData(0, snapshot, zero_to_lis, push_var0, reset_var0, re0, set_lang0, re_lang0)
+Tag_0.on("value", function(snapshot) {
+  readData(0, snapshot, zero_to_lis, push_var0, reset_var0, re0, set_lang0, re_lang0);
+  Tag_0.off("value");
 });
 
 if(Tag_0.toString() == firebase.database().ref('plan/' + "Tag_0/0").toString()){
@@ -222,7 +227,8 @@ function re1(){
   return var1;
 };
 Tag_1.once("value", function(snapshot) {
-  readData(1, snapshot, one_to_lis, push_var1, reset_var1, re1, set_lang1, re_lang1)
+  readData(1, snapshot, one_to_lis, push_var1, reset_var1, re1, set_lang1, re_lang1);
+  Tag_1.off("value");
 });
 
 if(Tag_1.toString() == firebase.database().ref('plan/' + "Tag_1/0").toString()){
@@ -250,7 +256,8 @@ function re2(){
   return var2;
 };
 Tag_2.once("value", function(snapshot) {
-  readData(2, snapshot, two_to_lis, push_var2, reset_var2, re2, set_lang2, re_lang2)
+  readData(2, snapshot, two_to_lis, push_var2, reset_var2, re2, set_lang2, re_lang2);
+  Tag_2.off("value");
 });
 
 if(Tag_2.toString() == firebase.database().ref('plan/' + "Tag_2/0").toString()){
@@ -278,7 +285,8 @@ function re3(){
   return var3;
 };
 Tag_3.once("value", function(snapshot) {
-  readData(3, snapshot, three_to_lis, push_var3, reset_var3, re3, set_lang3, re_lang3)
+  readData(3, snapshot, three_to_lis, push_var3, reset_var3, re3, set_lang3, re_lang3);
+  Tag_3.off("value");
 });
 
 if(Tag_3.toString() == firebase.database().ref('plan/' + "Tag_3/0").toString()){
@@ -306,7 +314,8 @@ function re4(){
   return var4;
 };
 Tag_4.once("value", function(snapshot) {
-  readData(4, snapshot, four_to_lis, push_var4, reset_var4, re4, set_lang4, re_lang4)
+  readData(4, snapshot, four_to_lis, push_var4, reset_var4, re4, set_lang4, re_lang4);
+  Tag_4.off("value");
 });
 
 if(Tag_4.toString() == firebase.database().ref('plan/' + "Tag_4/0").toString()){
