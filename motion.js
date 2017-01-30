@@ -116,7 +116,7 @@ function three_to_lis(lis) {  if(lis != undefined) {  Tag_3 = lis;  } else {  Ta
 
 function four_to_lis(lis) {  if(lis != undefined) {  Tag_4 = lis;  } else {  Tag_4 = [];  };
   clear_loading();
-  alert("done");
+  write(Tag_0);
 };
 
 
@@ -245,7 +245,6 @@ function write(liste) {
     };
   };
 };
-write(Tag_0);
 // function that writes the days on screen
 
 function change(color, id) {
