@@ -384,5 +384,5 @@ function day_fives(){
 function clear_loading(){
   var load = document.getElementById("load_div");
   load.parentNode.removeChild(load);
-  document.getElementById("load_opacity").style.opacity = 1.0;
+  document.getElementById("holder_load").innerHTML = "";
 };
