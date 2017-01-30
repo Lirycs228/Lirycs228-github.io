@@ -1,7 +1,20 @@
 body{
   background-color: #222;
-  font-family: Helvetica;
   color: #666;
+  font-family: Helvetica;
+}
+
+#load_opacity{
+  width: 100%;
+  height: 100%;
+  color: #000;
+  opacity: 0.3;
+}
+
+#load_div{
+  position: absolute;
+  top: 80px;
+  left: 150px;
 }
 
 nav{
@@ -16,20 +29,31 @@ nav ul{
   height: 50px;
 }
 
+.pressed{
+  background-color: #ff5400;
+  text-decoration: underline;
+  color: #fff;
+}
+
+.unpressed{
+  background-color: #333;
+  text-decoration: none;
+  color: #666;
+}
+
 nav ul li{
   list-style: none;
   float: left;
   background-color: #333;
   padding: 10px;
   text-align: center;
-  transition: all 400ms;
+  transition: all 200ms;
   border-right: solid #444 1px;
   cursor: pointer;
-  height: 18px;
 }
 
 nav ul li:hover{
-  background-color: ff5400;
+  background-color: #ff5400;
   color: #fff;
   text-decoration: underline;
 }
@@ -40,6 +64,8 @@ nav ul li:first-child{
 
 nav ul li:last-child{
   border-radius: 0px 10px 10px 0px;
+  border: none;
+  height: 18px;
 }
 
 nav ul li ul{
@@ -86,7 +112,6 @@ nav ul li:last-child:hover ul{
   transition: all 400ms;
   border-right: solid #444 1px;
   cursor: pointer;
-  height: 24px;
 }
 
 #logo_bar ul li:first-child{
@@ -94,9 +119,14 @@ nav ul li:last-child:hover ul{
   border-radius: 10px 0px 0px 10px;
 }
 
+#logo_bar ul li:first-child:hover{
+background-color: #ff5400;
+}
+
 #oranien_link{
   text-decoration: none;
   color: #666;
+  transition: all 400ms;
 }
 
 #menue_date{
@@ -122,7 +152,7 @@ nav ul li:last-child:hover ul{
   }
 
 #logo_bar ul li:hover{
-  background-color: #ff5400;
+  background-color: ff5400;
   color: #fff;
   text-decoration: none;
 }
@@ -132,6 +162,83 @@ nav ul li:last-child:hover ul{
   width: 20px;
   position: relative;
   top: 0px;
+}
+
+#text{
+  position: relative;
+  top: 20px;
+}
+
+.circle{
+	position: absolute;
+	top: 100px;
+	left:230px;
+	background-color: #aaa;
+	border-radius: 50%;
+	height: 0px;
+	width: 0px;
+  z-index: 20;
+}
+
+span{
+	display: block;
+	height: 20px;
+	width: 20px;
+	background-color: #777;
+	border-radius: 50%;
+	position: absolute;
+	top: 0px;
+}
+
+span:nth-child(1){
+	left: -25px;
+	animation: jump 1s ease-in-out infinite;
+}
+
+span:nth-child(2){
+	animation: jump 1s ease-in-out 0.33s infinite;
+}
+
+span:nth-child(3){
+	left: 25px;
+	animation: jump 1s ease-in-out 0.66s infinite;
+}
+
+@keyframes jump{
+	0%,,75%,100%{
+		transform: translate(0px);
+		}
+	25%{
+		transform: translateY(-30px);
+		}
+}
+
+#bar{
+	position: absolute;
+	top:130px;
+	left: 170px;
+	width: 150px;
+	height: 8px;
+	background-color: #777;
+  z-index: 21;
+}
+
+#load_massage{
+	font-family: Arial;
+	font-size: 12px;
+	position: absolute;
+	top:140px;
+	left: 155px;
+	width: 175px;
+	height: 15px;
+	background-color: #777;
+	text-align: center;
+  z-index: 22;
+  color: #000;
+}
+
+#load_massage:hover{
+  cursor: default;
 }
 
 /* !Hier beginnt die Tabelle! */
@@ -146,6 +253,18 @@ nav ul li:last-child:hover ul{
     background-color: #333;
     height: auto;
     min-height: 120px;
+}
+
+#ueberschrift{
+  color: #ff5400;
+}
+
+#sunde{
+  position: relative;
+  left: 450px;
+  top: -20px;
+  font-size: 15px;
+  color: #666;
 }
 .ueberklassen {
   margin-left: 26px;
@@ -167,6 +286,10 @@ nav ul li:last-child:hover ul{
   border: none;
 }
 
+.ueberklassen:hover{
+  cursor: pointer;;
+}
+
 #x5{
   margin-left: 8px;
 }
@@ -178,6 +301,10 @@ nav ul li:last-child:hover ul{
   color: #AAA;
   background-color: #444;
   border-radius: 10px;
+}
+
+.klassebutton:hover{
+  cursor: pointer;
 }
 
 .klassebutton:active{
@@ -196,6 +323,9 @@ nav ul li:last-child:hover ul{
   background-color: #444;
   border-radius: 10px;
 }
+.klassebuttonu:hover{
+    cursor: pointer;
+}
 
 .klassebuttonu:active{
   width: 25px;
@@ -209,6 +339,18 @@ nav ul li:last-child:hover ul{
   margin-left: 11px;
 }
 
+#searcher{
+  position: relative;
+  top: -40px;
+  left: 460px;
+  background-color: #444;;
+  color: #666;
+  width: 40px;
+  height: 20px;
+  margin: 5px;
+  text-align: center;
+}
+
 #table_main {
   border: none;
   color: #AAA;
@@ -219,7 +361,42 @@ nav ul li:last-child:hover ul{
   background-color: #444;
 }
 
+.table_th:hover{
+  cursor: default;
+}
+
+
 .table_td{
   border: 1px solid #222;
   background-color: #444;
+}
+
+#creators_div{
+  position: absolute;
+  top: 50px;
+  left: 550px;
+  background-color: #333;
+  color: #666;
+  width: 250px;
+  height: 100px;
+  border-radius: 10px;
+  text-align: center;
+  opacity: 0.0;
+  z-index: 20;
+  border: solid #ff5400 1px;
+}
+
+#close_creators{
+  background-color: #444;
+  border-radius: 2px;
+  border: solid #333 1px;
+  float: left;
+  margin-left: 2px;
+  margin-top: 2px;
+}
+
+#text{
+  margin: 2px;
+  font-size: 12px;
+  color: #ddd;
 }
