@@ -104,7 +104,7 @@ function indexer(index, nbr, lang, func, push, reset, re, set_lang, re_lang) {
 };
 
 function handler(lang, func, push, reset, re, set_lang, re_lang) {
-  set_lang(re_lang() + 1)
+  set_lang(re_lang() + 1);
   if(re_lang() == lang){
     set_lang(0);
     func(re());
@@ -112,12 +112,12 @@ function handler(lang, func, push, reset, re, set_lang, re_lang) {
   }
 }
 
-function readData(nbr, snapshot, func, push, reset, re) {
+function readData(nbr, snapshot, func, push, reset, re, set_lang, re_lang) {
   var lang = snapshot.val();
   reset();
 
   for(i=1; i<=lang; i++) {
-    indexer(i, nbr, lang, func, push, reset, re);
+    indexer(i, nbr, lang, func, push, reset, re, set_lang, re_lang);
   };
 };
 
