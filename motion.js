@@ -79,6 +79,7 @@ var database = firebase.database();
 function writeData(nbr, lis) {
   var long = lis.length;
   firebase.database().ref('plan/' + "Tag_" + nbr.toString()).set([long].concat(lis));
+  alert("did!");
 };
 
 function indexer(index, nbr, lang, func, push, reset, re, set_lang, re_lang) {
@@ -417,11 +418,12 @@ function next_day() {
       document.getElementById("close").addEventListener("click", function () {
         Klasse = document.getElementById("klassen").value;  Stunde = document.getElementById("stunde").value;  Lehrer = document.getElementById("lehrer").value;  bemerk = document.getElementById("bemerk").value;
         document.getElementById("e_pompt").innerHTML = "";
-        alert([Klasse, Stunde, Lehrer, bemerk]);
+        alert("1: " + [Klasse, Stunde, Lehrer, bemerk]);
         window.Tag_4.push([Klasse, Stunde, Lehrer, bemerk]);
-        alert(window.Tag_4);
+        alert("2: " + window.Tag_4);
+        alert("do?");
         writeData(4, window.Tag_4);
-        alert(window.Tag_4);
+        alert("3: " + window.Tag_4);
         day_at_moment = Tag_4;  write(window.Tag_4);
         firebase.auth().signOut().then(function() {
           // Sign-out successful.
