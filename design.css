@@ -9,6 +9,7 @@ body{
   height: 100%;
   color: #000;
   opacity: 0.3;
+  z-index: 19;
 }
 
 #load_div{
@@ -16,13 +17,6 @@ body{
   top: 80px;
   left: 150px;
   z-index: 3;
-}
-
-#load_back{
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-color: #222;
 }
 
 nav{
