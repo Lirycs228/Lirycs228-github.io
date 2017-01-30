@@ -123,38 +123,39 @@ function readData(nbr, snapshot, func, push, reset, re, set_lang, re_lang) {
 
 
 function zero_to_lis(lis) {
+  alert("hi");
   if(lis != undefined) {
-    window.Tag_0 = lis;
+    Tag_0 = lis;
   } else {
-    window.Tag_0 = []
+    Tag_0 = []
   };
 };
 function one_to_lis(lis) {
   if(lis != undefined) {
-    window.Tag_1 = lis;
+    Tag_1 = lis;
   } else {
-    window.Tag_1 = []
+    Tag_1 = []
   };
 };
 function two_to_lis(lis) {
   if(lis != undefined) {
-    window.Tag_2 = lis;
+    Tag_2 = lis;
   } else {
-    window.Tag_2 = []
+    Tag_2 = []
   };
 };
 function three_to_lis(lis) {
   if(lis != undefined) {
-    window.Tag_3 = lis;
+    Tag_3 = lis;
   } else {
-    window.Tag_3 = []
+    Tag_3 = []
   };
 };
 function four_to_lis(lis) {
   if(lis != undefined) {
-    window.Tag_4 = lis;
+    Tag_4 = lis;
   } else {
-    window.Tag_4 = []
+    Tag_4 = []
   };
   alert("done");
 };
