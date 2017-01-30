@@ -420,7 +420,7 @@ function next_day() {
         window.Tag_4.push([Klasse, Stunde, Lehrer, bemerk]);
         alert(window.Tag_4);
         writeData(4, window.Tag_4);
-        alert(Tag_4);
+        alert(window.Tag_4);
         day_at_moment = Tag_4;  write(window.Tag_4);
         firebase.auth().signOut().then(function() {
           // Sign-out successful.
