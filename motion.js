@@ -60,10 +60,6 @@ function update_day(){
 //                   !Hier beginnt die Tabelle!
 
 //From here on this is JS that you should not change
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 // Initialize Firebase
 var config = {
   apiKey: "AIzaSyATwnVL6P_HgJl1Ry68RasnGCmR5CiOBPo",
@@ -77,12 +73,7 @@ firebase.initializeApp(config);
 var database = firebase.database();
 
 function writeData(nbr, lis) {
-  alert("TEST1: " + lis);
-  var long = lis.length;
-  alert("TEST2: " + lis);
-  firebase.database().ref('plan/' + "Tag_" + nbr.toString()).set([long].concat(lis));
-  alert("TEST3: " + lis);
-  alert("did!");
+  var long = lis.length;  firebase.database().ref('plan/' + "Tag_" + nbr.toString()).set([long].concat(lis));
 };
 
 function indexer(index, nbr, lang, func, push, reset, re, set_lang, re_lang) {
@@ -91,19 +82,12 @@ function indexer(index, nbr, lang, func, push, reset, re, set_lang, re_lang) {
   var g = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + index.toString() + "/2");
   var h = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + index.toString() + "/3");
 
-  e.on("value", function(snapshot) {
-    var a = snapshot.val()
-    f.on("value", function(snapshot) {
-      var b = snapshot.val()
-      g.on("value", function(snapshot) {
-        var c = snapshot.val()
+  e.on("value", function(snapshot) {  var a = snapshot.val()
+    f.on("value", function(snapshot) {  var b = snapshot.val()
+      g.on("value", function(snapshot) {  var c = snapshot.val()
         h.on("value", function(snapshot) {
-          e.off("value");
-          f.off("value");
-          g.off("value");
-          h.off("value");
-          var d = snapshot.val();
-          push([a, b, c, d]);
+          e.off("value");  f.off("value");  g.off("value");  h.off("value");
+          var d = snapshot.val();  push([a, b, c, d]);
           handler(lang, func, push, reset, re, set_lang, re_lang);
         });
       });
@@ -113,58 +97,24 @@ function indexer(index, nbr, lang, func, push, reset, re, set_lang, re_lang) {
 
 function handler(lang, func, push, reset, re, set_lang, re_lang) {
   set_lang(re_lang() + 1);
-  if(re_lang() == lang){
-    set_lang(0);
-    func(re());
-    reset();
-  }
-}
+  if(re_lang() == lang){  set_lang(0);  func(re());  reset();  };
+};
 
 function readData(nbr, snapshot, func, push, reset, re, set_lang, re_lang) {
-  var lang = snapshot.val();
-  reset();
-
-  for(i=1; i<=lang; i++) {
-    indexer(i, nbr, lang, func, push, reset, re, set_lang, re_lang);
-  };
+  var lang = snapshot.val();  reset();
+  for(i=1; i<=lang; i++) {  indexer(i, nbr, lang, func, push, reset, re, set_lang, re_lang);  };
 };
 
 
-function zero_to_lis(lis) {
-  alert("hi");
-  if(lis != undefined) {
-    Tag_0 = lis;
-  } else {
-    Tag_0 = []
-  };
-};
-function one_to_lis(lis) {
-  if(lis != undefined) {
-    Tag_1 = lis;
-  } else {
-    Tag_1 = []
-  };
-};
-function two_to_lis(lis) {
-  if(lis != undefined) {
-    Tag_2 = lis;
-  } else {
-    Tag_2 = []
-  };
-};
-function three_to_lis(lis) {
-  if(lis != undefined) {
-    Tag_3 = lis;
-  } else {
-    Tag_3 = []
-  };
-};
-function four_to_lis(lis) {
-  if(lis != undefined) {
-    Tag_4 = lis;
-  } else {
-    Tag_4 = []
-  };
+function zero_to_lis(lis) {  if(lis != undefined) {  Tag_0 = lis;  } else {  Tag_0 = [];  };  };
+
+function one_to_lis(lis) {  if(lis != undefined) {  Tag_1 = lis;  } else {  Tag_1 = [];  };  };
+
+function two_to_lis(lis) {  if(lis != undefined) {  Tag_2 = lis;  } else {  Tag_2 = [];  };  };
+
+function three_to_lis(lis) {  if(lis != undefined) {  Tag_3 = lis;  } else {  Tag_3 = [];  };  };
+
+function four_to_lis(lis) {  if(lis != undefined) {  Tag_4 = lis;  } else {  Tag_4 = [];  };
   alert("done");
 };
 
@@ -177,163 +127,80 @@ var Tag_3 = firebase.database().ref('plan/' + "Tag_3/0");
 var Tag_4 = firebase.database().ref('plan/' + "Tag_4/0");
 
 
-var var0 = [];
-var lang0 = 0;
+var var0 = [];var lang0 = 0;
 
-function set_lang0(num){
-  lang0 = num;
-};
+function set_lang0(num){  lang0 = num;  };
+function re_lang0(){  return lang0;  };
+function reset_var0(){  var0 = [];  };
+function push_var0(lis){  var0.push(lis);  };
+function re0(){  return var0;  };
 
-function re_lang0(){
-  return lang0;
-};
-
-function reset_var0(){
-  var0 = [];
-};
-function push_var0(lis){
-  var0.push(lis);
-};
-function re0(){
-  return var0;
-};
 Tag_0.on("value", function(snapshot) {
-  readData(0, snapshot, zero_to_lis, push_var0, reset_var0, re0, set_lang0, re_lang0);
-  Tag_0.off("value");
+  readData(0, snapshot, zero_to_lis, push_var0, reset_var0, re0, set_lang0, re_lang0);  Tag_0.off("value");
 });
 
-if(Tag_0.toString() == firebase.database().ref('plan/' + "Tag_0/0").toString()){
-  Tag_0 = [];
-}
+if(Tag_0.toString() == firebase.database().ref('plan/' + "Tag_0/0").toString()){  Tag_0 = [];  };
 
-var var1 = [];
-var lang1 = 0;
 
-function set_lang1(num){
-  lang1 = num;
-};
+var var1 = [];var lang1 = 0;
 
-function re_lang1(){
-  return lang1;
-};
+function set_lang1(num){  lang1 = num;  };
+function re_lang1(){  return lang1;  };
+function reset_var1(){  var1 = [];  };
+function push_var1(lis){  var1.push(lis);  };
+function re1(){  return var1;  };
 
-function reset_var1(){
-  var1 = [];
-};
-function push_var1(lis){
-  var1.push(lis);
-};
-function re1(){
-  return var1;
-};
 Tag_1.once("value", function(snapshot) {
-  readData(1, snapshot, one_to_lis, push_var1, reset_var1, re1, set_lang1, re_lang1);
-  Tag_1.off("value");
+  readData(1, snapshot, one_to_lis, push_var1, reset_var1, re1, set_lang1, re_lang1);  Tag_1.off("value");
 });
 
-if(Tag_1.toString() == firebase.database().ref('plan/' + "Tag_1/0").toString()){
-  Tag_1 = [];
-}
+if(Tag_1.toString() == firebase.database().ref('plan/' + "Tag_1/0").toString()){  Tag_1 = [];  };
 
-var var2 = [];
-var lang2 = 0;
 
-function set_lang2(num){
-  lang2 = num;
-};
+var var2 = [];var lang2 = 0;
 
-function re_lang2(){
-  return lang2;
-};
+function set_lang2(num){  lang2 = num;  };
+function re_lang2(){  return lang2;  };
+function reset_var2(){  var2 = [];  };
+function push_var2(lis){  var2.push(lis);  };
+function re2(){  return var2;  };
 
-function reset_var2(){
-  var2 = [];
-};
-function push_var2(lis){
-  var2.push(lis);
-};
-function re2(){
-  return var2;
-};
 Tag_2.once("value", function(snapshot) {
-  readData(2, snapshot, two_to_lis, push_var2, reset_var2, re2, set_lang2, re_lang2);
-  Tag_2.off("value");
+  readData(2, snapshot, two_to_lis, push_var2, reset_var2, re2, set_lang2, re_lang2);  Tag_2.off("value");
 });
 
-if(Tag_2.toString() == firebase.database().ref('plan/' + "Tag_2/0").toString()){
-  Tag_2 = [];
-}
+if(Tag_2.toString() == firebase.database().ref('plan/' + "Tag_2/0").toString()){  Tag_2 = [];  };
 
-var var3 = [];
-var lang3 = 0;
 
-function set_lang3(num){
-  lang3 = num;
-};
+var var3 = [];var lang3 = 0;
 
-function re_lang3(){
-  return lang3;
-};
+function set_lang3(num){  lang3 = num;  };
+function re_lang3(){  return lang3;  };
+function reset_var3(){  var3 = [];  };
+function push_var3(lis){  var3.push(lis);  };
+function re3(){  return var3;  };
 
-function reset_var3(){
-  var3 = [];
-};
-function push_var3(lis){
-  var3.push(lis);
-};
-function re3(){
-  return var3;
-};
 Tag_3.once("value", function(snapshot) {
-  readData(3, snapshot, three_to_lis, push_var3, reset_var3, re3, set_lang3, re_lang3);
-  Tag_3.off("value");
+  readData(3, snapshot, three_to_lis, push_var3, reset_var3, re3, set_lang3, re_lang3);  Tag_3.off("value");
 });
+if(Tag_3.toString() == firebase.database().ref('plan/' + "Tag_3/0").toString()){  Tag_3 = [];  };
 
-if(Tag_3.toString() == firebase.database().ref('plan/' + "Tag_3/0").toString()){
-  Tag_3 = [];
-}
 
-var var4 = [];
-var lang4 = 0;
+var var4 = [];  	var lang4 = 0;
 
-function set_lang4(num){
-  lang4 = num;
-};
+function set_lang4(num){  lang4 = num;  };
+function re_lang4(){  return lang4; };
+function reset_var4(){  var4 = [];  };
+function push_var4(lis){  var4.push(lis);  };
+function re4(){  return var4;  };
 
-function re_lang4(){
-  return lang4;
-};
-
-function reset_var4(){
-  var4 = [];
-};
-function push_var4(lis){
-  var4.push(lis);
-};
-function re4(){
-  return var4;
-};
 Tag_4.once("value", function(snapshot) {
-  readData(4, snapshot, four_to_lis, push_var4, reset_var4, re4, set_lang4, re_lang4);
-  Tag_4.off("value");
+  readData(4, snapshot, four_to_lis, push_var4, reset_var4, re4, set_lang4, re_lang4);  Tag_4.off("value");
 });
-
-if(Tag_4.toString() == firebase.database().ref('plan/' + "Tag_4/0").toString()){
-  Tag_4 = [];
-}
-
-/*
-var Tag_0 = [];
-var Tag_1 = [];
-var Tag_2 = [];
-var Tag_3 = [];
-var Tag_4 = [];
-*/
+if(Tag_4.toString() == firebase.database().ref('plan/' + "Tag_4/0").toString()){  Tag_4 = [];  };
 
 var day_at_moment = [];
 //variales to save all days
-
-
 
 var Suche = [];
 //variable to highlight the searched klasses
@@ -385,42 +252,20 @@ function change(color, id) {
 
 function next_day() {
   document.getElementById("whitespace").innerHTML = "";
-  var email = "";
-  var psw = "";
-  window.err = false;
+  var email = "";  var psw = "";  window.err = false;
   document.getElementById("e_pompt").innerHTML = "<div style='background-color:#444; z-index:3; width:180px; height:400px; position:absolute; top:20%; left:45%; color:#AAA;'> <button type='button' id='end' style='background-color:#FF0000; border:none; width:25px; height:20px;'>X</button> <center><br> E-Mail: <br> <input type='email' id='email' /> <br><br><br> Password: <br> <input type='password' id='psw' /><br><br><br> <button type='button'  id='login' style='border:none; background-color:#00FF00; width:100px; height:50px; font-size: 20px;'>Login</button> </center></div>"
   document.getElementById("end").addEventListener("mouseover", function () {  change("AA0000", "end");  });
   document.getElementById("end").addEventListener("mouseout", function () {  change("FF0000", "end");  });
   document.getElementById("login").addEventListener("mouseover", function () {  change("00AA00", "login");  });
   document.getElementById("login").addEventListener("mouseout", function () {  change("00FF00", "login");  });
-  document.getElementById("end").addEventListener("click", function () {
-    document.getElementById("e_pompt").innerHTML = "";
-  });
+  document.getElementById("end").addEventListener("click", function () {  document.getElementById("e_pompt").innerHTML = "";  });
   document.getElementById("login").addEventListener("click", function () {
     email = document.getElementById("email").value; psw = document.getElementById("psw").value;
     firebase.auth().signInWithEmailAndPassword(email, psw).catch(function(error) {
-      window.err = true;
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      alert(errorCode + "\n" + errorMessage);
-      next_day();
+      window.err = true;  var errorCode = error.code;  var errorMessage = error.message;  alert(errorCode + "\n" + errorMessage);  next_day();
     }).then(function (){
-      alert("hg");
-
-      Tag_0 = Tag_1;
-      Tag_1 = Tag_2;
-      Tag_2 = Tag_3;
-      Tag_3 = Tag_4;
-      Tag_4 = [];
-      writeData(0, Tag_0);
-      writeData(1, Tag_1);
-      writeData(2, Tag_2);
-      writeData(3, Tag_3);
-      alert("0: " + Tag_0);
-      alert("1: " + Tag_1);
-      alert("2: " + Tag_2);
-      alert("3: " + Tag_3);
-
+      Tag_0 = Tag_1;  Tag_1 = Tag_2;  Tag_2 = Tag_3;  Tag_3 = Tag_4;  Tag_4 = [];
+      writeData(0, Tag_0);  writeData(1, Tag_1);  writeData(2, Tag_2);  writeData(3, Tag_3);
       var Klasse = "";  var Stunde = "";  var Lehrer = "";  var bemerk = "";
       document.getElementById("e_pompt").innerHTML = "<div style='background-color:#444; z-index:3; width:180px; height:400px; position:absolute; top:20%; left:45%; color:#AAA;'> <button type='button' id='close' style='background-color:#FF0000; border:none; width:25px; height:20px;'>X</button> <center><br> Klassen: <br> <input type='text' id='klassen' /><br><br><br> Stunde: <br> <input type='text' id='stunde' />  <br><br><br> Lehrkr&auml;fte: <br> <input type='text' id='lehrer' /><br><br><br> Anmerkungen: <br> <input type='text' id='bemerk' /><br><br><br> <button type='button'  id='weiter' style='border:none; background-color:#00FF00; width:100px; height:50px; font-size: 20px;'>Weiter</button> </center></div>";
       document.getElementById("close").addEventListener("mouseover", function () {  change("AA0000", "close");  });
@@ -430,18 +275,8 @@ function next_day() {
       document.getElementById("close").addEventListener("click", function () {
         Klasse = document.getElementById("klassen").value;  Stunde = document.getElementById("stunde").value;  Lehrer = document.getElementById("lehrer").value;  bemerk = document.getElementById("bemerk").value;
         document.getElementById("e_pompt").innerHTML = "";
-        alert("1: " + [Klasse, Stunde, Lehrer, bemerk]);
-        window.Tag_4.push([Klasse, Stunde, Lehrer, bemerk]);
-        alert("2: " + window.Tag_4);
-        alert("do?");
-        writeData(4, window.Tag_4);
-        alert("3: " + window.Tag_4);
-        day_at_moment = Tag_4;  write(window.Tag_4);
-        firebase.auth().signOut().then(function() {
-          // Sign-out successful.
-        }, function(error) {
-          // An error happened.
-        });
+        window.Tag_4.push([Klasse, Stunde, Lehrer, bemerk]);  writeData(4, window.Tag_4); day_at_moment = Tag_4;  write(window.Tag_4);  firebase.auth().signOut().then(function() {
+        }, function(error) {  alert(error);  });
       });
       document.getElementById("weiter").addEventListener("click", function () {
         Klasse = document.getElementById("klassen").value;  Stunde = document.getElementById("stunde").value;  Lehrer = document.getElementById("lehrer").value;  bemerk = document.getElementById("bemerk").value;
@@ -450,7 +285,6 @@ function next_day() {
       });
     });
   });
-
 };
 //function that inserts the next day and deletes today
 
@@ -468,14 +302,11 @@ function help_first(num, char) {
 
 
 function hide() {
-  document.getElementById("hidden_bar").style.height = "0";
-  document.getElementById("hidden_bar").style.overflow = "hidden";
-  document.getElementById("hidden_bar").style.opacity = "0.0";
+  document.getElementById("hidden_bar").style.height = "0";  document.getElementById("hidden_bar").style.overflow = "hidden";  document.getElementById("hidden_bar").style.opacity = "0.0";
 };
 
 function show() {
-  document.getElementById("hidden_bar").style.height = "auto";
-  document.getElementById("hidden_bar").style.opacity = "1.0";
+  document.getElementById("hidden_bar").style.height = "auto";  document.getElementById("hidden_bar").style.opacity = "1.0";
 };
 
 
@@ -492,12 +323,9 @@ function adder() {
   document.getElementById("next").addEventListener("click", next_day);
   //eventlistener for next day
 
-  help_first("5", "a");  help_first("5", "b");  help_first("5", "c");  help_first("5", "d");
-  help_first("6", "a");  help_first("6", "b");  help_first("6", "c");  help_first("6", "d");
-  help_first("7", "a");  help_first("7", "b");  help_first("7", "c");  help_first("7", "d");
-  help_first("8", "a");  help_first("8", "b");  help_first("8", "c");  help_first("8", "d");
-  help_first("9", "a");  help_first("9", "b");  help_first("9", "c");  help_first("9", "d");
-  help_first("E", "a");  help_first("E", "b");  help_first("E", "c");  help_first("E", "d");
+  help_first("5", "a");  help_first("5", "b");  help_first("5", "c");  help_first("5", "d");  help_first("6", "a");  help_first("6", "b");  help_first("6", "c");  help_first("6", "d");
+  help_first("7", "a");  help_first("7", "b");  help_first("7", "c");  help_first("7", "d");  help_first("8", "a");  help_first("8", "b");  help_first("8", "c");  help_first("8", "d");
+  help_first("9", "a");  help_first("9", "b");  help_first("9", "c");  help_first("9", "d");  help_first("E", "a");  help_first("E", "b");  help_first("E", "c");  help_first("E", "d");
 
   help_first("x5", "5");  help_first("x6", "6");  help_first("x7", "7");  help_first("x8", "8");  help_first("x9", "9");  help_first("xE", "E");  help_first("Q1-2", "");  help_first("Q3-4", "");
   //eventlistener for 5-Q Klasses
