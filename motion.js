@@ -340,7 +340,7 @@ function show_creators(){
   document.getElementById("creators_div").style.opacity = 1.0;
 };
 function show_rights(){
-  document.getElementById("text").innerHTML = "Da wir nicht direkt von der Oranienschule �ber �nderungen im Vertretungsplan informiert werden, k�nnen wir nicht f�r 100%ige Korrektheit unserer Webside garantieren.";
+  document.getElementById("text").innerHTML = "Da wir nicht direkt von der Oranienschule über änderungen im Vertretungsplan informiert werden, können wir nicht für 100%ige Korrektheit unserer Webside garantieren.";
   document.getElementById("creators_div").style.opacity = 1.0;
 }
 function close_creators(){
