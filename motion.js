@@ -190,7 +190,7 @@ function push_var0(lis){
 function re0(){
   return var0;
 };
-Tag_0.on("value", function(snapshot) {
+Tag_0.once("value", function(snapshot) {
   readData(0, snapshot, zero_to_lis, push_var0, reset_var0, re0, set_lang0, re_lang0)
 });
 
@@ -218,7 +218,7 @@ function push_var1(lis){
 function re1(){
   return var1;
 };
-Tag_1.on("value", function(snapshot) {
+Tag_1.once("value", function(snapshot) {
   readData(1, snapshot, one_to_lis, push_var1, reset_var1, re1, set_lang1, re_lang1)
 });
 
@@ -246,7 +246,7 @@ function push_var2(lis){
 function re2(){
   return var2;
 };
-Tag_2.on("value", function(snapshot) {
+Tag_2.once("value", function(snapshot) {
   readData(2, snapshot, two_to_lis, push_var2, reset_var2, re2, set_lang2, re_lang2)
 });
 
@@ -274,7 +274,7 @@ function push_var3(lis){
 function re3(){
   return var3;
 };
-Tag_3.on("value", function(snapshot) {
+Tag_3.once("value", function(snapshot) {
   readData(3, snapshot, three_to_lis, push_var3, reset_var3, re3, set_lang3, re_lang3)
 });
 
@@ -302,7 +302,7 @@ function push_var4(lis){
 function re4(){
   return var4;
 };
-Tag_4.on("value", function(snapshot) {
+Tag_4.once("value", function(snapshot) {
   readData(4, snapshot, four_to_lis, push_var4, reset_var4, re4, set_lang4, re_lang4)
 });
 
