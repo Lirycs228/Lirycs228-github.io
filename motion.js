@@ -245,6 +245,7 @@ function write(liste) {
     };
   };
 };
+write(Tag_0);
 // function that writes the days on screen
 
 function change(color, id) {
