@@ -6,9 +6,10 @@ body{
 
 #load_opacity{
   width: 100%;
+  margin: 0px;
   height: 100%;
   position: fixed;
-  background-color: #FF0000;
+  background-color: #222;
   opacity: 1;
   z-index: 19;
 }
