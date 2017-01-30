@@ -392,48 +392,50 @@ function next_day() {
       next_day();
     }).then(function (){
       alert("hg");
-    });
-    Tag_0 = Tag_1;
-    Tag_1 = Tag_2;
-    Tag_2 = Tag_3;
-    Tag_3 = Tag_4;
-    Tag_4 = [];
-    writeData(0, Tag_0);
-    writeData(1, Tag_1);
-    writeData(2, Tag_2);
-    writeData(3, Tag_3);
-    alert("0: " + Tag_0);
-    alert("1: " + Tag_1);
-    alert("2: " + Tag_2);
-    alert("3: " + Tag_3);
 
-    var Klasse = "";  var Stunde = "";  var Lehrer = "";  var bemerk = "";
-    document.getElementById("e_pompt").innerHTML = "<div style='background-color:#444; z-index:3; width:180px; height:400px; position:absolute; top:20%; left:45%; color:#AAA;'> <button type='button' id='close' style='background-color:#FF0000; border:none; width:25px; height:20px;'>X</button> <center><br> Klassen: <br> <input type='text' id='klassen' /><br><br><br> Stunde: <br> <input type='text' id='stunde' />  <br><br><br> Lehrkr&auml;fte: <br> <input type='text' id='lehrer' /><br><br><br> Anmerkungen: <br> <input type='text' id='bemerk' /><br><br><br> <button type='button'  id='weiter' style='border:none; background-color:#00FF00; width:100px; height:50px; font-size: 20px;'>Weiter</button> </center></div>";
-    document.getElementById("close").addEventListener("mouseover", function () {  change("AA0000", "close");  });
-    document.getElementById("close").addEventListener("mouseout", function () {  change("FF0000", "close");  });
-    document.getElementById("weiter").addEventListener("mouseover", function () {  change("00AA00", "weiter");  });
-    document.getElementById("weiter").addEventListener("mouseout", function () {  change("00FF00", "weiter");  });
-    document.getElementById("close").addEventListener("click", function () {
-      Klasse = document.getElementById("klassen").value;  Stunde = document.getElementById("stunde").value;  Lehrer = document.getElementById("lehrer").value;  bemerk = document.getElementById("bemerk").value;
-      document.getElementById("e_pompt").innerHTML = "";
-      alert([Klasse, Stunde, Lehrer, bemerk]);
-      window.Tag_4.push([Klasse, Stunde, Lehrer, bemerk]);
-      alert(window.Tag_4);
-      writeData(4, window.Tag_4);
-      alert(Tag_4);
-      day_at_moment = Tag_4;  write(window.Tag_4);
-      firebase.auth().signOut().then(function() {
-        // Sign-out successful.
-      }, function(error) {
-        // An error happened.
+      Tag_0 = Tag_1;
+      Tag_1 = Tag_2;
+      Tag_2 = Tag_3;
+      Tag_3 = Tag_4;
+      Tag_4 = [];
+      writeData(0, Tag_0);
+      writeData(1, Tag_1);
+      writeData(2, Tag_2);
+      writeData(3, Tag_3);
+      alert("0: " + Tag_0);
+      alert("1: " + Tag_1);
+      alert("2: " + Tag_2);
+      alert("3: " + Tag_3);
+
+      var Klasse = "";  var Stunde = "";  var Lehrer = "";  var bemerk = "";
+      document.getElementById("e_pompt").innerHTML = "<div style='background-color:#444; z-index:3; width:180px; height:400px; position:absolute; top:20%; left:45%; color:#AAA;'> <button type='button' id='close' style='background-color:#FF0000; border:none; width:25px; height:20px;'>X</button> <center><br> Klassen: <br> <input type='text' id='klassen' /><br><br><br> Stunde: <br> <input type='text' id='stunde' />  <br><br><br> Lehrkr&auml;fte: <br> <input type='text' id='lehrer' /><br><br><br> Anmerkungen: <br> <input type='text' id='bemerk' /><br><br><br> <button type='button'  id='weiter' style='border:none; background-color:#00FF00; width:100px; height:50px; font-size: 20px;'>Weiter</button> </center></div>";
+      document.getElementById("close").addEventListener("mouseover", function () {  change("AA0000", "close");  });
+      document.getElementById("close").addEventListener("mouseout", function () {  change("FF0000", "close");  });
+      document.getElementById("weiter").addEventListener("mouseover", function () {  change("00AA00", "weiter");  });
+      document.getElementById("weiter").addEventListener("mouseout", function () {  change("00FF00", "weiter");  });
+      document.getElementById("close").addEventListener("click", function () {
+        Klasse = document.getElementById("klassen").value;  Stunde = document.getElementById("stunde").value;  Lehrer = document.getElementById("lehrer").value;  bemerk = document.getElementById("bemerk").value;
+        document.getElementById("e_pompt").innerHTML = "";
+        alert([Klasse, Stunde, Lehrer, bemerk]);
+        window.Tag_4.push([Klasse, Stunde, Lehrer, bemerk]);
+        alert(window.Tag_4);
+        writeData(4, window.Tag_4);
+        alert(Tag_4);
+        day_at_moment = Tag_4;  write(window.Tag_4);
+        firebase.auth().signOut().then(function() {
+          // Sign-out successful.
+        }, function(error) {
+          // An error happened.
+        });
+      });
+      document.getElementById("weiter").addEventListener("click", function () {
+        Klasse = document.getElementById("klassen").value;  Stunde = document.getElementById("stunde").value;  Lehrer = document.getElementById("lehrer").value;  bemerk = document.getElementById("bemerk").value;
+        window.Tag_4.push([Klasse, Stunde, Lehrer, bemerk]);
+        document.getElementById("klassen").value = "";  document.getElementById("stunde").value = "";  document.getElementById("lehrer").value = "";  document.getElementById("bemerk").value = "";  ask();
       });
     });
-    document.getElementById("weiter").addEventListener("click", function () {
-      Klasse = document.getElementById("klassen").value;  Stunde = document.getElementById("stunde").value;  Lehrer = document.getElementById("lehrer").value;  bemerk = document.getElementById("bemerk").value;
-      window.Tag_4.push([Klasse, Stunde, Lehrer, bemerk]);
-      document.getElementById("klassen").value = "";  document.getElementById("stunde").value = "";  document.getElementById("lehrer").value = "";  document.getElementById("bemerk").value = "";  ask();
-    });
   });
+
 };
 //function that inserts the next day and deletes today
 
