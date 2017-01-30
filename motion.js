@@ -115,6 +115,7 @@ function two_to_lis(lis) {  if(lis != undefined) {  Tag_2 = lis;  } else {  Tag_
 function three_to_lis(lis) {  if(lis != undefined) {  Tag_3 = lis;  } else {  Tag_3 = [];  };  };
 
 function four_to_lis(lis) {  if(lis != undefined) {  Tag_4 = lis;  } else {  Tag_4 = [];  };
+  clear_loading();
   alert("done");
 };
 
@@ -334,3 +335,54 @@ function adder() {
 
 
 //From here on this is JS that you are allowed to change
+function show_creators(){
+  document.getElementById("text").innerHTML = "Creators: Sven Nachtigal & Erik Hammon 'Wir bieten euch diesen Service kostenlos an und hoffen, dass wir euer Leben hiermit ein kleines bisschen einfacher gemacht haben'";
+  document.getElementById("creators_div").style.opacity = 1.0;
+};
+function show_rights(){
+  document.getElementById("text").innerHTML = "Da wir nicht direkt von der Oranienschule �ber �nderungen im Vertretungsplan informiert werden, k�nnen wir nicht f�r 100%ige Korrektheit unserer Webside garantieren.";
+  document.getElementById("creators_div").style.opacity = 1.0;
+}
+function close_creators(){
+  document.getElementById("creators_div").style.opacity = 0.0;
+};
+function day_ones(){
+  document.getElementById("Tag_0").className = "pressed";
+  document.getElementById("Tag_1").className = "unpressed";
+  document.getElementById("Tag_2").className = "unpressed";
+  document.getElementById("Tag_3").className = "unpressed";
+  document.getElementById("Tag_4").className = "unpressed";
+};
+function day_twos(){
+  document.getElementById("Tag_0").className = "unpressed";
+  document.getElementById("Tag_1").className = "pressed";
+  document.getElementById("Tag_2").className = "unpressed";
+  document.getElementById("Tag_3").className = "unpressed";
+  document.getElementById("Tag_4").className = "unpressed";
+};
+function day_threes(){
+  document.getElementById("Tag_0").className = "unpressed";
+  document.getElementById("Tag_1").className = "unpressed";
+  document.getElementById("Tag_2").className = "pressed";
+  document.getElementById("Tag_3").className = "unpressed";
+  document.getElementById("Tag_4").className = "unpressed";
+};
+function day_fours(){
+  document.getElementById("Tag_0").className = "unpressed";
+  document.getElementById("Tag_1").className = "unpressed";
+  document.getElementById("Tag_2").className = "unpressed";
+  document.getElementById("Tag_3").className = "pressed";
+  document.getElementById("Tag_4").className = "unpressed";
+};
+function day_fives(){
+  document.getElementById("Tag_0").className = "unpressed";
+  document.getElementById("Tag_1").className = "unpressed";
+  document.getElementById("Tag_2").className = "unpressed";
+  document.getElementById("Tag_3").className = "unpressed";
+  document.getElementById("Tag_4").className = "pressed";
+};
+function clear_loading(){
+  var load = document.getElementById("load_div");
+  load.parentNode.removeChild(load);
+  document.getElementById("load_opacity").style.opacity = 1.0;
+};
