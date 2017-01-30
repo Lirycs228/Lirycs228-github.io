@@ -1,23 +1,36 @@
-<html>
+<!DOCTYPE html>
+<html lang = "de">
 <head>
+  <meta charset="utf-8">
   <title> Oranien-Plan </title>
   <link rel = "stylesheet" href="design.css">
 </head>
-<body onload="update_date(); adder(); write([]);" style="-moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; -user-select: none;">
+<body onload="update_date(); adder(); write([]);"  style="-moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; -user-select: none;">
   <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
   <script language="javascript" type="text/javascript" src="motion.js"></script>
+<div id = "load_div">
+  <div class = "circle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div id = "bar"></div>
+  <div id = "load_massage">CONNECTING TO SERVER</div>
+</div>
+
+  <div id = "load_opacity">
       <nav>
           <ul>
-              <li id="Tag_0">MO</li>
-              <li id="Tag_1">DI</li>
-              <li id="Tag_2">MI</li>
-              <li id="Tag_3">DO</li>
-              <li id="Tag_4">FR</li>
+              <li id="Tag_0" class = "pressed" onclick="day_ones();">MO</li>
+              <li id="Tag_1" class = "unpressed" onclick="day_twos();">DI</li>
+              <li id="Tag_2" class = "unpressed" onclick="day_threes();">MI</li>
+              <li id="Tag_3" class = "unpressed" onclick="day_fours();">DO</li>
+              <li id="Tag_4" class = "unpressed" onclick="day_fives();">FR</li>
               <li>
                 <img src = "menue.png" id = "menue_button">
                   <ul id="hidden_bar">
-                    <li>Rechtliches</li>
-                    <li>Creators</li>
+                    <li id = "rechtliches" onclick="show_rights()">Rechtliches</li>
+                    <li id = "creators" onclick="show_creators();">Creators</li>
                     <li id="next">Log-In</li>
                   </ul>
               </li>
@@ -31,21 +44,26 @@
           </ul>
               <div id="menue_date">Datum</div>
       </div>
+    <div id = "creators_div"><input type = "button" id = "close_creators"  value ="x" onclick="close_creators();"><div id = "text"><br><br></div></div>
 
 <br>
 <br>
 <br>
 <br>
 <br>
+
+
+
               <!-- !Ab hier beginnt die Tabbele! -->
 
 <div id="main">
 
+<div id = "ueberschrift">ORANIEN-PLAN <div id = "sunde">by Erik 	&amp; Sven</div></div>
 <!--From here on this is HTML that you should not change-->
 
 <div id="whitespace">
 </div>
-<br>
+
 <br>
 <br>
     <button type="button" id="x5" class="ueberklassen">5</button>
@@ -98,12 +116,13 @@
 
 <!--<hr style="width:1px; height:15px; background-color:black; position:absolute; margin-left:378px; margin-top:-40px; float:left;">
 <hr style="width:1px; height:15px; background-color:black; position:absolute; margin-left:442px; margin-top:-40px; float:left;">-->
-<!--
-<div id="searcher">
-</div>
--->
+
+    <div id="searcher">
+    </div>
+
 </div>
 <div id="e_pompt">
+</div>
 </div>
 </body>
 </html>
