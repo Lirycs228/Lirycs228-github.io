@@ -264,7 +264,7 @@ function next_day() {
   document.getElementById("login").addEventListener("click", function () {
     email = document.getElementById("email").value; psw = document.getElementById("psw").value;
     firebase.auth().signInWithEmailAndPassword(email, psw).catch(function(error) {
-      window.err = true;  var errorCode = error.code;  var errorMessage = error.message;  alert(errorCode + "\n" + errorMessage);  next_day();
+      window.err = true;  var errorCode = error.code;  var errorMessage = error.message;  alert(errorCode + "\n" + errorMessage);
     }).then(function (){
       alert(window.err);
       if(window.err != true){
