@@ -109,14 +109,15 @@ function readData(nbr, snapshot, func, push, reset, re, set_lang, re_lang) {
 };
 
 
-function zero_to_lis(lis) {  if(lis != undefined) {  Tag_0 = lis;  } else {  Tag_0 = [];  };  };
+function zero_to_lis(lis) {  if(lis != undefined) {  Tag_0 = lis;  } else {  Tag_0 = [];  };
+  write(Tag_0);
+};
 
 function one_to_lis(lis) {  if(lis != undefined) {  Tag_1 = lis;  } else {  Tag_1 = [];  };  };
 
 function two_to_lis(lis) {  if(lis != undefined) {  Tag_2 = lis;  } else {  Tag_2 = [];  };  };
 
 function three_to_lis(lis) {  if(lis != undefined) {  Tag_3 = lis;  } else {  Tag_3 = [];  };
-  write(Tag_0);
   clear_loading();
   day_at_moment = Tag_0;
 };
