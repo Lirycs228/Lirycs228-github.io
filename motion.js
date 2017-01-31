@@ -19,42 +19,36 @@ function update_day(){
       document.getElementById('Tag_1').innerHTML = "DI";
       document.getElementById('Tag_2').innerHTML = "MI";
       document.getElementById('Tag_3').innerHTML = "DO";
-      document.getElementById('Tag_4').innerHTML = "FR";
     }
   else if(week_day == 2){
        document.getElementById('Tag_0').innerHTML = "HEUTE";
        document.getElementById('Tag_1').innerHTML = "MI";
        document.getElementById('Tag_2').innerHTML = "DO";
        document.getElementById('Tag_3').innerHTML = "FR";
-       document.getElementById('Tag_4').innerHTML = "MO";
      }
   else if (week_day == 3) {
        document.getElementById('Tag_0').innerHTML = "HEUTE";
        document.getElementById('Tag_1').innerHTML = "DO";
        document.getElementById('Tag_2').innerHTML = "FR";
        document.getElementById('Tag_3').innerHTML = "MO";
-       document.getElementById('Tag_4').innerHTML = "DI";
        }
   else if (week_day == 4) {
         document.getElementById('Tag_0').innerHTML = "HEUTE";
         document.getElementById('Tag_1').innerHTML = "FR";
         document.getElementById('Tag_2').innerHTML = "MO";
         document.getElementById('Tag_3').innerHTML = "DI";
-        document.getElementById('Tag_4').innerHTML = "MI";
           }
     else if (week_day == 5){
         document.getElementById('Tag_0').innerHTML = "HEUTE";
         document.getElementById('Tag_1').innerHTML = "MO";
         document.getElementById('Tag_2').innerHTML = "DI";
         document.getElementById('Tag_3').innerHTML = "MI";
-        document.getElementById('Tag_4').innerHTML = "DO";
       }
     else{
       document.getElementById('Tag_0').innerHTML = "MO";
       document.getElementById('Tag_1').innerHTML = "DI";
       document.getElementById('Tag_2').innerHTML = "MI";
       document.getElementById('Tag_3').innerHTML = "DO";
-      document.getElementById('Tag_4').innerHTML = "FR";
     };
 };
 //                   !Hier beginnt die Tabelle!
@@ -109,15 +103,13 @@ function readData(nbr, snapshot, func, push, reset, re, set_lang, re_lang) {
 };
 
 
-function zero_to_lis(lis) {  if(lis != undefined) {  Tag_0 = lis;  } else {  Tag_0 = [];  };  };
+function zero_to_lis(lis) {  if(lis != undefined) {  Tag_0 = lis;  } else {  Tag_0 = [];  };  alert("1"); };
 
-function one_to_lis(lis) {  if(lis != undefined) {  Tag_1 = lis;  } else {  Tag_1 = [];  };  };
+function one_to_lis(lis) {  if(lis != undefined) {  Tag_1 = lis;  } else {  Tag_1 = [];  };  alert("2"); };
 
-function two_to_lis(lis) {  if(lis != undefined) {  Tag_2 = lis;  } else {  Tag_2 = [];  };  };
+function two_to_lis(lis) {  if(lis != undefined) {  Tag_2 = lis;  } else {  Tag_2 = [];  };  alert("3"); };
 
-function three_to_lis(lis) {  if(lis != undefined) {  Tag_3 = lis;  } else {  Tag_3 = [];  };  };
-
-function four_to_lis(lis) {  if(lis != undefined) {  Tag_4 = lis;  } else {  Tag_4 = [];  };
+function three_to_lis(lis) {  if(lis != undefined) {  Tag_3 = lis;  } else {  Tag_3 = [];  alert("4"); };
   clear_loading();
   write(Tag_0);
   day_at_moment = Tag_0;
@@ -125,11 +117,11 @@ function four_to_lis(lis) {  if(lis != undefined) {  Tag_4 = lis;  } else {  Tag
 
 
 
+
 var Tag_0 = firebase.database().ref('plan/' + "Tag_0/0");
 var Tag_1 = firebase.database().ref('plan/' + "Tag_1/0");
 var Tag_2 = firebase.database().ref('plan/' + "Tag_2/0");
 var Tag_3 = firebase.database().ref('plan/' + "Tag_3/0");
-var Tag_4 = firebase.database().ref('plan/' + "Tag_4/0");
 
 
 var var0 = [];var lang0 = 0;
@@ -191,18 +183,6 @@ Tag_3.once("value", function(snapshot) {
 if(Tag_3.toString() == firebase.database().ref('plan/' + "Tag_3/0").toString()){  Tag_3 = [];  };
 
 
-var var4 = [];  	var lang4 = 0;
-
-function set_lang4(num){  lang4 = num;  };
-function re_lang4(){  return lang4; };
-function reset_var4(){  var4 = [];  };
-function push_var4(lis){  var4.push(lis);  };
-function re4(){  return var4;  };
-
-Tag_4.once("value", function(snapshot) {
-  readData(4, snapshot, four_to_lis, push_var4, reset_var4, re4, set_lang4, re_lang4);
-});
-if(Tag_4.toString() == firebase.database().ref('plan/' + "Tag_4/0").toString()){  Tag_4 = [];  };
 
 var day_at_moment = [];
 //variales to save all days
@@ -267,12 +247,11 @@ function next_day() {
   document.getElementById("login").addEventListener("click", function () {
     email = document.getElementById("email").value; psw = document.getElementById("psw").value;
     firebase.auth().signInWithEmailAndPassword(email, psw).catch(function(error) {
-      window.err = true;  var errorCode = error.code;  var errorMessage = error.message;  alert(errorCode + "\n" + errorMessage);  next_day();
+      window.err = true;  var errorCode = error.code;  var errorMessage = error.message;  alert(errorCode + "\n" + errorMessage);
     }).then(function (){
-      alert(wi)
       if(window.err != true){
-        Tag_0 = Tag_1;  Tag_1 = Tag_2;  Tag_2 = Tag_3;  Tag_3 = Tag_4;  Tag_4 = [];
-        writeData(0, Tag_0);  writeData(1, Tag_1);  writeData(2, Tag_2);  writeData(3, Tag_3);
+        Tag_0 = Tag_1;  Tag_1 = Tag_2;  Tag_2 = Tag_3;  Tag_3 = [];
+        writeData(0, Tag_0);  writeData(1, Tag_1);  writeData(2, Tag_2);
         var Klasse = "";  var Stunde = "";  var Lehrer = "";  var bemerk = "";
         document.getElementById("e_pompt").innerHTML = "<div style='background-color:#444; z-index:3; width:180px; height:400px; position:absolute; top:20%; left:45%; color:#AAA;'> <button type='button' id='close' style='background-color:#FF0000; border:none; width:25px; height:20px;'>X</button> <center><br> Klassen: <br> <input type='text' id='klassen' /><br><br><br> Stunde: <br> <input type='text' id='stunde' />  <br><br><br> Lehrkr&auml;fte: <br> <input type='text' id='lehrer' /><br><br><br> Anmerkungen: <br> <input type='text' id='bemerk' /><br><br><br> <button type='button'  id='weiter' style='border:none; background-color:#00FF00; width:100px; height:50px; font-size: 20px;'>Weiter</button> </center></div>";
         document.getElementById("close").addEventListener("mouseover", function () {  change("AA0000", "close");  });
@@ -282,12 +261,12 @@ function next_day() {
         document.getElementById("close").addEventListener("click", function () {
           Klasse = document.getElementById("klassen").value;  Stunde = document.getElementById("stunde").value;  Lehrer = document.getElementById("lehrer").value;  bemerk = document.getElementById("bemerk").value;
           document.getElementById("e_pompt").innerHTML = "";
-          window.Tag_4.push([Klasse, Stunde, Lehrer, bemerk]);  writeData(4, window.Tag_4); day_at_moment = Tag_4; day_fives(); write(window.Tag_4);  firebase.auth().signOut().then(function() {
+          window.Tag_3.push([Klasse, Stunde, Lehrer, bemerk]);  writeData(3, window.Tag_3); day_at_moment = Tag_3; day_fours(); write(window.Tag_3);  firebase.auth().signOut().then(function() {
           }, function(error) {  alert(error);  });
         });
         document.getElementById("weiter").addEventListener("click", function () {
           Klasse = document.getElementById("klassen").value;  Stunde = document.getElementById("stunde").value;  Lehrer = document.getElementById("lehrer").value;  bemerk = document.getElementById("bemerk").value;
-          window.Tag_4.push([Klasse, Stunde, Lehrer, bemerk]);
+          window.Tag_3.push([Klasse, Stunde, Lehrer, bemerk]);
           document.getElementById("klassen").value = "";  document.getElementById("stunde").value = "";  document.getElementById("lehrer").value = "";  document.getElementById("bemerk").value = "";  ask();
         });
       } else {
@@ -324,7 +303,6 @@ function adder() {
   document.getElementById("Tag_1").addEventListener("click", function(){ write(Tag_1);  day_at_moment = Tag_1;  day_twos();  });
   document.getElementById("Tag_2").addEventListener("click", function(){ write(Tag_2);  day_at_moment = Tag_2;  day_threes();  });
   document.getElementById("Tag_3").addEventListener("click", function(){ write(Tag_3);  day_at_moment = Tag_3;  day_fours(); });
-  document.getElementById("Tag_4").addEventListener("click", function(){ write(Tag_4);  day_at_moment = Tag_4;  day_fives();  });
 
   //eventListener for day-buttons
 
@@ -358,35 +336,24 @@ function day_ones(){
   document.getElementById("Tag_1").className = "unpressed";
   document.getElementById("Tag_2").className = "unpressed";
   document.getElementById("Tag_3").className = "unpressed";
-  document.getElementById("Tag_4").className = "unpressed";
 };
 function day_twos(){
   document.getElementById("Tag_0").className = "unpressed";
   document.getElementById("Tag_1").className = "pressed";
   document.getElementById("Tag_2").className = "unpressed";
   document.getElementById("Tag_3").className = "unpressed";
-  document.getElementById("Tag_4").className = "unpressed";
 };
 function day_threes(){
   document.getElementById("Tag_0").className = "unpressed";
   document.getElementById("Tag_1").className = "unpressed";
   document.getElementById("Tag_2").className = "pressed";
   document.getElementById("Tag_3").className = "unpressed";
-  document.getElementById("Tag_4").className = "unpressed";
 };
 function day_fours(){
   document.getElementById("Tag_0").className = "unpressed";
   document.getElementById("Tag_1").className = "unpressed";
   document.getElementById("Tag_2").className = "unpressed";
   document.getElementById("Tag_3").className = "pressed";
-  document.getElementById("Tag_4").className = "unpressed";
-};
-function day_fives(){
-  document.getElementById("Tag_0").className = "unpressed";
-  document.getElementById("Tag_1").className = "unpressed";
-  document.getElementById("Tag_2").className = "unpressed";
-  document.getElementById("Tag_3").className = "unpressed";
-  document.getElementById("Tag_4").className = "pressed";
 };
 function clear_loading(){
   var load = document.getElementById("load_div");
