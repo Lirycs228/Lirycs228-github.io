@@ -287,7 +287,7 @@ function next_day() {
 
 function help_first(num, char) {
   var buchs = num.split("");
-  if (1 in buchs) {
+  if (char == "") {
     document.getElementById(num).addEventListener("click", function(){  Suche = [];  Suche.push(char);  write(day_at_moment);  });
   } else {
     document.getElementById(num + char).addEventListener("click", function(){  Suche = [];  Suche.push(num, char);  write(day_at_moment);  });
