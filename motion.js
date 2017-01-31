@@ -105,6 +105,9 @@ function handler(lang, func, push, reset, re, set_lang, re_lang) {
 function readData(nbr, snapshot, func, push, reset, re, set_lang, re_lang) {
   alert("read: " + nbr);
   var lang = snapshot.val();  reset();
+  if(lang == 0){
+    func(undefined);
+  };
   for(i=1; i<=lang; i++) {  indexer(i, nbr, lang, func, push, reset, re, set_lang, re_lang);  };
 };
 
