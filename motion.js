@@ -116,8 +116,8 @@ function one_to_lis(lis) {  if(lis != undefined) {  Tag_1 = lis;  } else {  Tag_
 function two_to_lis(lis) {  if(lis != undefined) {  Tag_2 = lis;  } else {  Tag_2 = [];  };  };
 
 function three_to_lis(lis) {  if(lis != undefined) {  Tag_3 = lis;  } else {  Tag_3 = [];  };
-  clear_loading();
   write(Tag_0);
+  clear_loading();
   day_at_moment = Tag_0;
 };
 
