@@ -97,7 +97,7 @@ function handler(lang, func, push, reset, re, set_lang, re_lang) {
 };
 
 function readData(nbr, snapshot, func, push, reset, re, set_lang, re_lang) {
-  alert("read");
+  alert("read: " + nbr);
   var lang = snapshot.val();  reset();
   for(i=1; i<=lang; i++) {  indexer(i, nbr, lang, func, push, reset, re, set_lang, re_lang);  };
 };
