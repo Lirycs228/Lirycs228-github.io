@@ -113,7 +113,7 @@ function zero_to_lis(lis) {  if(lis != undefined) {  Tag_0 = lis;  } else {  Tag
 
 function one_to_lis(lis) {  if(lis != undefined) {  Tag_1 = lis;  } else {  Tag_1 = [];  };  alert("2"); };
 
-function two_to_lis(lis) {  if(lis != undefined) {  Tag_2 = lis;  } else {  Tag_2 = [];  };  alert("3"); };
+function two_to_lis(lis) {  if(lis != undefined) {  Tag_2 = lis;  } else {  Tag_2 = [];  alert("true"); };  alert("3"); };
 
 function three_to_lis(lis) {  if(lis != undefined) {  Tag_3 = lis;  } else {  Tag_3 = [];  alert("4"); };
   clear_loading();
