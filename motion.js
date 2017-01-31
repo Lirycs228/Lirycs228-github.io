@@ -277,7 +277,7 @@ function next_day() {
           }, function(error) {  alert(error);  });
         });
         document.getElementById("weiter").addEventListener("click", function () {
-          Klasse = document.getElementById("klassen").value;  Stunde = document.getElementById("stunde").value;  Lehrer = document.getElementById("lehrer").value;  bemerk = document.getElementById("bemerk").value;
+          Klasse = document.getElementById("klassen").value;  Stunde = document.getElementById("stunde").value;  Lehrer = document.getElementById("lehrer").value;  bemerk = document.getElementById("bemerk").value; Raum = document.getElementById("raum").value; Fach = document.getElementById("fach").value;
           window.Tag_3.push([Klasse, Stunde, Raum, Lehrer, Fach, bemerk]);
           document.getElementById("klassen").value = "";  document.getElementById("stunde").value = "";  document.getElementById("lehrer").value = "";  document.getElementById("bemerk").value = "";  ask();
         });
