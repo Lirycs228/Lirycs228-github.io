@@ -109,17 +109,22 @@ function readData(nbr, snapshot, func, push, reset, re, set_lang, re_lang) {
 };
 
 
+var end_load = 0;
+
 function zero_to_lis(lis) {  if(lis != undefined) {  Tag_0 = lis;  } else {  Tag_0 = [];  };
   write(Tag_0);
+  end_load++;
+  if (end_load == 4) {  clear_loading();  };
 };
 
-function one_to_lis(lis) {  if(lis != undefined) {  Tag_1 = lis;  } else {  Tag_1 = [];  };  };
+function one_to_lis(lis) {  if(lis != undefined) {  Tag_1 = lis;  } else {  Tag_1 = [];  };  end_load++;    if (end_load == 4) {  clear_loading();  };};
 
-function two_to_lis(lis) {  if(lis != undefined) {  Tag_2 = lis;  } else {  Tag_2 = [];  };  };
+function two_to_lis(lis) {  if(lis != undefined) {  Tag_2 = lis;  } else {  Tag_2 = [];  };  end_load++;    if (end_load == 4) {  clear_loading();  };};
 
 function three_to_lis(lis) {  if(lis != undefined) {  Tag_3 = lis;  } else {  Tag_3 = [];  };
-  clear_loading();
   day_at_moment = Tag_0;
+  end_load++;
+  if (end_load == 4) {  clear_loading();  };
 };
 
 
