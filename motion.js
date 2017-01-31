@@ -76,14 +76,20 @@ function indexer(index, nbr, lang, func, push, reset, re, set_lang, re_lang) {
   var f = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + index.toString() + "/1");
   var g = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + index.toString() + "/2");
   var h = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + index.toString() + "/3");
+  var i = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + index.toString() + "/4");
+  var j = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + index.toString() + "/5");
 
   e.on("value", function(snapshot) {  var a = snapshot.val()
     f.on("value", function(snapshot) {  var b = snapshot.val()
       g.on("value", function(snapshot) {  var c = snapshot.val()
-        h.on("value", function(snapshot) {
-          e.off("value");  f.off("value");  g.off("value");  h.off("value");
-          var d = snapshot.val();  push([a, b, c, d]);
-          handler(lang, func, push, reset, re, set_lang, re_lang);
+        h.on("value", function(snapshot) {  var d = snapshot.val();
+          i.on("value", function(snapshot) {  var k = snapshot.val();
+            j.on("value", function(snapshot) {
+              e.off("value");  f.off("value");  g.off("value");  h.off("value");  i.off("value");  j.off("value");
+              var l = snapshot.val();  push([a, b, c, d, k, l]);
+              handler(lang, func, push, reset, re, set_lang, re_lang);
+            });
+          });
         });
       });
     });
@@ -192,7 +198,7 @@ var Suche = [];
 
 
 function write(liste) {
-  document.getElementById("whitespace").innerHTML = "<table border='1px solid black' id='table_main'> <tr><th width='100' class='table_th'> Klasse: </th><th width='100' class='table_th'> Stunde: </th><th width='100' class='table_th'> Lehrkr&auml;fte: </th><th width='300' class='table_th'> Anmerkungen: </th></tr>";
+  document.getElementById("whitespace").innerHTML = "<table border='1px solid black' id='table_main'> <tr><th width='100' class='table_th'> Klasse: </th><th width='100' class='table_th'> Stunde: </th><th width='100' class='table_th'> Fach: </th><th width='100' class='table_th'> Lehrkr&auml;fte: </th><th width='100' class='table_th'> Raum: </th><th width='300' class='table_th'> Anmerkungen: </th></tr>";
   for (var i = 0; i < liste.length; i++) {
     if (liste[i][0] != "Q1-2" && liste[i][0] != "Q3-4") {
       var test = liste[i][0].split("");
@@ -204,26 +210,26 @@ function write(liste) {
       if (Suche[0] == test[o] || Suche[0] == test) {
         if (Suche[0] == test) {
           done = true; donee = true;
-          document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr> <td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][0] +" </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][1] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][2] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][3] + " </td> </tr>" + "</tbody></table>");  break
+          document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr> <td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][0] +" </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][1] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][2] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][3] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][4] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][5] + " </td> </tr>" + "</tbody></table>");  break
         };
         if (Suche.length == 2) {
           for (var g = 0; g < test.length; g++) {
             if (Suche[1] == test[g]) {
               done = true;  donee = true;
-              document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr> <td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][0] +" </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][1] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][2] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][3] + " </td> </tr>" + "</tbody></table>");  break
+              document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr> <td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][0] +" </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][1] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][2] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][3] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][4] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][5] + " </td> </tr>" + "</tbody></table>");  break
             };
           };
           if (donee == false) {
-            document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr> <td class='table_td'> " + liste[i][0] +" </td><td class='table_td'> " + liste[i][1] + " </td><td class='table_td'> " + liste[i][2] + " </td><td class='table_td'> " + liste[i][3] + " </td> </tr>" + "</tbody></table>");  break
+            document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr> <td class='table_td'> " + liste[i][0] +" </td><td class='table_td'> " + liste[i][1] + " </td><td class='table_td'> " + liste[i][2] + " </td><td class='table_td'> " + liste[i][3] + " </td><td class='table_td'> " + liste[i][4] + " </td><td class='table_td'> " + liste[i][5] + " </td> </tr>" + "</tbody></table>");  break
           };
         } else {
           done = true;
-          document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr> <td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][0] +" </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][1] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][2] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][3] + " </td> </tr>" + "</tbody></table>");  break
+          document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr> <td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][0] +" </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][1] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][2] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][3] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][4] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][5] + " </td> </tr>" + "</tbody></table>");  break
         };
       } else {
         if (done != true && donee != true) {
           done = true;
-          document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr> <td class='table_td'> " + liste[i][0] +" </td><td class='table_td'> " + liste[i][1] + " </td><td class='table_td'> " + liste[i][2] + " </td><td class='table_td'> " + liste[i][3] + " </td> </tr>" + "</tbody></table>");  break
+          document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr> <td class='table_td'> " + liste[i][0] +" </td><td class='table_td'> " + liste[i][1] + " </td><td class='table_td'> " + liste[i][2] + " </td><td class='table_td'> " + liste[i][3] + " </td><td class='table_td'> " + liste[i][4] + " </td><td class='table_td'> " + liste[i][5] + " </td> </tr>" + "</tbody></table>");  break
         };
       };
     };
@@ -253,20 +259,20 @@ function next_day() {
         Tag_0 = Tag_1;  Tag_1 = Tag_2;  Tag_2 = Tag_3;  Tag_3 = [];
         writeData(0, Tag_0);  writeData(1, Tag_1);  writeData(2, Tag_2);
         var Klasse = "";  var Stunde = "";  var Lehrer = "";  var bemerk = "";
-        document.getElementById("e_pompt").innerHTML = "<div style='background-color:#444; z-index:3; width:180px; height:400px; position:absolute; top:20%; left:45%; color:#AAA;'> <button type='button' id='close' style='background-color:#FF0000; border:none; width:25px; height:20px;'>X</button> <center><br> Klassen: <br> <input type='text' id='klassen' /><br><br><br> Stunde: <br> <input type='text' id='stunde' />  <br><br><br> Lehrkr&auml;fte: <br> <input type='text' id='lehrer' /><br><br><br> Anmerkungen: <br> <input type='text' id='bemerk' /><br><br><br> <button type='button'  id='weiter' style='border:none; background-color:#00FF00; width:100px; height:50px; font-size: 20px;'>Weiter</button> </center></div>";
+        document.getElementById("e_pompt").innerHTML = "<div style='background-color:#444; z-index:3; width:180px; height:400px; position:absolute; top:20%; left:45%; color:#AAA;'> <button type='button' id='close' style='background-color:#FF0000; border:none; width:25px; height:20px;'>X</button> <center><br> Klassen: <br> <input type='text' id='klassen' /><br><br> Stunde: <br> <input type='text' id='stunde' /><br><br> Raum: <br> <input type='text' id='raum' />  <br><br> Lehrkr&auml;fte: <br> <input type='text' id='lehrer' /><br><br> Fach: <br> <input type='text' id='fach' /><br><br> Anmerkungen: <br> <input type='text' id='bemerk' /><br><br> <button type='button'  id='weiter' style='border:none; background-color:#00FF00; width:100px; height:50px; font-size: 20px;'>Weiter</button> </center></div>";
         document.getElementById("close").addEventListener("mouseover", function () {  change("AA0000", "close");  });
         document.getElementById("close").addEventListener("mouseout", function () {  change("FF0000", "close");  });
         document.getElementById("weiter").addEventListener("mouseover", function () {  change("00AA00", "weiter");  });
         document.getElementById("weiter").addEventListener("mouseout", function () {  change("00FF00", "weiter");  });
         document.getElementById("close").addEventListener("click", function () {
-          Klasse = document.getElementById("klassen").value;  Stunde = document.getElementById("stunde").value;  Lehrer = document.getElementById("lehrer").value;  bemerk = document.getElementById("bemerk").value;
+          Klasse = document.getElementById("klassen").value;  Stunde = document.getElementById("stunde").value;  Lehrer = document.getElementById("lehrer").value;  bemerk = document.getElementById("bemerk").value; Raum = document.getElementById("raum").value; Fach = document.getElementById("fach").value;
           document.getElementById("e_pompt").innerHTML = "";
-          window.Tag_3.push([Klasse, Stunde, Lehrer, bemerk]);  writeData(3, window.Tag_3); day_at_moment = Tag_3; day_fours(); write(window.Tag_3);  firebase.auth().signOut().then(function() {
+          window.Tag_3.push([Klasse, Stunde, Raum, Lehrer, Fach, bemerk]);  writeData(3, window.Tag_3); day_at_moment = Tag_3; day_fours(); write(window.Tag_3);  firebase.auth().signOut().then(function() {
           }, function(error) {  alert(error);  });
         });
         document.getElementById("weiter").addEventListener("click", function () {
           Klasse = document.getElementById("klassen").value;  Stunde = document.getElementById("stunde").value;  Lehrer = document.getElementById("lehrer").value;  bemerk = document.getElementById("bemerk").value;
-          window.Tag_3.push([Klasse, Stunde, Lehrer, bemerk]);
+          window.Tag_3.push([Klasse, Stunde, Raum, Lehrer, Fach, bemerk]);
           document.getElementById("klassen").value = "";  document.getElementById("stunde").value = "";  document.getElementById("lehrer").value = "";  document.getElementById("bemerk").value = "";  ask();
         });
       } else {
