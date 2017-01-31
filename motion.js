@@ -71,7 +71,7 @@ function writeData(nbr, lis) {
 };
 
 function indexer(index, nbr, lang, func, push, reset, re, set_lang, re_lang) {
-  alert("index");
+  alert("index: " + index);
   var e = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + index.toString() + "/0");
   var f = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + index.toString() + "/1");
   var g = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + index.toString() + "/2");
