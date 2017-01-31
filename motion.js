@@ -71,7 +71,6 @@ function writeData(nbr, lis) {
 };
 
 function indexer(index, nbr, lang, func, push, reset, re, set_lang, re_lang) {
-  alert("index: " + index);
   var e = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + index.toString() + "/0");
   var f = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + index.toString() + "/1");
   var g = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + index.toString() + "/2");
@@ -97,13 +96,11 @@ function indexer(index, nbr, lang, func, push, reset, re, set_lang, re_lang) {
 };
 
 function handler(lang, func, push, reset, re, set_lang, re_lang) {
-  alert("handle");
   set_lang(re_lang() + 1);
   if(re_lang() == lang){  set_lang(0);  func(re());  reset();  };
 };
 
 function readData(nbr, snapshot, func, push, reset, re, set_lang, re_lang) {
-  alert("read: " + nbr);
   var lang = snapshot.val();  reset();
   if(lang == 0){
     func(undefined);
@@ -112,13 +109,12 @@ function readData(nbr, snapshot, func, push, reset, re, set_lang, re_lang) {
 };
 
 
-function zero_to_lis(lis) {  if(lis != undefined) {  Tag_0 = lis;  } else {  Tag_0 = [];  };  alert("1"); };
+function zero_to_lis(lis) {  if(lis != undefined) {  Tag_0 = lis;  } else {  Tag_0 = [];  };  };
 
-function one_to_lis(lis) {  if(lis != undefined) {  Tag_1 = lis;  } else {  Tag_1 = [];  };  alert("2"); };
+function one_to_lis(lis) {  if(lis != undefined) {  Tag_1 = lis;  } else {  Tag_1 = [];  };  };
 
-function two_to_lis(lis) {  if(lis != undefined) {  Tag_2 = lis;  } else {  Tag_2 = [];  alert("true"); };  alert("3"); };
 
-function three_to_lis(lis) {  if(lis != undefined) {  Tag_3 = lis;  } else {  Tag_3 = [];  alert("4"); };
+function three_to_lis(lis) {  if(lis != undefined) {  Tag_3 = lis;  } else {  Tag_3 = [];  };
   clear_loading();
   write(Tag_0);
   day_at_moment = Tag_0;
