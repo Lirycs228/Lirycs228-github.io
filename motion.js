@@ -70,6 +70,7 @@ function writeData(nbr, lis) {
 };
 
 function indexer(index, nbr, lang, func, push, reset, re, set_lang, re_lang) {
+  alert("hallo");
   var e = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + index.toString() + "/0");
   var f = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + index.toString() + "/1");
   var g = firebase.database().ref('plan/' + "Tag_" + nbr.toString() + "/" + index.toString() + "/2");
@@ -93,13 +94,15 @@ function indexer(index, nbr, lang, func, push, reset, re, set_lang, re_lang) {
     });
   });
 };
-alert("hallo");
+
 function handler(lang, func, push, reset, re, set_lang, re_lang) {
+  alert("hallo");
   set_lang(re_lang() + 1);
   if(re_lang() == lang){  set_lang(0);  func(re());  reset();  };
 };
 
 function readData(nbr, snapshot, func, push, reset, re, set_lang, re_lang) {
+  alert("hallo");
   var lang = snapshot.val();  reset();
   if(lang == 0){
     func(undefined);
@@ -146,6 +149,7 @@ function push_var0(lis){  var0.push(lis);  };
 function re0(){  return var0;  };
 
 Tag_0.on("value", function(snapshot) {
+  alert("hallo");
   readData(0, snapshot, zero_to_lis, push_var0, reset_var0, re0, set_lang0, re_lang0);
 });
 
