@@ -1,4 +1,3 @@
-alert("hallo");
 // Oranien-Plan Javascript Code by Sven Nachtigal && Erik Hammon
 var date = new Date();
 var day = date.getDate();
@@ -94,7 +93,7 @@ function indexer(index, nbr, lang, func, push, reset, re, set_lang, re_lang) {
     });
   });
 };
-
+alert("hallo");
 function handler(lang, func, push, reset, re, set_lang, re_lang) {
   set_lang(re_lang() + 1);
   if(re_lang() == lang){  set_lang(0);  func(re());  reset();  };
