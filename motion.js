@@ -210,6 +210,7 @@ function write(liste) {
       var test = liste[i][0].split("");
     } else {
       var test = liste[i][0];
+      alert("test");
     };
     var done = false;  var donee = false;
     for (var o = 0; o < test.length; o++) {
