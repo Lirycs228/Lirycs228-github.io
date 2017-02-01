@@ -1,4 +1,4 @@
-
+alert("hallo");
 // Oranien-Plan Javascript Code by Sven Nachtigal && Erik Hammon
 var date = new Date();
 var day = date.getDate();
