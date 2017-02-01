@@ -211,6 +211,8 @@ function write(liste) {
     } else {
       var test = liste[i][0];
       alert(test);
+      alert(Suche);
+      alert(Suche[0]);
     };
     var done = false;  var donee = false;
     for (var o = 0; o < test.length; o++) {
