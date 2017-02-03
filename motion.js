@@ -115,18 +115,14 @@ var end_load = 0;
 
 function zero_to_lis(lis) {  if(lis != undefined) {  Tag_0 = lis;  } else {  Tag_0 = [];  };
   end_load++;
-  alert(end_load);
   if (end_load == 4) {  write(Tag_0);   clear_loading();  };
 };
 
-function one_to_lis(lis) {  if(lis != undefined) {  Tag_1 = lis;  } else {  Tag_1 = [];  };  end_load++;  alert(end_load);    if (end_load == 4) {  clear_loading();  };};
 
-function two_to_lis(lis) {  if(lis != undefined) {  Tag_2 = lis;  } else {  Tag_2 = [];  };  end_load++;  alert(end_load);    if (end_load == 4) {  clear_loading();  };};
 
 function three_to_lis(lis) {  if(lis != undefined) {  Tag_3 = lis;  } else {  Tag_3 = [];  };
   day_at_moment = Tag_0;
   end_load++;
-  alert(end_load);
   if (end_load == 4) {  clear_loading();  };
 };
 
@@ -148,7 +144,6 @@ function push_var0(lis){  var0.push(lis);  };
 function re0(){  return var0;  };
 
 Tag_0.once("value", function(snapshot) {
-  alert("hallo");
   readData(0, snapshot, zero_to_lis, push_var0, reset_var0, re0, set_lang0, re_lang0);
 }, function (err) {
   alert("ERROR: " + err);
@@ -184,6 +179,8 @@ function re2(){  return var2;  };
 
 Tag_2.once("value", function(snapshot) {
   readData(2, snapshot, two_to_lis, push_var2, reset_var2, re2, set_lang2, re_lang2);
+}, function (err) {
+  alert("ERROR: " + err);
 });
 
 if(Tag_2.toString() == firebase.database().ref('plan/' + "Tag_2/0").toString()){  Tag_2 = [];  };
@@ -199,6 +196,8 @@ function re3(){  return var3;  };
 
 Tag_3.once("value", function(snapshot) {
   readData(3, snapshot, three_to_lis, push_var3, reset_var3, re3, set_lang3, re_lang3);
+}, function (err) {
+  alert("ERROR: " + err);
 });
 if(Tag_3.toString() == firebase.database().ref('plan/' + "Tag_3/0").toString()){  Tag_3 = [];  };
 
