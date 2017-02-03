@@ -120,7 +120,6 @@ function two_to_lis(lis) {  if(lis != undefined) {  Tag_2 = lis;  } else {  Tag_
 
 
 function three_to_lis(lis) {  if(lis != undefined) {  Tag_3 = lis;  } else {  Tag_3 = [];  };
-  day_at_moment = Tag_0;
   end_load++;
   if (end_load == 4) {  write(Tag_0);  clear_loading();  };
 };
