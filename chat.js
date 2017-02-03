@@ -28,7 +28,6 @@ function load_msg(index) {
         msgs.push({head:top, body:mid});
         display_new_msg();
       }));
-    );
   };
 };
 
