@@ -211,40 +211,42 @@ var Suche = [];
 
 function write(liste) {
   document.getElementById("whitespace").innerHTML = "<table border='1px solid black' id='table_main'> <tr><th width='100' class='table_th'> Klasse: </th><th width='100' class='table_th'> Stunde: </th><th width='100' class='table_th'> Fach: </th><th width='100' class='table_th'> Lehrkr&auml;fte: </th><th width='100' class='table_th'> Raum: </th><th width='300' class='table_th'> Anmerkungen: </th></tr>";
-  for (var i = 0; i < liste.length; i++) {
-    if (liste[i][0] != "Q1-2" && liste[i][0] != "Q3-4") {
-      var test = liste[i][0].split("");
-    } else {
-      var test = liste[i][0];
-      alert(test);
-      alert(Suche);
-      alert(Suche[0]);
-    };
-    var done = false;  var donee = false;
-    for (var o = 0; o < test.length; o++) {
-      if (Suche[0] == test[o] || Suche[0] == test) {
-        if (Suche[0] == test) {
-          done = true; donee = true;
-          document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr> <td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][0] +" </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][1] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][2] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][3] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][4] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][5] + " </td> </tr>" + "</tbody></table>");  break
-        };
-        if (Suche.length == 2) {
-          for (var g = 0; g < test.length; g++) {
-            if (Suche[1] == test[g]) {
-              done = true;  donee = true;
-              document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr> <td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][0] +" </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][1] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][2] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][3] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][4] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][5] + " </td> </tr>" + "</tbody></table>");  break
-            };
+  if (liste.length != 0) {
+    for (var i = 0; i < liste.length; i++) {
+      if (liste[i][0] != "Q1-2" && liste[i][0] != "Q3-4") {
+        var test = liste[i][0].split("");
+      } else {
+        var test = liste[i][0];
+        alert(test);
+        alert(Suche);
+        alert(Suche[0]);
+      };
+      var done = false;  var donee = false;
+      for (var o = 0; o < test.length; o++) {
+        if (Suche[0] == test[o] || Suche[0] == test) {
+          if (Suche[0] == test) {
+            done = true; donee = true;
+            document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr> <td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][0] +" </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][1] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][2] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][3] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][4] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][5] + " </td> </tr>" + "</tbody></table>");  break
           };
-          if (donee == false) {
-            document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr> <td class='table_td'> " + liste[i][0] +" </td><td class='table_td'> " + liste[i][1] + " </td><td class='table_td'> " + liste[i][2] + " </td><td class='table_td'> " + liste[i][3] + " </td><td class='table_td'> " + liste[i][4] + " </td><td class='table_td'> " + liste[i][5] + " </td> </tr>" + "</tbody></table>");  break
+          if (Suche.length == 2) {
+            for (var g = 0; g < test.length; g++) {
+              if (Suche[1] == test[g]) {
+                done = true;  donee = true;
+                document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr> <td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][0] +" </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][1] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][2] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][3] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][4] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][5] + " </td> </tr>" + "</tbody></table>");  break
+              };
+            };
+            if (donee == false) {
+              document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr> <td class='table_td'> " + liste[i][0] +" </td><td class='table_td'> " + liste[i][1] + " </td><td class='table_td'> " + liste[i][2] + " </td><td class='table_td'> " + liste[i][3] + " </td><td class='table_td'> " + liste[i][4] + " </td><td class='table_td'> " + liste[i][5] + " </td> </tr>" + "</tbody></table>");  break
+            };
+          } else {
+            done = true;
+            document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr> <td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][0] +" </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][1] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][2] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][3] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][4] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][5] + " </td> </tr>" + "</tbody></table>");  break
           };
         } else {
-          done = true;
-          document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr> <td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][0] +" </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][1] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][2] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][3] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][4] + " </td><td class='table_td' style='background-color:#FF8000; color:black;'> " + liste[i][5] + " </td> </tr>" + "</tbody></table>");  break
-        };
-      } else {
-        if (done != true && donee != true) {
-          done = true;
-          document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr> <td class='table_td'> " + liste[i][0] +" </td><td class='table_td'> " + liste[i][1] + " </td><td class='table_td'> " + liste[i][2] + " </td><td class='table_td'> " + liste[i][3] + " </td><td class='table_td'> " + liste[i][4] + " </td><td class='table_td'> " + liste[i][5] + " </td> </tr>" + "</tbody></table>");  break
+          if (done != true && donee != true) {
+            done = true;
+            document.getElementById("whitespace").innerHTML = document.getElementById("whitespace").innerHTML.replace("</tbody></table>", "<tr> <td class='table_td'> " + liste[i][0] +" </td><td class='table_td'> " + liste[i][1] + " </td><td class='table_td'> " + liste[i][2] + " </td><td class='table_td'> " + liste[i][3] + " </td><td class='table_td'> " + liste[i][4] + " </td><td class='table_td'> " + liste[i][5] + " </td> </tr>" + "</tbody></table>");  break
+          };
         };
       };
     };
