@@ -150,6 +150,8 @@ function re0(){  return var0;  };
 Tag_0.once("value", function(snapshot) {
   alert("hallo");
   readData(0, snapshot, zero_to_lis, push_var0, reset_var0, re0, set_lang0, re_lang0);
+})}, function (err) {
+  alert("ERROR: " + err);
 });
 
 if(Tag_0.toString() == firebase.database().ref('plan/' + "Tag_0/0").toString()){  Tag_0 = [];  };
@@ -165,6 +167,8 @@ function re1(){  return var1;  };
 
 Tag_1.once("value", function(snapshot) {
   readData(1, snapshot, one_to_lis, push_var1, reset_var1, re1, set_lang1, re_lang1);
+})}, function (err) {
+  alert("ERROR: " + err);
 });
 
 if(Tag_1.toString() == firebase.database().ref('plan/' + "Tag_1/0").toString()){  Tag_1 = [];  };
