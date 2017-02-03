@@ -111,17 +111,17 @@ var end_load = 0;
 
 function zero_to_lis(lis) {  if(lis != undefined) {  Tag_0 = lis;  } else {  Tag_0 = [];  };
   end_load++;
-  if (end_load == 4) {   write(Tag_0);   clear_loading();  };
+  if (end_load == 4) {   write(Tag_0);  day_at_moment = Tag_0;   clear_loading();  };
 };
 
-function one_to_lis(lis) {  if(lis != undefined) {  Tag_1 = lis;  } else {  Tag_1 = [];  };  end_load++;  if (end_load == 4) {  write(Tag_0);  clear_loading();  };  };
+function one_to_lis(lis) {  if(lis != undefined) {  Tag_1 = lis;  } else {  Tag_1 = [];  };  end_load++;  if (end_load == 4) {  write(Tag_0);  day_at_moment = Tag_0;  clear_loading();  };  };
 
-function two_to_lis(lis) {  if(lis != undefined) {  Tag_2 = lis;  } else {  Tag_2 = [];  };  end_load++;  if (end_load == 4) {  write(Tag_0);  clear_loading();  };  };
+function two_to_lis(lis) {  if(lis != undefined) {  Tag_2 = lis;  } else {  Tag_2 = [];  };  end_load++;  if (end_load == 4) {  write(Tag_0);  day_at_moment = Tag_0;  clear_loading();  };  };
 
 
 function three_to_lis(lis) {  if(lis != undefined) {  Tag_3 = lis;  } else {  Tag_3 = [];  };
   end_load++;
-  if (end_load == 4) {  write(Tag_0);  clear_loading();  };
+  if (end_load == 4) {  write(Tag_0);  day_at_moment = Tag_0;  clear_loading();  };
 };
 
 
@@ -216,9 +216,6 @@ function write(liste) {
         var test = liste[i][0].toString().split("");
       } else {
         var test = liste[i][0];
-        alert(test);
-        alert(Suche);
-        alert(Suche[0]);
       };
       var done = false;  var donee = false;
       for (var o = 0; o < test.length; o++) {
