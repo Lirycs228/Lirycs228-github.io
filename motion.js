@@ -114,10 +114,9 @@ function readData(nbr, snapshot, func, push, reset, re, set_lang, re_lang) {
 var end_load = 0;
 
 function zero_to_lis(lis) {  if(lis != undefined) {  Tag_0 = lis;  } else {  Tag_0 = [];  };
-  write(Tag_0);
   end_load++;
   alert(end_load);
-  if (end_load == 4) {  clear_loading();  };
+  if (end_load == 4) {  write(Tag_0);   clear_loading();  };
 };
 
 function one_to_lis(lis) {  if(lis != undefined) {  Tag_1 = lis;  } else {  Tag_1 = [];  };  end_load++;  alert(end_load);    if (end_load == 4) {  clear_loading();  };};
