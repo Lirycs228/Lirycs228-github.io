@@ -111,17 +111,17 @@ var end_load = 0;
 
 function zero_to_lis(lis) {  if(lis != undefined) {  Tag_0 = lis;  } else {  Tag_0 = [];  };
   end_load++;
-  if (end_load == 4) {  alert(Tag_0);   write(Tag_0);   clear_loading();  };
+  if (end_load == 4) {   write(Tag_0);   clear_loading();  };
 };
 
-function one_to_lis(lis) {  if(lis != undefined) {  Tag_1 = lis;  } else {  Tag_1 = [];  };  end_load++;  if (end_load == 4) {  alert(Tag_0);  write(Tag_0);  clear_loading();  };  };
+function one_to_lis(lis) {  if(lis != undefined) {  Tag_1 = lis;  } else {  Tag_1 = [];  };  end_load++;  if (end_load == 4) {  write(Tag_0);  clear_loading();  };  };
 
-function two_to_lis(lis) {  if(lis != undefined) {  Tag_2 = lis;  } else {  Tag_2 = [];  };  end_load++;  if (end_load == 4) {  alert(Tag_0);  write(Tag_0);  clear_loading();  };  };
+function two_to_lis(lis) {  if(lis != undefined) {  Tag_2 = lis;  } else {  Tag_2 = [];  };  end_load++;  if (end_load == 4) {  write(Tag_0);  clear_loading();  };  };
 
 
 function three_to_lis(lis) {  if(lis != undefined) {  Tag_3 = lis;  } else {  Tag_3 = [];  };
   end_load++;
-  if (end_load == 4) {  alert(Tag_0);  write(Tag_0);  clear_loading();  };
+  if (end_load == 4) {  write(Tag_0);  clear_loading();  };
 };
 
 
@@ -209,13 +209,10 @@ var Suche = [];
 
 
 function write(liste) {
-  alert(liste);
   document.getElementById("whitespace").innerHTML = "<table border='1px solid black' id='table_main'> <tr><th width='100' class='table_th'> Klasse: </th><th width='100' class='table_th'> Stunde: </th><th width='100' class='table_th'> Fach: </th><th width='100' class='table_th'> Lehrkr&auml;fte: </th><th width='100' class='table_th'> Raum: </th><th width='300' class='table_th'> Anmerkungen: </th></tr>";
   if (liste.length != 0) {
     for (var i = 0; i < liste.length; i++) {
       if (liste[i][0] != "Q1-2" && liste[i][0] != "Q3-4") {
-        alert(liste[i][0]);
-        alert(typeof liste[i][0])
         var test = liste[i][0].toString().split("");
       } else {
         var test = liste[i][0];
