@@ -33,6 +33,8 @@ function save_msg(msg, name) {
   firebase.database().ref("chat/msg" + (long + 1) + "/head").set(name);
   firebase.database().ref("chat/msg" + (long + 1) + "/body").set(msg);
 };
-document.getElementById("send").addEventListener("click", function() {
-  save_msg(document.getElementById("msg").value, document.getElementById("name").value);
-});
+function adder() {
+  document.getElementById("send").addEventListener("click", function() {
+    save_msg(document.getElementById("msg").value, document.getElementById("name").value);
+  });
+};
