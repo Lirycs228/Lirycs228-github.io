@@ -255,6 +255,7 @@ function change(color, id) {
 
 
 function next_day() {
+  write(day_at_moment);
   document.getElementById("whitespace").innerHTML = "";
   var email = "";  var psw = "";  window.err = false;
   document.getElementById("e_pompt").innerHTML = "<div style='background-color:#444; z-index:3; width:180px; height:400px; position:absolute; top:20%; left:45%; color:#AAA;'> <button type='button' id='end' style='background-color:#FF0000; border:none; width:25px; height:20px;'>X</button> <center><br> E-Mail: <br> <input type='email' id='email' /> <br><br><br> Password: <br> <input type='password' id='psw' /><br><br><br> <button type='button'  id='login' style='border:none; background-color:#00FF00; width:100px; height:50px; font-size: 20px;'>Login</button> </center></div>"
