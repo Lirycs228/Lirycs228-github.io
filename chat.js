@@ -24,10 +24,10 @@ function load_msg(index) {
     var body = firebase.database().ref("chat/msg/" + i + "/body");
     head.once("value", function(snapshot) {
       head = snapshot.val();
-    }, then(
+    }), then(
       body.once("value", function(snapshot) {
         body = snapshot.val();
-      }, then(
+      }), then(
         msgs.push({"head":head, "body":body});
         display_new_msg();
       );
