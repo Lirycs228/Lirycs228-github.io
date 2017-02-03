@@ -147,7 +147,7 @@ function reset_var0(){  var0 = [];  };
 function push_var0(lis){  var0.push(lis);  };
 function re0(){  return var0;  };
 
-Tag_0.on("value", function(snapshot) {
+Tag_0.once("value", function(snapshot) {
   alert("hallo");
   readData(0, snapshot, zero_to_lis, push_var0, reset_var0, re0, set_lang0, re_lang0);
 });
