@@ -20,15 +20,15 @@ function display_new_msg() {
 
 function load_msg(index) {
   for (var i = 1; i <= index; i++) {
-    var head = firebase.database().ref("chat/msg/" + i + "/head");
-    var body = firebase.database().ref("chat/msg/" + i + "/body");
-    head.once("value", function(snapshot) {
-      head = snapshot.val();
+    var top = firebase.database().ref("chat/msg/" + i + "/head");
+    var mid = firebase.database().ref("chat/msg/" + i + "/body");
+    top.once("value", function(snapshot) {
+      top = snapshot.val();
     }), then(
-      body.once("value", function(snapshot) {
-        body = snapshot.val();
+      mid.once("value", function(snapshot) {
+        mid = snapshot.val();
       }), then(
-        msgs.push({"head":head, "body":body});
+        msgs.push({head:top, body:mid});
         display_new_msg();
       );
     );
