@@ -253,16 +253,21 @@ function write(liste) {
 function change(color, id) {
   var color = "#" + color.toString();  document.getElementById(id.toString()).style.backgroundColor=color;  };
 
+function call_change(id, func, color) {
+  document.getElementById(id).addEventListener(func, function () {  change(color, id);  });
+}
+
+
 
 function next_day() {
   write(day_at_moment);
   document.getElementById("whitespace").innerHTML = "";
   var email = "";  var psw = "";  window.err = false;
   document.getElementById("e_pompt").innerHTML = "<div style='background-color:#444; z-index:3; width:180px; height:400px; position:absolute; top:20%; left:45%; color:#AAA;'> <button type='button' id='end' style='background-color:#FF0000; border:none; width:25px; height:20px;'>X</button> <center><br> E-Mail: <br> <input type='email' id='email' /> <br><br><br> Password: <br> <input type='password' id='psw' /><br><br><br> <button type='button'  id='login' style='border:none; background-color:#00FF00; width:100px; height:50px; font-size: 20px;'>Login</button> </center></div>"
-  document.getElementById("end").addEventListener("mouseover", function () {  change("AA0000", "end");  });
-  document.getElementById("end").addEventListener("mouseout", function () {  change("FF0000", "end");  });
-  document.getElementById("login").addEventListener("mouseover", function () {  change("00AA00", "login");  });
-  document.getElementById("login").addEventListener("mouseout", function () {  change("00FF00", "login");  });
+  call_change("end", "mouseover", "AA0000");
+  call_change("end", "mouseout", "FF0000");
+  call_change("login", "mouseover", "00AA00");
+  call_change("login", "mouseout", "00FF00");
   document.getElementById("end").addEventListener("click", function () {  document.getElementById("e_pompt").innerHTML = "";  });
   document.getElementById("login").addEventListener("click", function () {
     email = document.getElementById("email").value; psw = document.getElementById("psw").value;
@@ -274,10 +279,10 @@ function next_day() {
         writeData(0, Tag_0);  writeData(1, Tag_1);  writeData(2, Tag_2);
         var Klasse = "";  var Stunde = "";  var Lehrer = "";  var bemerk = "";
         document.getElementById("e_pompt").innerHTML = "<div style='background-color:#444; z-index:3; width:180px; height:400px; position:absolute; top:20%; left:45%; color:#AAA;'> <button type='button' id='close' style='background-color:#FF0000; border:none; width:25px; height:20px;'>X</button> <center> Klassen: <br> <input type='text' id='klassen' /><br><br> Stunde: <br> <input type='text' id='stunde' /><br><br> Raum: <br> <input type='text' id='raum' />  <br><br> Lehrkr&auml;fte: <br> <input type='text' id='lehrer' /><br><br> Fach: <br> <input type='text' id='fach' /><br><br> Anmerkungen: <br> <input type='text' id='bemerk' /><br><br> <button type='button'  id='weiter' style='border:none; background-color:#00FF00; width:100px; height:40px; font-size: 20px;'>Weiter</button> </center></div>";
-        document.getElementById("close").addEventListener("mouseover", function () {  change("AA0000", "close");  });
-        document.getElementById("close").addEventListener("mouseout", function () {  change("FF0000", "close");  });
-        document.getElementById("weiter").addEventListener("mouseover", function () {  change("00AA00", "weiter");  });
-        document.getElementById("weiter").addEventListener("mouseout", function () {  change("00FF00", "weiter");  });
+        call_change("close", "mouseover", "AA0000");
+        call_change("close", "mouseout", "FF0000");
+        call_change("weiter", "mouseover", "00AA00");
+        call_change("weiter", "mouseout", "00FF00");
         document.getElementById("close").addEventListener("click", function () {
           Klasse = document.getElementById("klassen").value;  Stunde = document.getElementById("stunde").value;  Lehrer = document.getElementById("lehrer").value;  bemerk = document.getElementById("bemerk").value; Raum = document.getElementById("raum").value; Fach = document.getElementById("fach").value;
           document.getElementById("e_pompt").innerHTML = "";
