@@ -215,6 +215,7 @@ function write(liste) {
     for (var i = 0; i < liste.length; i++) {
       if (liste[i][0] != "Q1-2" && liste[i][0] != "Q3-4") {
         alert(liste[i][0]);
+        alert(liste[i][0].split(""))
         var test = liste[i][0].split("");
       } else {
         var test = liste[i][0];
