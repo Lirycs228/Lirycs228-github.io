@@ -353,30 +353,14 @@ function show_rights(){
 function close_creators(){
   document.getElementById("hold_creators").innerHTML = "";
 };
-function day_ones(){
-  document.getElementById("Tag_0").className = "pressed";
-  document.getElementById("Tag_1").className = "unpressed";
-  document.getElementById("Tag_2").className = "unpressed";
-  document.getElementById("Tag_3").className = "unpressed";
+function clicked_day(day_one, day_two, day_three, day_four, day_five){
+  document.getElementById(day_one).className = "pressed";
+  document.getElementById(day_two).className = "unpressed";
+  document.getElementById(day_three).className = "unpressed";
+  document.getElementById(day_four).className = "unpressed";
+  document.getElementById(day_five).className = "unpressed";
 };
-function day_twos(){
-  document.getElementById("Tag_0").className = "unpressed";
-  document.getElementById("Tag_1").className = "pressed";
-  document.getElementById("Tag_2").className = "unpressed";
-  document.getElementById("Tag_3").className = "unpressed";
-};
-function day_threes(){
-  document.getElementById("Tag_0").className = "unpressed";
-  document.getElementById("Tag_1").className = "unpressed";
-  document.getElementById("Tag_2").className = "pressed";
-  document.getElementById("Tag_3").className = "unpressed";
-};
-function day_fours(){
-  document.getElementById("Tag_0").className = "unpressed";
-  document.getElementById("Tag_1").className = "unpressed";
-  document.getElementById("Tag_2").className = "unpressed";
-  document.getElementById("Tag_3").className = "pressed";
-};
+
 function clear_loading(){
   var load = document.getElementById("load_div");
   load.parentNode.removeChild(load);
