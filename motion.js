@@ -302,7 +302,7 @@ function next_day() {
 
 function help_first(num, char) {
   var buchs = num.split("");
-  if (1 in buchs) {
+  if (1 in buchs && char != "") {
     document.getElementById(num).addEventListener("click", function(){  Suche = [];  Suche.push(char);  write(day_at_moment);  });
   } else if (char == "") {
     alert(num);
