@@ -321,10 +321,10 @@ function show() {
 
 function adder() {
 
-  document.getElementById("Tag_0").addEventListener("click", function(){ write(Tag_0);  day_at_moment = Tag_0;  day_ones();  });
-  document.getElementById("Tag_1").addEventListener("click", function(){ write(Tag_1);  day_at_moment = Tag_1;  day_twos();  });
-  document.getElementById("Tag_2").addEventListener("click", function(){ write(Tag_2);  day_at_moment = Tag_2;  day_threes();  });
-  document.getElementById("Tag_3").addEventListener("click", function(){ write(Tag_3);  day_at_moment = Tag_3;  day_fours(); });
+  document.getElementById("Tag_0").addEventListener("click", function(){ write(Tag_0);  day_at_moment = Tag_0;  clicked_day('Tag_0', 'Tag_1', 'Tag_2', 'Tag_3');  });
+  document.getElementById("Tag_1").addEventListener("click", function(){ write(Tag_1);  day_at_moment = Tag_1;  clicked_day('Tag_1', 'Tag_2', 'Tag_3', 'Tag_0');  });
+  document.getElementById("Tag_2").addEventListener("click", function(){ write(Tag_2);  day_at_moment = Tag_2;  clicked_day('Tag_2', 'Tag_3', 'Tag_0', 'Tag_1');  });
+  document.getElementById("Tag_3").addEventListener("click", function(){ write(Tag_3);  day_at_moment = Tag_3;  clicked_day('Tag_3', 'Tag_0', 'Tag_1', 'Tag_2'); });
 
   //eventListener for day-buttons
 
@@ -353,12 +353,11 @@ function show_rights(){
 function close_creators(){
   document.getElementById("hold_creators").innerHTML = "";
 };
-function clicked_day(day_one, day_two, day_three, day_four, day_five){
+function clicked_day(day_one, day_two, day_three, day_four){
   document.getElementById(day_one).className = "pressed";
   document.getElementById(day_two).className = "unpressed";
   document.getElementById(day_three).className = "unpressed";
   document.getElementById(day_four).className = "unpressed";
-  document.getElementById(day_five).className = "unpressed";
 };
 
 function clear_loading(){
