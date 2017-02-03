@@ -346,15 +346,15 @@ function adder() {
 
 //From here on this is JS that you are allowed to change
 function show_creators(){
+  document.getElementById("creators_div").innerHTML = "<input type = 'button' id = 'close_creators'  value ='x' onclick='close_creators();'><div id = 'text'><br><br></div>";
   document.getElementById("text").innerHTML = "Creators: Sven Nachtigal & Erik Hammon 'Wir bieten euch diesen Service kostenlos an und hoffen, dass wir euer Leben hiermit ein kleines bisschen einfacher gemacht haben'";
-  document.getElementById("creators_div").style.opacity = 1.0;
 };
 function show_rights(){
+  document.getElementById("creators_div").innerHTML = "<input type = 'button' id = 'close_creators'  value ='x' onclick='close_creators();'><div id = 'text'><br><br></div>";
   document.getElementById("text").innerHTML = "Da wir nicht direkt von der Oranienschule über änderungen im Vertretungsplan informiert werden, können wir nicht für 100%ige Korrektheit unserer Webside garantieren.<br> <a href='https://lirycs228.github.io/lizenz.htm'>LIZENZ</a>";
-  document.getElementById("creators_div").style.opacity = 1.0;
 }
 function close_creators(){
-  document.getElementById("creators_div").style.opacity = 0.0;
+  document.getElementById("creators_div").innerHTML = "";
 };
 function day_ones(){
   document.getElementById("Tag_0").className = "pressed";
