@@ -373,7 +373,6 @@ span:nth-child(3){
   height: 200px;
   border-radius: 5px;
   text-align: center;
-  opacity: 0.0;
   z-index: 20;
   border: solid #ff5400 1px;
 }
