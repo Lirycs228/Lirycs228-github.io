@@ -27,7 +27,7 @@ function load_msg(index) {
       mid.once("value", function(snapshot) {  mid = snapshot.val();
         msgs.push({head:top, body:mid});
         display_new_msg();
-      });
+      }));
     );
   };
 };
