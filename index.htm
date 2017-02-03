@@ -25,10 +25,10 @@
 </div>
       <nav>
           <ul>
-              <li id="Tag_0" class = "pressed" onclick="day_ones();">MO</li>
-              <li id="Tag_1" class = "unpressed" onclick="day_twos();">DI</li>
-              <li id="Tag_2" class = "unpressed" onclick="day_threes();">MI</li>
-              <li id="Tag_3" class = "unpressed" onclick="day_fours();">DO</li>
+            <li id="Tag_0" class = "pressed"   onclick="clicked_day('Tag_0', 'Tag_1', 'Tag_2', 'Tag_3', 'Tag_4');">MO</li>
+            <li id="Tag_1" class = "unpressed" onclick="clicked_day('Tag_1', 'Tag_2', 'Tag_3', 'Tag_4', 'Tag_0');">DI</li>
+            <li id="Tag_2" class = "unpressed" onclick="clicked_day('Tag_2', 'Tag_3', 'Tag_4', 'Tag_0', 'Tag_1');">MI</li>
+            <li id="Tag_3" class = "unpressed" onclick="clicked_day('Tag_3', 'Tag_4', 'Tag_0', 'Tag_1', 'Tag_2');">DO</li>
               <li>
                 <img src="menue.png" id = "menue_button">
                   <ul id="hidden_bar">
