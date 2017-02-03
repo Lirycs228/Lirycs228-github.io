@@ -209,10 +209,12 @@ var Suche = [];
 
 
 function write(liste) {
+  alert(liste);
   document.getElementById("whitespace").innerHTML = "<table border='1px solid black' id='table_main'> <tr><th width='100' class='table_th'> Klasse: </th><th width='100' class='table_th'> Stunde: </th><th width='100' class='table_th'> Fach: </th><th width='100' class='table_th'> Lehrkr&auml;fte: </th><th width='100' class='table_th'> Raum: </th><th width='300' class='table_th'> Anmerkungen: </th></tr>";
   if (liste.length != 0) {
     for (var i = 0; i < liste.length; i++) {
       if (liste[i][0] != "Q1-2" && liste[i][0] != "Q3-4") {
+        alert(liste[i][0]);
         var test = liste[i][0].split("");
       } else {
         var test = liste[i][0];
