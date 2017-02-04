@@ -21,9 +21,9 @@ function display_new_msg() {
 };
 
 function load_msg(index) {
-  alert("loading...");
+  alert("loading..." + index);
   for (var i = 1; i <= index; i++) {
-    alert("load: " + index);
+    alert("load: " + i);
     var top = firebase.database().ref("chat/msg/" + i + "/head");
     alert("head loaded");
     var mid = firebase.database().ref("chat/msg/" + i + "/body");
