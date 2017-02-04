@@ -85,7 +85,7 @@ function adder() {
 
 ref_zero.on("value", function(snapshot) {
   var a = 0;
-  while (a<100) {
+  while (a<1000) {
     a++
   };
   load_msg(snapshot.val());
