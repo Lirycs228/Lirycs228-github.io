@@ -13,6 +13,7 @@ var database = firebase.database();
 var ref_zero = firebase.database().ref("chat/msg/0");
 
 function display_new_msg() {
+  document.getElementById("msg_box").innerHTML = "";
   alert("displaying msg...");
   for (var i = 0; i < msgs.length; i++) {
     alert(msgs[i]);
