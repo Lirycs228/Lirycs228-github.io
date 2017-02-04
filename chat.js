@@ -41,6 +41,7 @@ function save_msg(msg, name) {
   firebase.database().ref("chat/msg/0").set(long + 1);
   firebase.database().ref("chat/msg/" + (long + 1) + "/head").set(name);
   firebase.database().ref("chat/msg/" + (long + 1) + "/body").set(msg);
+  load_msg(snapshot);
 };
 function adder() {
   document.getElementById("send").addEventListener("click", function() {
