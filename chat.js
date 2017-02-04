@@ -58,5 +58,5 @@ function adder() {
 
 ref_zero.on("value", function(snapshot) {
   alert("hi");
-  load_msg(snapshot);
+  load_msg(snapshot.val());
 });
