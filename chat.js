@@ -89,5 +89,6 @@ function adder() {
 };
 
 ref_zero.on("value", function(snapshot) {
+  alert("test");
   load_msg(snapshot.val());
 });
