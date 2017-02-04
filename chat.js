@@ -14,11 +14,13 @@ var ref_zero = firebase.database().ref("chat/msg/0");
 
 function display_new_msg() {
   for (var i = 0; i < msgs.length; i++) {
+    alert(msgs[i]);
     document.getElementById("msg_box").innerHTML = document.getElementById("msg_box").innerHTML + "<div id='msg'><div id='msg_header'>" + msgs[i]["head"] + "</div><div id='msg_body'>" + msgs[i]["body"] + "</div></div>";
   };
 };
 
 function load_msg(index) {
+  alert("loading...");
   for (var i = 1; i <= index; i++) {
     var top = firebase.database().ref("chat/msg/" + i + "/head");
     var mid = firebase.database().ref("chat/msg/" + i + "/body");
@@ -41,10 +43,6 @@ function save_msg(msg, name) {
   firebase.database().ref("chat/msg/0").set(long + 1);
   firebase.database().ref("chat/msg/" + (long + 1) + "/head").set(name);
   firebase.database().ref("chat/msg/" + (long + 1) + "/body").set(msg);
-  ref_zero.once("value", function(snapshot) {
-    alert("hi");
-    load_msg(snapshot);
-  });
 };
 function adder() {
   document.getElementById("send").addEventListener("click", function() {
