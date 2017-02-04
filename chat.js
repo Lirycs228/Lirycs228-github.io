@@ -68,9 +68,11 @@ function save_msg(msg, name) {
     window.err_s = true;
   });
   if(window.err_s == false) {
-    firebase.database().ref("chat/msg/" + (long + 1) + "/head").set(name);
-    firebase.database().ref("chat/msg/" + (long + 1) + "/body").set(msg);
-    ref_zero.set(long + 1);
+    firebase.database().ref("chat/msg/" + (long + 1) + "/head").set(name).then(
+      firebase.database().ref("chat/msg/" + (long + 1) + "/body").set(msg).then(
+        ref_zero.set(long + 1);
+      );
+    );
   };
 };
 
@@ -82,6 +84,5 @@ function adder() {
 };
 
 ref_zero.on("value", function(snapshot) {
-  alert("test");
   load_msg(snapshot.val());
 });
