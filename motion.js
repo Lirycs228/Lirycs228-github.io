@@ -22,7 +22,12 @@ function update_date(){
 
 
 function update_day(){
-  if(week_day == 2){
+  if(week_day == 1){
+    set_html("Tag_0", "HEUTE");
+    set_html("Tag_1", "DI");
+    set_html("Tag_2", "MI");
+    set_html("Tag_0", "DO");
+  } else if(week_day == 2){
     set_html("Tag_0", "HEUTE");
     set_html("Tag_1", "MI");
     set_html("Tag_2", "DO");
@@ -43,7 +48,7 @@ function update_day(){
     set_html("Tag_2", "DI");
     set_html("Tag_0", "MI");
   } else{
-    set_html("Tag_0", "HEUTE");
+    set_html("Tag_0", "MO");
     set_html("Tag_1", "DI");
     set_html("Tag_2", "MI");
     set_html("Tag_0", "DO");
