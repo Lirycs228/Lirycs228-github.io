@@ -46,7 +46,6 @@ function display_new_msg() {
 };
 
 function load_msg(index) {
-  alert("called");
   msgs = [];
   for (var i = 1; i <= index; i++) {
     var top = firebase.database().ref("chat/msg/" + i + "/head");
@@ -70,11 +69,8 @@ function save_msg(msg, name) {
   });
   if(window.err_s == false) {
     firebase.database().ref("chat/msg/" + (long + 1) + "/head").set(name);
-    alert("head");
     firebase.database().ref("chat/msg/" + (long + 1) + "/body").set(msg);
-    alert("body");
     ref_zero.set(long + 1);
-    alert("changed");
   };
 };
 
@@ -86,6 +82,5 @@ function adder() {
 };
 
 ref_zero.on("value", function(snapshot) {
-  alert("picked");
   load_msg(snapshot.val());
 });
