@@ -255,7 +255,7 @@ function write(liste) {
 
 
 function next_day() {
-  write(day_at_moment);
+  close_creators();
   set_html("whitespace", "");
   var email = "";  var psw = "";  window.err = false;
   set_html("e_pompt", "<div style='background-color:#444; z-index:3; width:180px; height:400px; position:absolute; top:20%; left:45%; color:#AAA;'> <button type='button' id='end' style='background-color:#FF0000; border:none; width:25px; height:20px;'>X</button> <center><br> E-Mail: <br> <input type='email' id='email' /> <br><br><br> Password: <br> <input type='password' id='psw' /><br><br><br> <button type='button'  id='login' style='border:none; background-color:#00FF00; width:100px; height:50px; font-size: 20px;'>Login</button> </center></div>");
@@ -263,7 +263,7 @@ function next_day() {
   call_change("end", "mouseout", "#FF0000");
   call_change("login", "mouseover", "#00AA00");
   call_change("login", "mouseout", "#00FF00");
-  document.getElementById("end").addEventListener("click", function () {  set_html("e_pompt", "");  });
+  document.getElementById("end").addEventListener("click", function () {  set_html("e_pompt", "");   write(day_at_moment);  });
   document.getElementById("login").addEventListener("click", function () {
     email = document.getElementById("email").value; psw = document.getElementById("psw").value;
     firebase.auth().signInWithEmailAndPassword(email, psw).catch(function(error) {
@@ -333,6 +333,11 @@ function adder() {
   help_first("9", "a");  help_first("9", "b");  help_first("9", "c");  help_first("9", "d");  help_first("E", "a");  help_first("E", "b");  help_first("E", "c");  help_first("E", "d");
 
   help_first("x5", "5");  help_first("x6", "6");  help_first("x7", "7");  help_first("x8", "8");  help_first("x9", "9");  help_first("xE", "E");  help_first("Q1-2", "");  help_first("Q3-4", "");
+/*
+  document.getElementById("chat").addEventListener("click", function(){
+    window.location.replace('https://lirycs228.github.io/chat.htm');
+  };
+*/
 };
 
 //From here on this is JS that you are allowed to change
