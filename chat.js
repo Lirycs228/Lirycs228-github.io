@@ -25,16 +25,15 @@ function load_msg(index) {
   for (var i = 1; i <= index; i++) {
     alert("load: " + i);
     var top = firebase.database().ref("chat/msg/" + i + "/head");
-    alert("head loaded");
     var mid = firebase.database().ref("chat/msg/" + i + "/body");
-    alert("body loaded");
-    top.once("value", function(snapshot) {  top = snapshot.val();   alert("got val of head");
+    top.once("value", function(snapshot) {  top = snapshot.val();   alert("got val of head");   }),then(
       mid.once("value", function(snapshot) {  mid = snapshot.val();   alert("got val of body");
         msgs.push({head:top, body:mid});
         alert("msgs pushed");
+      }),then(
         display_new_msg();
-      });
-    });
+      );
+    );
   };
 };
 
