@@ -53,9 +53,11 @@ function load_msg(index) {
     top.once("value", function(snapshot) {  top = snapshot.val();   }).then(
       mid.once("value", function(snapshot) {  mid = snapshot.val();
         msgs.push({head:top, body:mid});
+        if(i==index){
+          display_new_msg();
+        };
       }));
   };
-  display_new_msg();
 };
 
 function save_msg(msg, name) {
