@@ -32,8 +32,7 @@ function load_msg(index) {
         msgs.push({head:top, body:mid});
         alert("msgs pushed");
         display_new_msg();
-      });
-    );
+      }));
   };
 };
 
