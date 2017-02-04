@@ -59,15 +59,19 @@ function load_msg(index) {
 };
 
 function save_msg(msg, name) {
+  window.err_s = false;
   var long = firebase.database().ref("chat/msg/0");
   long.once("value", function(snapshot) {
     long = snapshot.val();
   }, function (err) {
     alert("ERROR: " + err);
+    window.err_s = true;
   });
-  firebase.database().ref("chat/msg/0").set(long + 1);
-  firebase.database().ref("chat/msg/" + (long + 1) + "/head").set(name);
-  firebase.database().ref("chat/msg/" + (long + 1) + "/body").set(msg);
+  if(window.err_s == false) {
+    firebase.database().ref("chat/msg/0").set(long + 1);
+    firebase.database().ref("chat/msg/" + (long + 1) + "/head").set(name);
+    firebase.database().ref("chat/msg/" + (long + 1) + "/body").set(msg);
+  };
 };
 function adder() {
   document.getElementById("send").addEventListener("click", function() {
