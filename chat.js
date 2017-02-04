@@ -70,8 +70,8 @@ function save_msg(msg, name) {
   if(window.err_s == false) {
     firebase.database().ref("chat/msg/" + (long + 1) + "/head").set(name);
     firebase.database().ref("chat/msg/" + (long + 1) + "/body").set(msg);
-    alert("test");
     ref_zero.set(long + 1);
+    alert("test");
   };
 };
 
