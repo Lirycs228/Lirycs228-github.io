@@ -32,8 +32,8 @@ function secure() {
     email = document.getElementById("email").value; psw = document.getElementById("psw").value;
     firebase.auth().signInWithEmailAndPassword(email, psw).catch(function(error) {
       window.err = true;  var errorCode = error.code;  var errorMessage = error.message;  alert(errorCode + "\n" + errorMessage);  window.location.replace('https://lirycs228.github.io');
-    })
-
+    });
+  });
 };
 
 function display_new_msg() {
