@@ -13,6 +13,7 @@ var database = firebase.database();
 var ref_zero = firebase.database().ref("chat/msg/0");
 
 function display_new_msg() {
+  alert("displaying msg...");
   for (var i = 0; i < msgs.length; i++) {
     alert(msgs[i]);
     document.getElementById("msg_box").innerHTML = document.getElementById("msg_box").innerHTML + "<div id='msg'><div id='msg_header'>" + msgs[i]["head"] + "</div><div id='msg_body'>" + msgs[i]["body"] + "</div></div>";
@@ -22,12 +23,16 @@ function display_new_msg() {
 function load_msg(index) {
   alert("loading...");
   for (var i = 1; i <= index; i++) {
+    alert("load: " + index);
     var top = firebase.database().ref("chat/msg/" + i + "/head");
+    alert("head loaded");
     var mid = firebase.database().ref("chat/msg/" + i + "/body");
-    top.once("value", function(snapshot) {  top = snapshot.val();
+    alert("body loaded");
+    top.once("value", function(snapshot) {  top = snapshot.val();   alert("got val of head");
     }), then(
-      mid.once("value", function(snapshot) {  mid = snapshot.val();
+      mid.once("value", function(snapshot) {  mid = snapshot.val();   alert("got val of body");
         msgs.push({head:top, body:mid});
+        alert("msgs pushed");
         display_new_msg();
       }));
   };
