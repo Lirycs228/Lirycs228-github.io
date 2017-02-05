@@ -1,4 +1,5 @@
 var msgs = [];
+var name = undefined;
 
 var config = {
   apiKey: "AIzaSyATwnVL6P_HgJl1Ry68RasnGCmR5CiOBPo",
@@ -20,6 +21,17 @@ function call_change(id, func, color) {
   document.getElementById(id).addEventListener(func, function () {  document.getElementById(id).style.backgroundColor=color;  });
 };
 
+function get_name(email) {
+  email = email.split("@");
+  name = firebase.database().ref("chat/msg/users/" + email[0]);
+  name.once("value", function(snapshot) {
+    name = snapshot.val();
+  }, function (err) {
+    alert("ERROR: " + err);
+  });
+};
+
+
 function secure() {
   var email = "";  var psw = "";  window.err = false;
   set_html("e_pompt", "<div style='background-color:#444; z-index:3; width:180px; height:400px; position:absolute; top:20%; left:45%; color:#AAA;'> <button type='button' id='end' style='background-color:#FF0000; border:none; width:25px; height:20px;'>X</button> <center><br> E-Mail: <br> <input type='email' id='email' /> <br><br><br> Password: <br> <input type='password' id='psw' /><br><br><br> <button type='button'  id='login' style='border:none; background-color:#00FF00; width:100px; height:50px; font-size: 20px;'>Login</button> </center></div>");
@@ -33,6 +45,7 @@ function secure() {
     firebase.auth().signInWithEmailAndPassword(email, psw).catch(function(error) {
       window.err = true;  var errorCode = error.code;  var errorMessage = error.message;  alert(errorCode + "\n" + errorMessage);  window.location.replace('https://lirycs228.github.io');
     }).then(function(){
+      get_name(email);
       set_html("hold_black", "");
       set_html("e_pompt", "");
     });
@@ -81,7 +94,7 @@ function save_msg(msg, name) {
 function adder() {
   document.getElementById("send").addEventListener("click", function() {
     save_msg(document.getElementById("msg").value, document.getElementById("name").value);
-    document.getElementById("msg").value = "";  document.getElementById("name").value = "";
+    document.getElementById("msg").value = "";
   });
 };
 
