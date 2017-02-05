@@ -89,7 +89,7 @@ ref_zero.on("value", function(snapshot) {
     window.sleep = false;
     setTimeout(function () {
       load_msg(snapshot.val());
-    }, 1000);
+    }, 2000);
   } else {
     load_msg(snapshot.val());
   };
