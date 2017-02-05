@@ -1,5 +1,5 @@
 var msgs = [];
-var name = undefined;
+var name = "";
 
 var config = {
   apiKey: "AIzaSyATwnVL6P_HgJl1Ry68RasnGCmR5CiOBPo",
@@ -24,6 +24,7 @@ function call_change(id, func, color) {
 function get_name(email) {
   email = email.split("@");
   name = firebase.database().ref("chat/msg/users/" + email[0]);
+  alert(name);
   name.once("value", function(snapshot) {
     name = snapshot.val();
   }, function (err) {
