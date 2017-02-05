@@ -23,7 +23,7 @@ function call_change(id, func, color) {
 
 function get_name(email) {
   email = email.split("@");
-  name = firebase.database().ref("chat/msg/users/" + email[0]);
+  name = firebase.database().ref("chat/msg/users/erik");
   alert(name);
   name.once("value", function(snapshot) {
     name = snapshot.val();
