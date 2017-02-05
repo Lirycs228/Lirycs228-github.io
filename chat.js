@@ -33,7 +33,7 @@ function secure() {
     firebase.auth().signInWithEmailAndPassword(email, psw).catch(function(error) {
       window.err = true;  var errorCode = error.code;  var errorMessage = error.message;  alert(errorCode + "\n" + errorMessage);  window.location.replace('https://lirycs228.github.io');
     }).then(function(){
-      set_html("black", "");
+      set_html("hold_black", "");
       set_html("e_pompt", "");
     });
   });
