@@ -24,7 +24,8 @@ function get_name(email) {
   email = email.split("@");
   name = firebase.database().ref("chat/msg/users/erik");
   alert(name);
-  name.once("value", function(snapshot) {
+  name.on("value", function(snapshot) {
+    name.off("value");
     name = snapshot.val();
   }, function (err) {
     alert("ERROR: " + err);
