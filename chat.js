@@ -1,5 +1,4 @@
 var msgs = [];
-var name = "";
 
 var config = {
   apiKey: "AIzaSyATwnVL6P_HgJl1Ry68RasnGCmR5CiOBPo",
@@ -65,7 +64,6 @@ function load_msg(index) {
   for (var i = 1; i <= index; i++) {
     var top = firebase.database().ref("chat/msg/" + i + "/head");
     var mid = firebase.database().ref("chat/msg/" + i + "/body");
-    alert(top);
     top.once("value", function(snapshot) {  top = snapshot.val();   }).then(
       mid.once("value", function(snapshot) {  mid = snapshot.val();
         msgs.push({head:top, body:mid});
