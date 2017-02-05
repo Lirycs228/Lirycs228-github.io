@@ -68,6 +68,7 @@ function save_msg(msg, name) {
     window.err_s = true;
   });
   if(window.err_s == false) {
+    window.sleep = true;
     firebase.database().ref("chat/msg/" + (long + 1) + "/head").set(name).then(
       firebase.database().ref("chat/msg/" + (long + 1) + "/body").set(msg).then(
         ref_zero.set(long + 1)
@@ -84,6 +85,12 @@ function adder() {
 };
 
 ref_zero.on("value", function(snapshot) {
-  alert("Receiving...");
-  load_msg(snapshot.val());
+  if (window.sleep == true) {
+    window.sleep = false;
+    setTimeout(function () {
+      load_msg(snapshot.val());
+    }, 10);
+  } else {
+    load_msg(snapshot.val());
+  };
 });
