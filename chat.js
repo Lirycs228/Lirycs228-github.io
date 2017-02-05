@@ -42,7 +42,7 @@ function secure() {
 function display_new_msg() {
   document.getElementById("msg_box").innerHTML = "";
   for (var i = 0; i < msgs.length; i++) {
-    document.getElementById("msg_box").innerHTML =  "<div id='msg'><div id='msg_header'>" + msgs[i]["head"] + "</div><div id='msg_body'>" + msgs[i]["body"] + "</div></div>" + document.getElementById("msg_box").innerHTML;
+    document.getElementById("msg_box").innerHTML =  "<div id='msg'><hr style='width: 40%; position: left;'><div id='msg_header'>" + msgs[i]["head"] + "</div><div id='msg_body'>" + msgs[i]["body"] + "</div></div>" + document.getElementById("msg_box").innerHTML;
   };
 };
 
