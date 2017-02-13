@@ -23,37 +23,38 @@ function update_date(){
 
 function update_day(){
   if(week_day == 1){
-    set_html("Tag_0", "HEUTE");
-    set_html("Tag_1", "DI");
-    set_html("Tag_2", "MI");
-    set_html("Tag_0", "DO");
+    set_html('Tag_0', 'HEUTE');
+    set_html('Tag_1', 'DI');
+    set_html('Tag_2', 'MI');
+    set_html('Tag_3', 'DO');
   } else if(week_day == 2){
-    set_html("Tag_0", "HEUTE");
-    set_html("Tag_1", "MI");
-    set_html("Tag_2", "DO");
-    set_html("Tag_0", "FR");
+    set_html('Tag_0', 'HEUTE');
+    set_html('Tag_1', 'MI');
+    set_html('Tag_2', 'DO');
+    set_html('Tag_3', 'FR');
   } else if (week_day == 3) {
-    set_html("Tag_0", "HEUTE");
-    set_html("Tag_1", "DO");
-    set_html("Tag_2", "FR");
-    set_html("Tag_0", "MO");
+    set_html('Tag_0', 'HEUTE');
+    set_html('Tag_1', 'DO');
+    set_html('Tag_2', 'FR');
+    set_html('Tag_3', 'MO');
   } else if (week_day == 4) {
-    set_html("Tag_0", "HEUTE");
-    set_html("Tag_1", "FR");
-    set_html("Tag_2", "MO");
-    set_html("Tag_0", "DI");
+    set_html('Tag_0', 'HEUTE');
+    set_html('Tag_1', 'FR');
+    set_html('Tag_2', 'MO');
+    set_html('Tag_3', 'DI');
   } else if (week_day == 5){
-    set_html("Tag_0", "HEUTE");
-    set_html("Tag_1", "MO");
-    set_html("Tag_2", "DI");
-    set_html("Tag_0", "MI");
+    set_html('Tag_0', 'HEUTE');
+    set_html('Tag_1', 'MO');
+    set_html('Tag_2', 'DI');
+    set_html('Tag_3', 'MI');
   } else{
-    set_html("Tag_0", "MO");
-    set_html("Tag_1", "DI");
-    set_html("Tag_2", "MI");
-    set_html("Tag_0", "DO");
+    set_html('Tag_0', 'MO');
+    set_html('Tag_1', 'DI');
+    set_html('Tag_2', 'MI');
+    set_html('Tag_3', 'DO');
   };
 };
+
 //                   !Hier beginnt die Tabelle!
 
 //From here on this is JS that you should not change
