@@ -22,6 +22,7 @@ oReq.onload = function(e) {
   process_wb(workbook);
 }
 function process_wb(wb) {
+  console.log("Hallo<");
   var first_sheet_name = workbook.SheetNames[0];
   var address_of_cell = 'A1';
 
