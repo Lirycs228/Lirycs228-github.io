@@ -5,6 +5,8 @@
   border-radius: 2px;
   float: left;
   margin-left: 20px;
+  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
 }
 .main:hover {
   background-color: #DEDEDE;
