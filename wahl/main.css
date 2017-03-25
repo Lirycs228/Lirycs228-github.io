@@ -1,1 +1,11 @@
-/*Erik*/
+#container {
+  background-color: #F0F0F0;
+  width: 1000px;
+  height: 500px;
+}
+#left {
+  float: left;
+}
+#right {
+  float: left;
+}
