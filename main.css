@@ -1,0 +1,23 @@
+.main {
+  background-color: #F0F0F0;
+  width: 300px;
+  height: 150px;
+  border-radius: 2px;
+  float: left;
+  margin-left: 20px;
+}
+.main:hover {
+  background-color: #DEDEDE;
+}
+.header {
+  font-size: 2em;
+  font-family: Helvetica;
+  color: #4D4D4D;
+  margin-left: 20px;
+}
+.body {
+  font-size: 1em;
+  color: #7D7D7D;
+  margin-left: 20px;
+  margin-top: 75px;
+}
