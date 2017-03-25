@@ -1,7 +1,7 @@
 //Erik
 /* set up XMLHttpRequest */
 var out = document.getElementById("outter");
-var url = "Mappe1.xlsx";
+var url = "Mappe1.csv";
 var oReq = new XMLHttpRequest();
 oReq.open("GET", url, true);
 oReq.responseType = "arraybuffer";
