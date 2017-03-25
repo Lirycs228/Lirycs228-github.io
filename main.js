@@ -1,5 +1,5 @@
 var folders = {"Oranien-Plan":"/plan/plan.htm",
-               "Wahlzettel"  :"lirycs228.github.io/wahl/wahl.htm"};
+               "Wahlzettel"  :"/wahl/wahl.htm"};
 
 var keys = Object.keys(folders);
 var current;
