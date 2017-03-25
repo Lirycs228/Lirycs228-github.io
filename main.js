@@ -1,4 +1,4 @@
-var folders = {"Oranien-Plan":"lirycs228.github.io/plan/plan.htm"};
+var folders = {"Oranien-Plan":"/plan/plan.htm"};
 //,"Wahlzettel"  :"lirycs228.github.io/wahl/wahl.htm"
 
 var keys = Object.keys(folders);
