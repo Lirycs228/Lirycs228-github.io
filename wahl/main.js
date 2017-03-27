@@ -22,6 +22,7 @@ req.onreadystatechange = function() {
   if (req.readyState == 4) {
     data = readBody(req);
     alert(data);
+    data = data.split("\n")
     for(line = 0; line < data.length - 1; line++) {
       alert(line);
       alert(data[line]);
