@@ -1,18 +1,32 @@
-#container {
+.main {
   background-color: #F0F0F0;
-  width: 1000px;
-  height: 500px;
-  box-shadow: 5px 5px 5px #9D9D9D;
-}
-#left {
+  width: 300px;
+  height: 150px;
+  border-radius: 2px;
   float: left;
+  margin-left: 20px;
+  box-shadow: 2px 2px 5px #9D9D9D;
 }
-#right {
-  float: left;
+.main:hover {
+  background-color: #DEDEDE;
+  box-shadow: 2px 2px 5px #6D6D6D;
 }
-h2 {
-  margin: 0px;
+.header {
+  font-size: 2em;
+  font-family: Helvetica;
+  color: #4D4D4D;
+  margin-left: 20px;
 }
-h5 {
-  margin: 0px;
+.body {
+  font-size: 1em;
+  color: #7D7D7D;
+  margin-left: 20px;
+  margin-top: 75px;
+}
+#creators {
+  color: #D1D1D1;
+  font-size: 1em;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
