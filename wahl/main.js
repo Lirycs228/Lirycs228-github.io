@@ -22,10 +22,13 @@ req.onreadystatechange = function() {
   if (req.readyState == 4) {
     data = readBody(req);
     alert(data);
-    data = data.split("\n")
+    data = data.split("\n");
+    var current;
     for(line = 0; line < data.length - 1; line++) {
-      alert(line);
+      current = data[line].split(";");
+      current = current[0];
       alert(data[line]);
+      alert(current);
     }
   }
 };
