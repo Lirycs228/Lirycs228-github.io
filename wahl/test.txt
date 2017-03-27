@@ -1,2 +1,2 @@
-﻿halo;hi;huhu
-a;b;c
+Meier;15;9c
+Peter;17;Q1
