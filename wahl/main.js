@@ -34,3 +34,8 @@ req.onreadystatechange = function() {
 };
 req.open("GET", fileName, true);
 req.send();
+
+var log = document.getElementById("log");
+log.addEventListener("click", function () {
+  alert("click");
+});
