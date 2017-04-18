@@ -103,7 +103,8 @@
 #left {
   float: left;
 }
-/*line between sides*/#line {
+/*line between sides*/
+#line {
   padding: 0px;
   width: 2px;
   height: 99%;
@@ -117,7 +118,7 @@
 /*right side of container*/
 #right {
   float: right;
-  margin-top: 80px;
+  margin-top: 85px;
 
 }
 /*left margin*/
