@@ -97,9 +97,10 @@
   top: 0; left: 0; bottom: 0; right: 0;
 }
 #understood {
-  background-color: #0000CC;
+  background-color: #3333FF;
+  color: #FFFFFF;
   width: 150px;
-  height: 100px;
+  height: 75px;
   border: solid 1px black;
   padding: 2px
 }
