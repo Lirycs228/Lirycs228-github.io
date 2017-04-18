@@ -84,6 +84,7 @@ req.onreadystatechange = function() {
       var clas = document.getElementById("clas").innerHTML;
       var number = document.getElementById("number").innerHTML;
       var mail = document.getElementById("mail").innerHTML;
+      alert(child);
       //to hash
       var achild = hash(child);
       var afamily = hash(family);
