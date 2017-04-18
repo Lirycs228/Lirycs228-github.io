@@ -91,7 +91,7 @@ req.onreadystatechange = function() {
       var anumber = hash(number);
       var amail = hash(mail);
 
-      alert(child);
+      alert(achild);
 
       var obj;
       var valid = false;
@@ -101,6 +101,7 @@ req.onreadystatechange = function() {
         if((((obj[0]==achild) && (obj[1]==afamily)) && ((obj[2]==aclas) && (obj[3]==anumber))) && (obj[4]==amail)) {
           valid = true;
           inline = line;
+          alert(valid)
           valid_psw(child, family, clas, number, mail);
           break;
         };
