@@ -11,7 +11,7 @@ function make_log() {
     element = document.getElementById("vesel");
     current = folders[keys[i]];
     if(keys[i]=="Game") {
-      element.innerHTML = element.innerHTML + "<a href='" + current + "'><div class='main'><div class='header'>" + keys[i] + "</div><div class='body'>" + current + "</div><div class='out'>Coming soon</div></div></a>";
+      element.innerHTML = element.innerHTML + "<div><div class='main'><div class='header'>" + keys[i] + "</div><div class='body'>" + current + "</div><div class='out'>Coming soon</div></div></div>";
     } else {
       element.innerHTML = element.innerHTML + "<a href='" + current + "'><div class='main'><div class='header'>" + keys[i] + "</div><div class='body'>" + current + "</div></div></a>";
     }
