@@ -23,6 +23,14 @@
   margin-left: 20px;
   margin-top: 75px;
 }
+.out {
+  z-index: 10;
+  font-family: Helvetica;
+  font-size: 1em;
+  background-color: #99004C;
+  width: 100px;
+  height: 150px;
+}
 #creators {
   color: #D1D1D1;
   font-size: 1em;
