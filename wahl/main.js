@@ -79,11 +79,11 @@ req.onreadystatechange = function() {
     var log = document.getElementById("log").addEventListener("click", function () {
       alert("click")
       //copare with server
-      var child = document.getElementById("child").innerHTML;
-      var family = document.getElementById("family").innerHTML;
-      var clas = document.getElementById("clas").innerHTML;
-      var number = document.getElementById("number").innerHTML;
-      var mail = document.getElementById("mail").innerHTML;
+      var child = document.getElementById("child").value;
+      var family = document.getElementById("family").value;
+      var clas = document.getElementById("clas").value;
+      var number = document.getElementById("number").value;
+      var mail = document.getElementById("mail").value;
       alert(child);
       //to hash
       var achild = hash(child);
