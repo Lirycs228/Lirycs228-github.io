@@ -108,10 +108,11 @@
   cursor: pointer;
   font-weight: 500;
   font-size: 14px;
-  transition: box-shadow .4s cubic-bezier(0.25,0.8,0.25,1),background-color .4s cubic-bezier(0.25,0.8,0.25,1);
+  box-shadow: 2px 2px 2px #9D9D9D;
 }
 #understood:hover {
   background-color: #0000FF;
+  box-shadow: 2px 2px 2px #8E8E8E;
 }
 /*-----check-----*/
 /*-----login-----*/
