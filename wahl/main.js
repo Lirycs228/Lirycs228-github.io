@@ -103,8 +103,8 @@ req.onreadystatechange = function() {
           valid = true;
           inline = line;
           alert("valid")
-          valid_psw(child, family, clas, number, mail);
           break;
+          valid_psw(child, family, clas, number, mail);
         };
       };
       alert("not_valid")
