@@ -103,11 +103,14 @@ req.onreadystatechange = function() {
           valid = true;
           inline = line;
           alert("valid")
-          valid_psw(child, family, clas, number, mail);
+          valid_psw();
+          break;
         };
       };
-      alert("not_valid")
-      not_valid();
+      if(valid!=true) {
+        alert("not_valid")
+        not_valid();
+      }
       //end of comparing
     });
 
@@ -117,7 +120,7 @@ req.onreadystatechange = function() {
 req.open("GET", fileName, true);
 req.send();
 
-function valid_psw(c, f, cl, n, m) {
+function valid_psw() {
   alert("v")
   login_away();
   //sleep
