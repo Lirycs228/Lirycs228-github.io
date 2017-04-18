@@ -103,8 +103,7 @@
 #left {
   float: left;
 }
-/*line between sides*/
-#line {
+/*line between sides*/#line {
   padding: 0px;
   width: 2px;
   height: 99%;
@@ -146,10 +145,9 @@ h5.right {
 input.right {
   margin-top: 5px;
 }
-/*Login button
+
 #log {
   width: 150px;
   border: solid 1px black;
   padding: 2px
 }
-*/
