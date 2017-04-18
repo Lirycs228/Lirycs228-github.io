@@ -87,6 +87,22 @@
   background-color: #FFFFFF;
 }
 /*-----exp-----*/
+#exp_box {
+  background-color: #F0F0F0;
+  width: 1000px;
+  height: 500px;
+  box-shadow: 5px 5px 5px #9D9D9D;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+#understood {
+  background-color: #0000CC;
+  width: 150px;
+  height: 100px;
+  border: solid 1px black;
+  padding: 2px
+}
 /*-----check-----*/
 /*-----login-----*/
 /*main container for holding login*/
