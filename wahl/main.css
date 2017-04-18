@@ -1,4 +1,15 @@
 /*-----defining layers-----*/
+/*background*/
+#background {
+  z-index: 0;
+  position: fixed;
+  margin: 0px;
+  padding: 0px;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
 /*wahl sheet*/
 #wahl {
   z-index: 1;
@@ -23,7 +34,7 @@
 }
 /*explanation*/
 #exp {
-  z-index: 3;
+  z-index: -3;
   position: fixed;
   margin: 0px;
   padding: 0px;
@@ -34,7 +45,7 @@
 }
 /*check before submit*/
 #check {
-  z-index: 4;
+  z-index: -4;
   position: fixed;
   margin: 0px;
   padding: 0px;
@@ -53,6 +64,16 @@
   top: 0px;
   width: 100%;
   height: 100%;
+}
+/*-----background-----*/
+#b_plane {
+  margin: 0px;
+  padding: 0px;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
 }
 /*-----wahl-----*/
 /*-----blur-----*/
@@ -125,9 +146,10 @@ h5.right {
 input.right {
   margin-top: 5px;
 }
-/*Login button*/
+/*Login button
 #log {
   width: 150px;
   border: solid 1px black;
   padding: 2px
 }
+*/
