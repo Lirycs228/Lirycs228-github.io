@@ -119,10 +119,11 @@ req.open("GET", fileName, true);
 req.send();
 
 function valid_psw(c, f, cl, n, m) {
+  alert("v")
   login_away();
   //sleep
   exp_get();
 }
 function not_valid() {
-
+  alert("nv")
 }
