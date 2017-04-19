@@ -123,6 +123,11 @@
   margin-top: 2px;
   text-align: center;
 }
+#tabcontainer {
+  width: 800px;
+  height: 350px;
+  margin: auto;
+}
 /*-----check-----*/
 /*-----login-----*/
 /*main container for holding login*/
