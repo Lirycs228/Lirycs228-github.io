@@ -76,7 +76,7 @@ req.onreadystatechange = function() {
     //  //alert(current);     first entry per line
     //};
     //normal JS after XMLHttpRequest:
-    var cheat = document.getElementById("cheat").addEventListener("click", valid_psw())
+    var cheat = document.getElementById("cheat").addEventListener("click", function() {valid_psw()})
 
     var log = document.getElementById("log").addEventListener("click", function () {
       //copare with server
