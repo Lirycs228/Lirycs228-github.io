@@ -62,38 +62,37 @@ function readBody(xhr) {
 //make request which executes code inside of it after
 req = new XMLHttpRequest();
 req.onreadystatechange = function() {
-  alert("Loading" + req.readyState);
+  //alert("Loading" + req.readyState);
   if (req.readyState == 4) {
     data = readBody(req);
-    //alert(data); full document
+    //alert(data);            full document
     data = data.split("\n");
     var current;
-    alert(data.length)
-    for(line in data) {
-      current = data[line].split(";");
-      current = current[0];
-      alert(data[line]);
-      alert(current);
-    };
+    //alert(data.length)
+    //for(line in data) {     to give out the document lines
+    //  current = data[line].split(";");
+    //  current = current[0];
+    //  //alert(data[line]);  line
+    //  //alert(current);     first entry per line
+    //};
     //normal JS after XMLHttpRequest:
 
     var log = document.getElementById("log").addEventListener("click", function () {
-      alert("click")
       //copare with server
       var child = document.getElementById("child").value;
       var family = document.getElementById("family").value;
       var clas = document.getElementById("clas").value;
       var number = document.getElementById("number").value;
       var mail = document.getElementById("mail").value;
-      alert(child);
+      //alert(child);
+
       //to hash
       var achild = hash(child);
       var afamily = hash(family);
       var aclas = hash(clas);
       var anumber = hash(number);
       var amail = hash(mail);
-
-      alert(achild);
+      //alert(achild);
 
       var obj;
       var valid = false;
@@ -122,11 +121,9 @@ req.open("GET", fileName, true);
 req.send();
 
 function valid_psw() {
-  alert("v")
   login_away();
   //sleep
   exp_get();
 }
 function not_valid() {
-  alert("nv")
 }
