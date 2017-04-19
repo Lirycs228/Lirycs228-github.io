@@ -97,26 +97,7 @@
   top: 0; left: 0; bottom: 0; right: 0;
 }
 #understood {
-  background-color: #3333FF;
-  color: #FFFFFF;
-  min-height: 36px;
-  height: 36px;
-  width: 88px;
-  border: none;
-  padding: 2px;
-  border-radius: 2px;
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 14px;
-  box-shadow: 2px 2px 2px #A0A0A0;
-}
-#understood:hover {
-  background-color: #0000FF;
-  box-shadow: 2px 2px 2px #606060;
-}
-#understood:active {
-  background-color: #000077;
-  box-shadow: 2px 2px 2px #606060;
+  margin: 20px;
 }
 /*-----check-----*/
 /*-----login-----*/
@@ -177,9 +158,26 @@ h5.right {
 input.right {
   margin-top: 5px;
 }
-
-#log {
-  width: 150px;
-  border: solid 1px black;
-  padding: 2px
+/*-----shared-----*/
+.bt {
+  background-color: #3333FF;
+  color: #FFFFFF;
+  min-height: 36px;
+  height: 36px;
+  width: 88px;
+  border: none;
+  padding: 2px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  box-shadow: 2px 2px 2px #A0A0A0;
+}
+.bt:hover {
+  background-color: #0000FF;
+  box-shadow: 2px 2px 2px #606060;
+}
+.bt:active {
+  background-color: #000077;
+  box-shadow: 2px 2px 2px #606060;
 }
