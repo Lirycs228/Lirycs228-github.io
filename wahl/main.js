@@ -47,13 +47,13 @@ var data = "";
 function readBody(xhr) {
     var d;
     if (!xhr.responseType || xhr.responseType === "text") {
-      alert("text");
+      //alert("text");
         d = xhr.responseText;
     } else if (xhr.responseType === "document") {
-      alert("document");
+      //alert("document");
         d = xhr.responseXML;
     } else {
-      alert("else");
+      //alert("else");
         d = xhr.response;
     }
     return d;
@@ -65,9 +65,10 @@ req.onreadystatechange = function() {
   alert("Loading" + req.readyState);
   if (req.readyState == 4) {
     data = readBody(req);
-    alert(data);
+    //alert(data); full document
     data = data.split("\n");
     var current;
+    alert(data.length)
     for(line in data) {
       current = data[line].split(";");
       current = current[0];
