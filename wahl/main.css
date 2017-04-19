@@ -123,6 +123,14 @@
   margin-right: 2px;
   margin-top: 2px;
   text-align: center;
+  border: solid 1px #9D9D9D;
+}
+.activetab {
+  background-color: #FCFCFC;
+  border-top: solid 1px #9D9D9D;
+  border-left: solid 1px #9D9D9D;
+  border-right: solid 1px #9D9D9D;
+  border-bottom: solid 1px #FCFCFC;
 }
 #tabcontainer {
   background-color: #E0E0E0;
