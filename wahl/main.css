@@ -118,10 +118,11 @@
   width: 100px;
   float: left;
   font-size: 19.6px;
-  line-height: 21px;
+  line-height: 40.64px;
   margin-left: 1.96px;
   margin-right: 1.96px;
   margin-top: 1.96px;
+  text-align: center;
 }
 /*-----check-----*/
 /*-----login-----*/
