@@ -78,6 +78,28 @@ req.onreadystatechange = function() {
     //normal JS after XMLHttpRequest:
     var cheat = document.getElementById("cheat").addEventListener("click", function() {valid_psw()})
 
+    var t = document.getElementById("tab1");
+    var tt = document.getElementById("tab2");
+    var cname;
+    t.addEventListener("click", function(){
+      cname = tt.className;
+      alert(cname)
+      cname.split(" ");
+      if(cname.length >= 2) {
+        tt.className.replace(/\bactivetab\b/,'');
+        t.className += " activetab";
+      }
+    })
+    tt.addEventListener("click", function(){
+      cname = t.className;
+      alert(cname)
+      cname.split(" ");
+      if(cname.length >= 2) {
+        t.className.replace(/\bactivetab\b/,'');
+      }
+      tt.className += " activetab";
+    })
+
     var log = document.getElementById("log").addEventListener("click", function () {
       //copare with server
       var child = document.getElementById("child").value;
