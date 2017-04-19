@@ -105,7 +105,7 @@
 }
 #tabbar {
   height: 40px;
-  margin-left: 25px;
+  margin-left: 20px;
   margin-top: 10px;
   display: block;
 }
@@ -127,13 +127,13 @@
 #tabcontainer {
   background-color: #E0E0E0;
   width: 900px;
-  height: 360px;
+  height: 375px;
   margin: auto;
 }
 #expcontainer {
   background-color: #FCFCFC;
   width: 890px;
-  height: 350px;
+  height: 365px;
   margin: auto;
 }
 /*-----check-----*/
