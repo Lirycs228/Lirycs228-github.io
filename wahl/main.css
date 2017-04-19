@@ -183,6 +183,9 @@ input.right {
   margin-top: 5px;
 }
 /*-----shared-----*/
+* {
+  font-family: OpenSansRegular,Arial,sans-serif;
+}
 .bt {
   background-color: #3333FF;
   color: #FFFFFF;
