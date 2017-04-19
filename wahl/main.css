@@ -107,13 +107,19 @@
   height: 40.64px;
   line-height: 21px;
   margin-left: 11.2px;
-  font-style: 14px;
   display: block;
 }
 #tabox {
+  background-color: #E0E0E0;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   display: inline-block;
+  float: left;
+  font-size: 19.6px;
+  line-height: 21px;
+  margin-left: 1.96px;
+  margin-right: 1.96px;
+  margin-top: 1.96px;
 }
 /*-----check-----*/
 /*-----login-----*/
@@ -122,7 +128,7 @@
   background-color: #F0F0F0;
   width: 700px;
   height: 350px;
-  box-shadow: 5px 5px 5px #9D9D9D;
+  box-shadow: 5px 5px 5px #A0A0A0;
   margin: auto;
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
