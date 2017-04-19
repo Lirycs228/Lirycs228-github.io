@@ -115,7 +115,7 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   display: inline-block;
-  height: 40px;
+  height: 39px;
   width: 100px;
   float: left;
   font-size: 18px;
@@ -127,6 +127,7 @@
   border: solid 1px #9D9D9D;
 }
 .activetab {
+  height: 40px;
   background-color: #FCFCFC;
   border-top: solid 1px #9D9D9D;
   border-left: solid 1px #9D9D9D;
