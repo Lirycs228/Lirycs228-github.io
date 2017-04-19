@@ -98,8 +98,8 @@ req.onreadystatechange = function() {
       //alert(cname.length);
       if(cname.length >= 2) {
         t.className.replace(/\bactivetab\b/,'');
+        tt.className += " activetab";
       }
-      tt.className += " activetab";
     })
 
     var log = document.getElementById("log").addEventListener("click", function () {
