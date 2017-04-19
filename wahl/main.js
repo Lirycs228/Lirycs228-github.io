@@ -87,7 +87,7 @@ req.onreadystatechange = function() {
       cname = cname.split(" ");
       //alert(cname.length);
       if(cname.length >= 2) {
-        tt.className.replace(/\bactivetab\b/,'');
+        tt.className = tt.className.replace( /(?:^|\s)activetab(?!\S)/g , '' );
         t.className += " activetab";
       }
     })
@@ -97,7 +97,7 @@ req.onreadystatechange = function() {
       cname = cname.split(" ");
       //alert(cname.length);
       if(cname.length >= 2) {
-        t.className.replace(" activetab",'');
+        t.className = t.className.replace( /(?:^|\s)activetab(?!\S)/g , '' );
         tt.className += " activetab";
       }
     })
