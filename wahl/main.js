@@ -97,7 +97,7 @@ req.onreadystatechange = function() {
       cname = cname.split(" ");
       //alert(cname.length);
       if(cname.length >= 2) {
-        t.className.replace(/\bactivetab\b/,'');
+        t.className.replace(" activetab",'');
         tt.className += " activetab";
       }
     })
