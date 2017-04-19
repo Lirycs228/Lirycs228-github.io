@@ -83,9 +83,9 @@ req.onreadystatechange = function() {
     var cname;
     t.addEventListener("click", function(){
       cname = tt.className;
-      alert(cname);
+      //alert(cname);
       cname = cname.split(" ");
-      alert(cname.length);
+      //alert(cname.length);
       if(cname.length >= 2) {
         tt.className.replace(/\bactivetab\b/,'');
         t.className += " activetab";
@@ -93,8 +93,9 @@ req.onreadystatechange = function() {
     })
     tt.addEventListener("click", function(){
       cname = t.className;
-      alert(cname)
-      cname.split(" ");
+      //alert(cname);
+      cname = cname.split(" ");
+      //alert(cname.length);
       if(cname.length >= 2) {
         t.className.replace(/\bactivetab\b/,'');
       }
