@@ -101,7 +101,7 @@
   float: right;
 }
 #tab {
-
+  cursor: pointer;
 }
 #tabbar {
   height: 40px;
