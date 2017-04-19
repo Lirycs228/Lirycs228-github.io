@@ -105,7 +105,8 @@
 }
 #tabbar {
   height: 40px;
-  margin-left: 12px;
+  margin-left: 25px;
+  margin-top: 10px;
   display: block;
 }
 .tabox {
@@ -125,8 +126,8 @@
 }
 #tabcontainer {
   background-color: #E0E0E0;
-  width: 800px;
-  height: 350px;
+  width: 900px;
+  height: 360px;
   margin: auto;
 }
 /*-----check-----*/
