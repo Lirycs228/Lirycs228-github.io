@@ -83,8 +83,9 @@ req.onreadystatechange = function() {
     var cname;
     t.addEventListener("click", function(){
       cname = tt.className;
-      alert(cname)
-      cname.split(" ");
+      alert(cname);
+      cname = cname.split(" ");
+      alert(cname.length);
       if(cname.length >= 2) {
         tt.className.replace(/\bactivetab\b/,'');
         t.className += " activetab";
