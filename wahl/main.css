@@ -124,6 +124,7 @@
   text-align: center;
 }
 #tabcontainer {
+  background-color: #E0E0E0;
   width: 800px;
   height: 350px;
   margin: auto;
