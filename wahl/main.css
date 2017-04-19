@@ -106,7 +106,7 @@
 #tabbar {
   height: 40px;
   margin-left: 20px;
-  margin-top: 12px;
+  margin-top: 15px;
   display: block;
 }
 .tabox {
@@ -133,7 +133,7 @@
   border-bottom: solid 1px #FCFCFC;
 }
 #tabcontainer {
-  background-color: #E0E0E0;
+  background-color: #FCFCFC;
   width: 900px;
   height: 360px;
   margin: auto;
