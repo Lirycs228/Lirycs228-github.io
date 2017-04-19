@@ -137,13 +137,7 @@
   width: 900px;
   height: 360px;
   margin: auto;
-}
-#expcontainer {
-  background-color: #FCFCFC;
-  width: 890px;
-  height: 350px;
-  margin: auto;
-  top: 0; left: 0; bottom: 0; right: 0;
+  margin-top: -20px;
 }
 /*-----check-----*/
 /*-----login-----*/
