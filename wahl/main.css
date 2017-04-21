@@ -205,6 +205,11 @@ input.right {
 * {
   font-family: OpenSansRegular,Arial,sans-serif;
 }
+body {
+  zoom: 2;
+  -moz-transform: scale(2);
+  -moz-transform-origin: 0 0;
+}
 .bt {
   background-color: #3333FF;
   color: #FFFFFF;
