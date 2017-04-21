@@ -206,8 +206,8 @@ input.right {
   font-family: OpenSansRegular,Arial,sans-serif;
 }
 body {
-  zoom: 2;
-  -moz-transform: scale(2);
+  zoom: 1.25;
+  -moz-transform: scale(1.25);
   -moz-transform-origin: 0 0;
 }
 .bt {
