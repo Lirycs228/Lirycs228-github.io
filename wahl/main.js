@@ -78,6 +78,9 @@ req.onreadystatechange = function() {
     //normal JS after XMLHttpRequest:
     var cheat = document.getElementById("cheat").addEventListener("click", function() {valid_psw()})
 
+    //make exp text change
+    var tab = document.getElementById("tabcontainer")
+    tab.innerHTML = "Erklärung"
     var t = document.getElementById("tab1");
     var tt = document.getElementById("tab2");
     var cname;
@@ -89,6 +92,7 @@ req.onreadystatechange = function() {
       if(cname.length >= 2) {
         tt.className = tt.className.replace( /(?:^|\s)activetab(?!\S)/g , '' );
         t.className += " activetab";
+        tab.innerHTML = "Erklärung"
       }
     })
     tt.addEventListener("click", function(){
@@ -99,6 +103,7 @@ req.onreadystatechange = function() {
       if(cname.length >= 2) {
         t.className = t.className.replace( /(?:^|\s)activetab(?!\S)/g , '' );
         tt.className += " activetab";
+        tab.innerHTML = "FAQ"
       }
     })
 
@@ -119,6 +124,7 @@ req.onreadystatechange = function() {
       var amail = hash(mail);
       //alert(achild);
 
+      var tabcontainer = document.getElementById("tabcontainer")
       var obj;
       var valid = false;
       var inline;
@@ -138,6 +144,7 @@ req.onreadystatechange = function() {
       }
       //end of comparing
     });
+
 
     //End of normal JS
   }
