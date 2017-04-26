@@ -1,3 +1,4 @@
+
 var temp;
 //make layer "hide" behind background
 function blur_away() {//beginning: there
@@ -26,6 +27,7 @@ function check_get() {
 function login_get() {
   temp = document.getElementById("login").style.zIndex = "5";
 };
+
 
 //hash a string to compare to database
 function hash(str) {
@@ -64,6 +66,29 @@ req = new XMLHttpRequest();
 req.onreadystatechange = function() {
   //alert("Loading" + req.readyState);
   if (req.readyState == 4) {
+    //adjust zoom to 125%
+    var browserZoomLevel = Math.round(window.devicePixelRatio * 100);
+    //alert(browserZoomLevel);
+    var body = document.getElementById("body")
+    if(browserZoomLevel==25) {
+      body.style.zoom = 5;
+      body.style["-moz-transform"] = "scale(5)";
+      body.style["-moz-transform-origin"] = "0 0";
+    } else if(browserZoomLevel==50) {
+      body.style.zoom = 2.5;
+      body.style["-moz-transform"] = "scale(2.5)";
+      body.style["-moz-transform-origin"] = "0 0";
+    } else if(browserZoomLevel==75) {
+      body.style.zoom = 1.8;
+      body.style["-moz-transform"] = "scale(1.8)";
+      body.style["-moz-transform-origin"] = "0 0";
+    } else if(browserZoomLevel==100) {
+      body.style.zoom = 1.25;
+      body.style["-moz-transform"] = "scale(1.25)";
+      body.style["-moz-transform-origin"] = "0 0";
+    }
+
+
     data = readBody(req);
     //alert(data);            full document
     data = data.split("\n");
@@ -79,7 +104,7 @@ req.onreadystatechange = function() {
     var cheat = document.getElementById("cheat").addEventListener("click", function() {valid_psw()})
 
     //make exp text change
-    var tab = document.getElementById("tabcontainer")
+    var tab = document.getElementById("tabcontainercontent")
     tab.innerHTML = "Erklärung"
     var t = document.getElementById("tab1");
     var tt = document.getElementById("tab2");
@@ -124,7 +149,6 @@ req.onreadystatechange = function() {
       var amail = hash(mail);
       //alert(achild);
 
-      var tabcontainer = document.getElementById("tabcontainer")
       var obj;
       var valid = false;
       var inline;
@@ -158,4 +182,10 @@ function valid_psw() {
   exp_get();
 }
 function not_valid() {
+  var nvalid = document.getElementsByClassName("avalid");
+  for(var i = 0;i < nvalid.length; i++) {
+    nvalid[i].style.color = "red";
+  }
+  var loga = document.getElementById("log");
+  loga.value = "Nochmal";
 }
