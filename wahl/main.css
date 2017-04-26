@@ -127,7 +127,7 @@
   border: solid 1px #9D9D9D;
 }
 .activetab {
-  height: 39px;
+  height: 40px;
   background-color: #FCFCFC;
   border-top: solid 1px #9D9D9D;
   border-left: solid 1px #9D9D9D;
@@ -141,6 +141,13 @@
   margin: auto;
   margin-top: 2.05px;
   border: solid 1px #9D9D9D;
+}
+#tabcontainercontent {
+  bottom: 0px;
+  width: 890px;
+  height: 350px;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 /*-----check-----*/
 /*-----login-----*/
@@ -200,6 +207,8 @@ h5.right {
 }
 input.right {
   margin-top: 5px;
+}
+.avalid {
 }
 /*-----shared-----*/
 * {
