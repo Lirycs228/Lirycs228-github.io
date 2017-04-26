@@ -5,7 +5,7 @@
   <title> Login </title>
   <link rel = "stylesheet" href="main.css">
 </head>
-<body  style="-moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; -user-select: none;">
+<body  id="body" style="-moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; -user-select: none;">
   <script language="javascript" type="text/javascript" src="main.js"></script>
   <div id="background">
     <div id="b_plane">
@@ -28,6 +28,8 @@
         </nav>
       </div>
       <div id="tabcontainer">
+        <div id="tabcontainercontent">
+        </div>
       </div>
       <input type="button" id="understood" class="bt" value="Verstanden">
     </div>
@@ -45,32 +47,32 @@
           Login
         </h2>
         <br>
-        <h5 class="left">
-          Vorname des Kindes:
+        <h5 class="left avalid">
+          Vorname des Schülers:
         </h5>
         <input type="text" id="child" class="left"/>
         <br>
         <br>
-        <h5 class="left">
-          Nachname des Kindes:
+        <h5 class="left avalid">
+          Nachname des Schülers:
         </h5>
         <input type="text" id="family" class="left"/>
         <br>
         <br>
-        <h5 class="left">
+        <h5 class="left avalid">
           Klasse:
         </h5>
         <input type="text" id="clas" class="left"/>
       </div>
       <hr id="line">
       <div id="right">
-        <h5 class="right">
+        <h5 class="right avalid">
           Telefonnummer:
         </h5>
         <input type="text" id="number" class="right"/>
         <br>
         <br>
-        <h5 class="right">
+        <h5 class="right avalid">
           E-Mail:
         </h5>
         <input type="text" id="mail" class="right"/>
