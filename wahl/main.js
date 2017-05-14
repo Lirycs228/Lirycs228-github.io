@@ -132,6 +132,79 @@ req.onreadystatechange = function() {
       }
     })
 
+    //Wahl JS
+    var w = document.getElementById("understood");
+    w.addEventListener("click", function(){
+      exp_away();
+      blur_away();
+      //Variables
+      var amount_ag1 = [10,2,4]; //Wie viele wollen in die AG
+      var possible_amout_ag1 = [10,7,8];// Wie viele können in die AG
+
+      function main_chois(AG_Index, Check_Index, amout_ag1){
+        if(document.getElementById(AG_Index).className == 'checkbutton'){
+          document.getElementById(AG_Index).className = 'checkbutton_true';
+          document.getElementById(Check_Index).className = 'checked';
+          amount_ag1 +=1;
+          return amount_ag1;
+        }
+        else{
+          document.getElementById(AG_Index).className = 'checkbutton';
+          document.getElementById(Check_Index).className = 'not_checked';
+          amount_ag1  -=1;
+          return amount_ag1;
+        };
+      }
+
+      function check_ag(HAB_Index){
+        if(document.getElementById(HAB_Index).className == 'checkbutton_HAB'){
+          document.getElementById(HAB_Index).className = 'checkbutton_HAB_not';
+          document.getElementById(HAB_Index).innerHTML = 'JA';
+        }
+        else{
+          document.getElementById(HAB_Index).className = 'checkbutton_HAB';
+          document.getElementById(HAB_Index).innerHTML = '';
+        }
+      };
+
+      function show_more(Button_Index, Beschreibung_Index){
+        if(document.getElementById(Button_Index).className == 'Add_Image'){
+          document.getElementById(Button_Index).className = 'Add_Image_Active';
+          document.getElementById(Beschreibung_Index).className = 'Beschreibung_Active';
+          document.getElementById(Beschreibung_Index).innerHTML += ' TextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextText'
+        }
+        else{
+          document.getElementById(Button_Index).className = 'Add_Image';
+          document.getElementById(Beschreibung_Index).innerHTML = 'Kletter-Ag <br> Diese Ag ist für sportlich eingagierte Schüler gut geeignet die'
+          document.getElementById(Beschreibung_Index).className = 'Beschreibung';
+        };
+      }
+
+      function check_if_availabe(){
+        var amount = document.getElementsByClassName('tri_up');
+        var p_amount = document.getElementsByClassName('tri_down');
+        var ag_to_check = document.getElementsByClassName('Ag');
+        var triangle = document.getElementsByClassName('triangle');
+        var triangle2 = document.getElementsByClassName('triangle2');
+        for(var i = 0; i < amount.length; i++){
+          amount[i].innerHTML = amount_ag1[i];
+          p_amount[i].innerHTML = possible_amout_ag1[i];
+        }
+        for(var i = 0; i < ag_to_check.length; i++){
+          if(amount_ag1[i] < possible_amout_ag1[i]){
+            ag_to_check[i].className = 'Ag';
+            triangle[i].className = 'triangle';
+            triangle2[i].className = 'triangle2';
+          }
+          else{
+            ag_to_check[i].className = 'Ag_not_available';
+            triangle[i].className = 'notriangle';
+            triangle2[i].className = 'notriangle2';
+          }
+        }
+      }
+    })
+
     var log = document.getElementById("log").addEventListener("click", function () {
       //copare with server
       var child = document.getElementById("child").value;
