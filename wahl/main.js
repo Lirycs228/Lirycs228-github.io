@@ -41,6 +41,25 @@ function hash(str) {
   return hval >>> 0;
 }
 
+function loged_in(apass) {
+  var http = new XMLHttpRequest();
+  var url = "loged_in.php";
+  var params = "pass=";
+  params+=apass
+  http.open("POST", url, true);
+
+  //Send the proper header information along with the request
+  http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+  http.onreadystatechange = function() {//Call a function when the state changes.
+    if(http.readyState == 4 && http.status == 200) {
+      alert(http.responseText);
+    }
+  }
+http.send(params);
+}
+
+
 
 var fileName = "test.txt";
 var data = "";
@@ -229,12 +248,17 @@ req.onreadystatechange = function() {
       var inline;
       for(line in data) {
         obj = data[line].split(";");
-        if((((obj[0]==achild) && (obj[1]==afamily)) && ((obj[2]==aclas) && (obj[3]==anumber))) && ((obj[4]==amail) && (obj[5]==apass))) {
-          valid = true;
-          inline = line;
-          alert("valid")
-          valid_psw();
+        if(obj[6] == "done") {
+          alert("You already loged in once \n Please contact * for a change request")
           break;
+        } else {
+          if((((obj[0]==achild) && (obj[1]==afamily)) && ((obj[2]==aclas) && (obj[3]==anumber))) && ((obj[4]==amail) && (obj[5]==apass))) {
+            valid = true;
+            inline = line;
+            alert("valid")
+            valid_psw(apass);
+            break;
+          };
         };
       };
       if(valid!=true) {
@@ -251,8 +275,9 @@ req.onreadystatechange = function() {
 req.open("GET", fileName, true);
 req.send();
 
-function valid_psw() {
+function valid_psw(apass) {
   login_away();
+  loged_in(apass);
   //sleep
   exp_get();
 }
