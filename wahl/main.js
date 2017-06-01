@@ -229,7 +229,7 @@ req.onreadystatechange = function() {
       var inline;
       for(line in data) {
         obj = data[line].split(";");
-        if(((((obj[0]==achild) && (obj[1]==afamily)) && ((obj[2]==aclas) && (obj[3]==anumber))) && (obj[4]==amail)) && (obj[5]==apass)) {
+        if((((obj[0]==achild) && (obj[1]==afamily)) && ((obj[2]==aclas) && (obj[3]==anumber))) && ((obj[4]==amail) && (obj[5]==apass)) {
           valid = true;
           inline = line;
           alert("valid")
