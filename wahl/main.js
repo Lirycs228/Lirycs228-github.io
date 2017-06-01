@@ -43,10 +43,10 @@ function hash(str) {
 
 function loged_in(apass) {
   var http = new XMLHttpRequest();
-  var url = "loged_in.php";
+  var url = "lirycs228.github.io/wahl/loged_in.php";
   var params = "pass=";
   params+=apass
-  http.open("POST", url, true);
+  http.open("GET", url, true);
 
   //Send the proper header information along with the request
   http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
