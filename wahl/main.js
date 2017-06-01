@@ -206,12 +206,13 @@ req.onreadystatechange = function() {
     })
 
     var log = document.getElementById("log").addEventListener("click", function () {
-      //copare with server
+      //compare with server
       var child = document.getElementById("child").value;
       var family = document.getElementById("family").value;
       var clas = document.getElementById("clas").value;
       var number = document.getElementById("number").value;
       var mail = document.getElementById("mail").value;
+      var pass = document.getElementById("pass").value;
       //alert(child);
 
       //to hash
@@ -220,6 +221,7 @@ req.onreadystatechange = function() {
       var aclas = hash(clas);
       var anumber = hash(number);
       var amail = hash(mail);
+      var apass = hash(pass);
       //alert(achild);
 
       var obj;
@@ -227,7 +229,7 @@ req.onreadystatechange = function() {
       var inline;
       for(line in data) {
         obj = data[line].split(";");
-        if((((obj[0]==achild) && (obj[1]==afamily)) && ((obj[2]==aclas) && (obj[3]==anumber))) && (obj[4]==amail)) {
+        if(((((obj[0]==achild) && (obj[1]==afamily)) && ((obj[2]==aclas) && (obj[3]==anumber))) && (obj[4]==amail)) && (obj[5]==apass)) {
           valid = true;
           inline = line;
           alert("valid")
