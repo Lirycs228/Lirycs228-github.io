@@ -43,7 +43,7 @@ function hash(str) {
 
 function loged_in(apass) {
   var http = new XMLHttpRequest();
-  var url = "lirycs228.github.io/wahl/loged_in.php";
+  var url = "loged_in.php";
   var params = "pass=";
   params+=apass
   http.open("GET", url, true);
