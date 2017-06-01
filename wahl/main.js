@@ -229,7 +229,7 @@ req.onreadystatechange = function() {
       var child = document.getElementById("child").value;
       var family = document.getElementById("family").value;
       var clas = document.getElementById("clas").value;
-      var number = document.getElementById("number").value;
+      var numba = document.getElementById("numba").value;
       var mail = document.getElementById("mail").value;
       var pass = document.getElementById("pass").value;
       //alert(child);
@@ -238,7 +238,7 @@ req.onreadystatechange = function() {
       var achild = hash(child);
       var afamily = hash(family);
       var aclas = hash(clas);
-      var anumber = hash(number);
+      var anumber = hash(numba);
       var amail = hash(mail);
       var apass = hash(pass);
       //alert(achild);
