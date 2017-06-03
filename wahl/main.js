@@ -43,23 +43,10 @@ function hash(str) {
 
 function loged_in(apass) {
   var http = new XMLHttpRequest();
-  var url = "loged_in.php";
-  var params = "pass=";
-  params+=apass
+  var url = "loged_in.php?pass=";
+  url+=apass
   http.open("GET", url, true);
-
-  //Send the proper header information along with the request
-  http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  http.setRequestHeader("Content-length", params.length);
-  http.setRequestHeader("Connection", "close");
-
-
-  http.onreadystatechange = function() {//Call a function when the state changes.
-    if(http.readyState == 4 && http.status == 200) {
-      alert(http.responseText);
-    }
-  }
-http.send(params);
+  http.send();
 }
 
 function get_ags() {
