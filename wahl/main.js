@@ -44,7 +44,7 @@ function hash(str) {
 function loged_in(apass) {
   var http = new XMLHttpRequest();
   var url = "loged_in.php?pass=";
-  aert(apass);
+  alert(apass);
   url+=apass;
   alert(url);
   http.open("GET", url, true);
