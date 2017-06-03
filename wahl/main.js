@@ -43,9 +43,8 @@ function hash(str) {
 
 function loged_in(apass) {
   var http = new XMLHttpRequest();
-  var url = "loged_in.php";
-  var params = "pass="
-  params+=apass;
+  var url = "loged_in.php?pass=";
+  url+=apass;
   http.onreadystatechange = function() {
     if (req.readyState == 4) {
       var data = readBody(http);
@@ -53,7 +52,7 @@ function loged_in(apass) {
     }
   }
   http.open("GET", url, true);
-  http.send(params);
+  http.send();
 }
 
 function get_ags() {
