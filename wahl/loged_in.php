@@ -1,4 +1,4 @@
-$name = $_POST["name"]
+$name = $_OPTIONS["name"]
 
 $f = fopen('test', 'rw');
 
