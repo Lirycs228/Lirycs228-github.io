@@ -1,7 +1,7 @@
 <?php
 $name = $_GET['pass']
 
-echo 'alert("' + $name + '");';
+echo 'alert("Name: + ' + $name + '");';
 
 
 $f = fopen('test', 'rw');
