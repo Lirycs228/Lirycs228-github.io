@@ -46,7 +46,7 @@ function loged_in(apass) {
   var url = "loged_in.php";
   var params = "pass=";
   params+=apass
-  http.open("POST", url, true);
+  http.open("PUT", url, true);
 
   //Send the proper header information along with the request
   http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -61,6 +61,36 @@ function loged_in(apass) {
   }
 http.send(params);
 }
+
+function get_ags() {
+  var great_list = [];
+  var file = "ag_list.txt";
+  var getter = new XMLHttpRequest();
+  getter.onreadystatechange = function() {
+    //alert("Loading" + req.readyState);
+    if (req.readyState == 4) {
+      var data = readBody(getter);
+
+      for(var line = 0; line < data.length; line++) {
+        var temp = data[line].split(";");
+        //AG1 = [day_id, ag_name, ag_head, ag_beschreibung, ag_plätze, ag_belegt]
+        great_list.append(temp);
+      }
+
+    }
+  }
+  getter.open("GET", file, true);
+  getter.send();
+
+  return great_list;//[AG1, AG2, AG3, ...]
+  //Bsp.:
+  //[["montag_block", "Klettern", "man kann klettern", "klettern ist super, da ...", 30, 12], ...]
+}
+//...
+//var liste = get_ags();
+//for(var i = 0; i < liste.length; i++) {
+//
+//}
 
 
 
