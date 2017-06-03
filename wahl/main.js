@@ -47,6 +47,12 @@ function loged_in(apass) {
   alert(apass);
   url+=apass;
   alert(url);
+  http.onreadystatechange = function() {
+    if (req.readyState == 4) {
+      var data = readBody(http);
+      alert(data);
+    }
+  }
   http.open("GET", url, true);
   http.send();
 }
