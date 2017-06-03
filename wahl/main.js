@@ -46,7 +46,7 @@ function loged_in(apass) {
   var url = "loged_in.php?pass=";
   url+=apass;
   http.onreadystatechange = function() {
-    if (req.readyState == 4) {
+    if (http.readyState == 4) {
       var data = readBody(http);
       alert(data);
     }
@@ -61,7 +61,7 @@ function get_ags() {
   var getter = new XMLHttpRequest();
   getter.onreadystatechange = function() {
     //alert("Loading" + req.readyState);
-    if (req.readyState == 4) {
+    if (getter.readyState == 4) {
       var data = readBody(getter);
 
       for(var line = 0; line < data.length; line++) {
