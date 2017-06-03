@@ -1,4 +1,4 @@
-$name = $_OPTIONS["name"]
+$name = $_GET["name"]
 
 $f = fopen('test', 'rw');
 
