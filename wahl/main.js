@@ -52,7 +52,7 @@ function loged_in(apass) {
       alert(data);
     }
   }
-  http.open("POST", url, true);
+  http.open("GET", url, true);
   http.send(params);
 }
 
