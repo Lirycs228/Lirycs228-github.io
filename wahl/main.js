@@ -46,7 +46,7 @@ function loged_in(apass) {
   var url = "loged_in.php";
   var params = "pass=";
   params+=apass
-  http.open("OPTION", url, true);
+  http.open("OPTIONS", url, true);
 
   //Send the proper header information along with the request
   http.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
