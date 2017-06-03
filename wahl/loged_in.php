@@ -1,5 +1,5 @@
 <?php
-$name = $_GET["pass"]
+$name = $_GET['pass']
 
 $f = fopen('test', 'rw');
 
