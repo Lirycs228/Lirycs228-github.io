@@ -1,6 +1,7 @@
 var folders = {"Oranien-Plan":"/plan/plan.htm",
                "Wahlzettel"  :"/wahl/wahl.htm",
-               "Game"        :"/game/game.htm"};
+               "Game"        :"/game/game.htm",
+	             "Lumberjack"  :"/Lumberjack/index.htm"};
 
 var keys = Object.keys(folders);
 var current;
